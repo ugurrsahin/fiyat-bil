@@ -25,7 +25,7 @@ const KOK = process.env.FIYATBIL_KOK || path.resolve(path.dirname(fileURLToPath(
 const CIKTI = path.join(KOK, "fiyatlar.json");
 const ESZAMANLI = 4;          // aynı anda açılan sayfa sayısı
 const ZAMAN_ASIMI = 25000;    // ms
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
+export const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 
 /* ---------- ürünleri yükle ---------- */
 export async function urunleriYukle(kok = KOK) {
@@ -165,6 +165,7 @@ export function fiyatSec(html, host, referans, onceki) {
     // güçlü yöntemlerde ilk makul aday; zayıf yöntemlerde kayıtlı fiyata en yakın aday
     if (i < 3) return uygun[0];
     const hedef = onceki || referans;
+    if (!hedef) break;   // kayıtlı fiyat yoksa zayıf yöntemlere güvenme
     return uygun.sort((a, b) => Math.abs(Math.log(a.fiyat / hedef)) - Math.abs(Math.log(b.fiyat / hedef)))[0];
   }
   const hepsi = gruplar.flat();
@@ -172,7 +173,7 @@ export function fiyatSec(html, host, referans, onceki) {
 }
 
 /* ---------- sayfa indir ---------- */
-async function sayfaGetir(url) {
+export async function sayfaGetir(url) {
   let sonHata;
   for (let deneme = 0; deneme < 2; deneme++) {
     try {

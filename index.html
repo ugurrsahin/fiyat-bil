@@ -187,7 +187,7 @@ details ul{padding-left:20px;margin:10px 0 0;color:var(--muted)}
 .srcq{margin:-12px 0 22px;color:var(--muted);font-size:15px}
 .srcq small{font-size:13px}
 .chip span small{opacity:.6;font-weight:600;margin-left:2px}
-.fdurum{margin:-10px 0 18px;font-weight:600;font-size:15px;color:var(--good)}
+.fdurum{margin:-10px 0 14px;font-weight:600;font-size:15px;color:var(--good)}
 .fdurum.warn{color:var(--hot)}
 .fdurum.muted{color:var(--muted)}
 #dagilim{margin:-12px 0 18px;font-size:15px}
@@ -244,7 +244,7 @@ footer{max-width:1200px;margin:0 auto;padding:0 24px 30px;color:var(--muted);fon
   </div>
 </div>
 
-<footer>Fiyatlar her sabah 06:00'da ürünlerin kaynak sitelerinden yeniden alınır; kaynak linki fiyat açıklanınca görünür. Ürünler urunler.js dosyasından düzenlenebilir.</footer>
+<footer>Ürünler ve fiyatlar her sabah 06:00'da e-ticaret ve ilan sitelerinden toplanır (kaynaklar.js); kaynak linki fiyat açıklanınca görünür.</footer>
 
 <div id="toast"></div>
 <div id="busy"></div>
@@ -258,12 +258,39 @@ footer{max-width:1200px;margin:0 auto;padding:0 24px 30px;color:var(--muted);fon
 <script src="urun-id.js"></script>
 <script src="urunler.js"></script>
 <script>
-/* Ürünler urunler.js dosyasından gelir */
-const ITEMS = [
+const CAT_EMOJI = {Elektronik:"📱",Kozmetik:"💄",Market:"🛒",Spor:"⚽",Giyim:"👕",Hırdavat:"🔧",Emlak:"🏠",Araba:"🚗",Yemek:"🍔",Hizmet:"🎟️"};
+
+/* =========================================================
+   ÜRÜNLER
+   1) CANLI HAVUZ: urun-havuzu.json — her sabah scripts/urun-topla.mjs
+      kaynaklar.js'deki e-ticaret ve ilan sitelerinden gerçek ürünleri
+      güncel fiyatlarıyla toplar. Her oyun başında yeniden yüklenir ve
+      her oyun bu havuzdan yeni bir set çeker.
+   2) YEDEK LİSTE: urunler.js — sadece canlı havuzda yeterli ürünü
+      olmayan kategoriler için (ör. Yemek, Hizmet) ya da havuz
+      dosyası hiç yoksa kullanılır.
+   ========================================================= */
+const STATIK = [
   ...(window.URUNLER_KAYNAKLI||[]).map(u=>({id:urunId(u),c:u.kategori,e:u.emoji||"🏷️",t:u.baslik,d:u.aciklama||"",p:u.fiyat,f:u.foto||"",k:u.kaynak||"",kn:u.kaynakAdi||"",oto:u.otomatik!==false})),
   ...(window.URUNLER_TAHMINI||[]).map(([c,e,t,d,p])=>({id:urunId({kategori:c,baslik:t}),c,e,t,d,p,f:"",k:"",kn:"",oto:false})),
 ];
-const CATS = [...new Set(ITEMS.map(i=>i.c))];
+const HAVUZ_MIN = 4;   // bir kategoride canlı ürün bundan azsa yedek liste de eklenir
+let HAVUZ = null, ITEMS = [], CATS = [];
+function urunleriKur(){
+  const canli = ((HAVUZ && HAVUZ.urunler) || [])
+    .filter(u=>u && u.id && u.c && u.t && u.p>0 && u.k)
+    .map(u=>({id:u.id, c:u.c, e:u.e||CAT_EMOJI[u.c]||"🏷️", t:u.t, d:u.d||"", p:u.p, f:u.f||"", k:u.k, kn:u.kn||"", kontrol:u.kontrol, eski:!!u.eski, havuz:true}));
+  const say = {}; canli.forEach(u=>say[u.c]=(say[u.c]||0)+1);
+  ITEMS = [...canli, ...STATIK.filter(i=>(say[i.c]||0) < HAVUZ_MIN)];
+  const sira = Object.keys(CAT_EMOJI);
+  const yer = c => { const i=sira.indexOf(c); return i<0 ? 99 : i; };
+  CATS = [...new Set(ITEMS.map(i=>i.c))].sort((a,b)=>yer(a)-yer(b));
+}
+urunleriKur();
+const havuzGetir = () => fetch("urun-havuzu.json?t="+Date.now(), {cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null);
+const zamanAsimi = ms => new Promise(r=>setTimeout(()=>r(null), ms));
+function lobiyiYenile(){ if(typeof S!=="undefined" && S && S.phase==="lobby" && isHost){ renderedKey=""; hostBroadcast(); } }
+const havuzHazir = havuzGetir().then(j=>{ if(j){ HAVUZ=j; urunleriKur(); lobiyiYenile(); } return j; });
 
 /* =========================================================
    GÜNLÜK FİYATLAR
@@ -274,9 +301,10 @@ const CATS = [...new Set(ITEMS.map(i=>i.c))];
 let FIYATLAR = null;
 const fiyatlarHazir = fetch("fiyatlar.json?t="+Date.now(), {cache:"no-store"})
   .then(r=>r.ok?r.json():null).catch(()=>null)
-  .then(j=>{ FIYATLAR=j; if(S && S.phase==="lobby" && isHost){ renderedKey=""; hostBroadcast(); } return j; });
+  .then(j=>{ FIYATLAR=j; lobiyiYenile(); return j; });
 
 function gunlukFiyat(it){
+  if(it.havuz) return {p:it.p, durum: it.eski ? "eski" : "guncel", kontrol:it.kontrol};
   const f = FIYATLAR && FIYATLAR.urunler && FIYATLAR.urunler[it.id];
   // urunler.js'de fiyat elle değiştirildiyse (referans uyuşmuyorsa) dosyadaki elle girilen fiyat geçerli
   if(!f || !(f.fiyat>0) || (f.referans!=null && f.referans!==it.p)) return {p:it.p, durum: !it.k ? "kaynaksiz" : (it.oto ? "kayitli" : "elle"), kontrol:null};
@@ -289,7 +317,10 @@ function bugunGuncel(it){ const g=gunlukFiyat(it); return g.durum==="guncel" && 
 function siteAdi(url){ try{ return new URL(url).hostname.replace(/^www\./,""); }catch(e){ return ""; } }
 function fiyatOzeti(){
   const oyn = ITEMS.filter(oynanabilir);
-  return { dosya: !!FIYATLAR, guncelleme: FIYATLAR && FIYATLAR.guncelleme, bugun: oyn.filter(bugunGuncel).length, toplam: oyn.length };
+  const canli = ITEMS.filter(i=>i.havuz);
+  return { dosya: !!FIYATLAR, guncelleme: FIYATLAR && FIYATLAR.guncelleme, bugun: oyn.filter(bugunGuncel).length, toplam: oyn.length,
+           havuz: !!HAVUZ, havuzZaman: HAVUZ && HAVUZ.guncelleme, canli: canli.length,
+           canliKat: new Set(canli.map(i=>i.c)).size, yedekKat: CATS.filter(c=>!canli.some(i=>i.c===c)) };
 }
 /* Fiyat açıklanınca kaynağın altında görünen satır */
 function fiyatNotu(pd, pk){
@@ -311,7 +342,11 @@ function fiyatNotu(pd, pk){
 const GECMIS_ANAHTAR = "fiyatbil-gecmis-v1";
 let GECMIS = {oyun:0, son:{}};
 try{ const g=JSON.parse(localStorage.getItem(GECMIS_ANAHTAR)); if(g && g.son) GECMIS=g; }catch(e){}
-function gecmisKaydet(){ try{ localStorage.setItem(GECMIS_ANAHTAR, JSON.stringify(GECMIS)); }catch(e){} }
+function gecmisKaydet(){
+  const ids = Object.keys(GECMIS.son);   // havuz her gün değiştiği için eski kayıtları buda
+  if(ids.length > 3000) ids.sort((a,b)=>GECMIS.son[a]-GECMIS.son[b]).slice(0, ids.length-2000).forEach(k=>delete GECMIS.son[k]);
+  try{ localStorage.setItem(GECMIS_ANAHTAR, JSON.stringify(GECMIS)); }catch(e){}
+}
 function gosterildi(id){ GECMIS.son[id]=GECMIS.oyun; gecmisKaydet(); }
 
 function tazelikSirasi(items){
@@ -340,7 +375,6 @@ function desteKur(pool, cats, rounds){
   }
   return deste;
 }
-const CAT_EMOJI = {Emlak:"🏠",Araba:"🚗",Market:"🛒",Kozmetik:"💄",Spor:"⚽",Yemek:"🍔",Hırdavat:"🔧",Elektronik:"📱",Giyim:"👕",Hizmet:"🎟️"};
 
 /* =========================================================
    PUANLAMA
@@ -374,7 +408,7 @@ let myGuess = {round:0, v:null};
 let joinTimeout = null;
 
 // Oda sahibinin tuttuğu tam durum
-const H = { code:"", players:{}, phase:"lobby", settings:{rounds:10, time:30, cats:[...CATS], onlyVerified:false}, deck:[], idx:-1, deadline:0, timer:null, current:null };
+const H = { code:"", players:{}, phase:"lobby", settings:{rounds:10, time:30, cats:null, onlyVerified:false}, deck:[], idx:-1, deadline:0, timer:null, current:null };
 
 /* ---------- arayüz yardımcıları ---------- */
 let toastT;
@@ -461,7 +495,11 @@ async function startGame(){
   if(!cats.length){ toast("En az bir kategori seç."); return; }
   const onlyVerified = $("#setVerified").checked;
   H.settings = { rounds:+$("#setRounds").value, time:+$("#setTime").value, cats, onlyVerified };
-  if(!FIYATLAR){ setBusy(true,"Günün fiyatları yükleniyor…"); await Promise.race([fiyatlarHazir, new Promise(r=>setTimeout(r,4000))]); setBusy(false); }
+  // her oyunun başında ürün havuzu yeniden yüklenir: bu sabah toplanan ürünler ve fiyatlar
+  setBusy(true,"Günün ürünleri yükleniyor…");
+  const [yeniHavuz] = await Promise.all([ Promise.race([havuzGetir(), zamanAsimi(6000)]), FIYATLAR ? null : Promise.race([fiyatlarHazir, zamanAsimi(4000)]) ]);
+  setBusy(false);
+  if(yeniHavuz){ HAVUZ = yeniHavuz; urunleriKur(); }
   const pool = oyunHavuzu(cats, onlyVerified);
   if(!pool.length){ toast("Bu seçimle hiç ürün yok."); return; }
   H.deck = desteKur(pool, cats, H.settings.rounds).map(it=>{ const g=gunlukFiyat(it); return {...it, p:g.p, pd:g.durum, pk:g.kontrol}; });
@@ -601,10 +639,17 @@ function scoringHelp(){
 
 function fiyatDurumHtml(fd){
   if(!fd) return "";
-  if(!fd.dosya) return `<p class="fdurum muted">💾 Günün fiyat dosyası bulunamadı, kayıtlı fiyatlar kullanılacak.</p>`;
-  const zaman = fd.guncelleme ? (bugunMu(fd.guncelleme) ? "bugün "+new Intl.DateTimeFormat("tr-TR",{hour:"2-digit",minute:"2-digit"}).format(new Date(fd.guncelleme)) : fmtTarih(fd.guncelleme)) : "";
-  const eski = fd.guncelleme && !bugunMu(fd.guncelleme);
-  return `<p class="fdurum ${eski?"warn":""}">${eski?"⚠️ Fiyatlar bugün güncellenmedi. Son kontrol":"💹 Günün fiyatları kontrol edildi:"} ${zaman} · ${fd.bugun} / ${fd.toplam} ürünün fiyatı bugün siteden alındı</p>`;
+  const saat = iso => bugunMu(iso) ? "bugün "+new Intl.DateTimeFormat("tr-TR",{hour:"2-digit",minute:"2-digit"}).format(new Date(iso)) : fmtTarih(iso);
+  let h = "";
+  if(fd.havuz && fd.canli){
+    const eski = !bugunMu(fd.havuzZaman);
+    h += `<p class="fdurum ${eski?"warn":""}">${eski?"⚠️ Ürünler bugün yenilenmedi · son toplama":"🛒 Canlı ürünler sitelerden toplandı:"} ${saat(fd.havuzZaman)} · ${fd.canliKat} kategoride ${fd.canli} ürün. Her oyun yeni bir set çeker.</p>`;
+    if(fd.yedekKat.length) h += `<p class="fdurum muted">📋 ${fd.yedekKat.map(esc).join(", ")}: yedek listeden</p>`;
+  } else {
+    h += `<p class="fdurum muted">💾 Canlı ürün havuzu bulunamadı, yedek ürün listesi kullanılıyor.</p>`;
+  }
+  h += `<p class="fdurum muted">${fd.bugun} / ${fd.toplam} ürünün fiyatı bugün siteden alındı</p>`;
+  return h;
 }
 function dagilimGoster(){
   const el = $("#dagilim"); if(!el) return;
@@ -639,7 +684,7 @@ function renderMain(){
           <label>Tur sayısı<select id="setRounds" onchange="dagilimGoster()">${[5,10,15,20,30].map(n=>`<option ${n==st.rounds?"selected":""}>${n}</option>`).join("")}</select></label>
           <label>Tahmin süresi<select id="setTime">${[15,20,30,45,60].map(n=>`<option value="${n}" ${n==st.time?"selected":""}>${n} saniye</option>`).join("")}</select></label>
         </div>
-        <div class="chips">${CATS.map(c=>`<label class="chip"><input type="checkbox" class="catchk" value="${c}" ${st.cats.includes(c)?"checked":""} onchange="dagilimGoster()"><span>${CAT_EMOJI[c]||""} ${c} <small>${ITEMS.filter(i=>i.c===c && oynanabilir(i)).length}</small></span></label>`).join("")}</div>
+        <div class="chips">${CATS.map(c=>`<label class="chip"><input type="checkbox" class="catchk" value="${c}" ${!st.cats||st.cats.includes(c)?"checked":""} onchange="dagilimGoster()"><span>${CAT_EMOJI[c]||""} ${c} <small>${ITEMS.filter(i=>i.c===c && oynanabilir(i)).length}</small></span></label>`).join("")}</div>
         <p class="hint" id="dagilim"></p>
         <label class="verified"><input type="checkbox" id="setVerified" ${st.onlyVerified?"checked":""} onchange="dagilimGoster()"> Sadece fiyatı bugün siteden alınan ürünler (${S.fiyatDurum?S.fiyatDurum.bugun:0} ürün)</label>
         <button class="btn" onclick="startGame()">Oyunu başlat</button>`

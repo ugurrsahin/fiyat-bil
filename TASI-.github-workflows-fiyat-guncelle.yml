@@ -1,34 +1,62 @@
-# Her sabah 06:00'da (Türkiye saati) ürün fiyatlarını kaynak sitelerden çeker
-# ve fiyatlar.json dosyasını günceller. Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir.
-name: Günlük fiyat güncelleme
+# Fiyat Bil! — günlük fiyat güncelleme + GitHub Pages yayını
+# - Her sabah 06:00'da (TR) e-ticaret/ilan sitelerinden canlı ürün havuzunu toplar (urun-havuzu.json),
+#   yedek listedeki ürünlerin fiyatlarını günceller (fiyatlar.json), depoya kaydeder ve siteyi yayınlar.
+# - main dalına her push'ta da siteyi yayınlar (fiyat çekmeden).
+# - Actions sekmesinden "Run workflow" ile elle de çalışır.
+# GEREKLİ AYAR: Settings → Pages → Build and deployment → Source: "GitHub Actions"
+name: Fiyat güncelle ve yayınla
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 03:00 UTC = 06:00 TR
+    - cron: "0 3 * * *"   # 03:00 UTC = 06:00 TR (GitHub bazen birkaç dakika-saat gecikebilir)
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: fiyat-guncelle
   cancel-in-progress: false
 
 jobs:
-  guncelle:
+  guncelle-ve-yayinla:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
+    environment:
+      name: github-pages
+      url: ${{ steps.yayin.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
+        if: github.event_name != 'push'
         with:
           node-version: 22
-      - name: Fiyatları çek
+
+      - name: Yedek listedeki ürünlerin fiyatlarını çek
+        if: github.event_name != 'push'
         run: node scripts/fiyat-guncelle.mjs
-      - name: Değişiklikleri kaydet
+
+      - name: Canlı ürün havuzunu topla
+        if: github.event_name != 'push'
+        run: node scripts/urun-topla.mjs
+
+      - name: Sonuçları depoya kaydet
+        if: github.event_name != 'push'
         run: |
           git config user.name "fiyat-botu"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add fiyatlar.json
-          git commit -m "Günlük fiyat güncellemesi $(TZ=Europe/Istanbul date +%Y-%m-%d)" || echo "Değişiklik yok"
+          git add fiyatlar.json urun-havuzu.json
+          git commit -m "Günlük ürün ve fiyat güncellemesi $(TZ=Europe/Istanbul date +%Y-%m-%d)" || echo "Değişiklik yok"
           git push
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: yayin
+        uses: actions/deploy-pages@v4
