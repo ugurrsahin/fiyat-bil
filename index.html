@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiyat Bil! — Arkadaşlarla fiyat tahmin yarışması</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏷️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<style>
+:root{
+  --bg:#eef1ff; --ink:#121433; --muted:#5b5f8a; --card:#ffffff; --line:#d6dbff;
+  --cobalt:#2a3cf0; --cobalt-ink:#ffffff; --tag:#ffd400; --tag-ink:#1a1500;
+  --hot:#ff3d7f; --good:#0f9d63;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e1230; --ink:#eef1ff; --muted:#9ba2d6; --card:#171d48; --line:#2a3270;
+    --cobalt:#5566ff; --cobalt-ink:#ffffff; --tag:#ffd400; --tag-ink:#1a1500;
+    --hot:#ff5c95; --good:#33d18f;
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size:17px; line-height:1.45; min-height:100vh;
+  font-variant-numeric: tabular-nums;
+}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto;padding:18px 24px 0}
+.logo{font-weight:800;font-size:28px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo .mini-tag{background:var(--tag);color:var(--tag-ink);padding:2px 10px 2px 18px;border-radius:4px 8px 8px 4px;position:relative;transform:rotate(-4deg);display:inline-block}
+.logo .mini-tag::before{content:"";position:absolute;left:6px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;background:var(--bg)}
+.roomcode{font-weight:600;color:var(--muted);font-size:15px}
+.roomcode b{color:var(--ink);letter-spacing:.08em}
+
+/* ---------- join ---------- */
+#joinScreen{max-width:520px;margin:6vh auto 40px;padding:0 20px}
+.hero-tag{
+  background:var(--tag);color:var(--tag-ink);border-radius:10px 22px 22px 10px;
+  padding:26px 28px 26px 58px;position:relative;transform:rotate(-2deg);margin-bottom:34px;
+  box-shadow:0 10px 0 -2px color-mix(in srgb, var(--tag) 45%, #000);
+}
+.hero-tag::before{content:"";position:absolute;left:22px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--bg);box-shadow:inset 0 2px 3px rgba(0,0,0,.25)}
+.hero-tag h1{margin:0;font-size:clamp(40px,9vw,64px);line-height:.95;letter-spacing:-.03em;font-weight:800}
+.hero-tag p{margin:10px 0 0;font-size:17px;font-weight:600;max-width:34ch}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-weight:600;font-size:15px;margin-bottom:6px;color:var(--muted)}
+.field input{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:12px;background:var(--card);font-size:19px}
+.field input:focus{border-color:var(--cobalt);outline:none}
+.joinrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end}
+.or{text-align:center;color:var(--muted);margin:18px 0;font-size:15px}
+.btn{
+  background:var(--cobalt);color:var(--cobalt-ink);border:0;border-radius:12px;
+  padding:14px 22px;font-weight:800;font-size:18px;cursor:pointer;
+  box-shadow:0 4px 0 color-mix(in srgb, var(--cobalt) 60%, #000);transition:transform .08s, box-shadow .08s;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 color-mix(in srgb, var(--cobalt) 60%, #000)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line);box-shadow:none}
+.btn.full{width:100%}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* ---------- layout ---------- */
+#app{display:none}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;max-width:1200px;margin:0 auto;padding:20px 24px 48px}
+@media (max-width:860px){.layout{grid-template-columns:1fr}}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:28px}
+@media (max-width:560px){.panel{padding:20px}}
+
+/* ---------- scoreboard ---------- */
+aside .panel{position:sticky;top:20px;padding:20px}
+aside h3{margin:0 0 12px;font-size:20px;font-weight:800;display:flex;justify-content:space-between;align-items:baseline}
+aside h3 small{font-weight:600;color:var(--muted);font-size:14px}
+.board{list-style:none;margin:0;padding:0}
+.board li{display:grid;grid-template-columns:28px 1fr auto auto;gap:8px;align-items:center;padding:10px 8px;border-radius:10px}
+.board li + li{border-top:1px solid var(--line)}
+.board li.me{background:color-mix(in srgb, var(--cobalt) 12%, transparent)}
+.board li.off{opacity:.45}
+.board .rank{font-weight:800;color:var(--muted);text-align:center}
+.board li:first-child .rank{color:var(--tag-ink);background:var(--tag);border-radius:6px}
+.board .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.board .nm small{font-weight:400;color:var(--muted)}
+.board .st{font-size:14px;color:var(--muted)}
+.board .st.plus{color:var(--good);font-weight:800}
+.board .sc{font-weight:800;font-size:19px;min-width:44px;text-align:right}
+
+/* ---------- lobby ---------- */
+.lobby h2,.q h2,.rev h2,.fin h2{margin:0;font-weight:800;letter-spacing:-.02em}
+.codebox{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin:4px 0 22px}
+.bigcode{font-size:clamp(44px,8vw,64px);font-weight:800;letter-spacing:.12em;line-height:1}
+.hint{color:var(--muted);margin:0 0 22px}
+.settings{display:flex;flex-wrap:wrap;gap:14px;margin:18px 0}
+.settings label{font-weight:600;font-size:15px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.settings select{padding:10px 12px;border-radius:10px;border:2px solid var(--line);background:var(--card);font-weight:600;min-width:120px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 24px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:8px 14px;border-radius:999px;border:2px solid var(--line);cursor:pointer;font-weight:600;font-size:15px;user-select:none}
+.chip input:checked + span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip input:focus-visible + span{outline:3px solid var(--cobalt);outline-offset:2px}
+details{margin-top:24px;border-top:2px dashed var(--line);padding-top:16px}
+summary{cursor:pointer;font-weight:800}
+details ul{padding-left:20px;margin:10px 0 0;color:var(--muted)}
+.waiting{font-size:20px;font-weight:600;padding:18px 0}
+
+/* ---------- question ---------- */
+.qmeta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;font-weight:600;color:var(--muted)}
+.cat{background:color-mix(in srgb, var(--cobalt) 14%, transparent);color:var(--ink);padding:4px 12px;border-radius:999px}
+.timer{position:relative;height:14px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:6px}
+.timer .bar{position:absolute;inset:0 auto 0 0;background:var(--cobalt);border-radius:999px;width:100%}
+.timer.urgent .bar{background:var(--hot)}
+.secs{font-weight:800;font-size:15px;color:var(--muted);text-align:right}
+.itememoji{font-size:84px;line-height:1;margin:18px 0 10px}
+.q h2{font-size:clamp(28px,4.4vw,42px);line-height:1.08;max-width:22ch}
+.desc{font-size:19px;color:var(--muted);margin:10px 0 26px;max-width:52ch}
+.guessrow{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch}
+.inputwrap{
+  flex:1 1 260px;display:flex;align-items:center;background:var(--tag);color:var(--tag-ink);
+  border-radius:10px 18px 18px 10px;padding:0 18px 0 44px;position:relative;
+}
+.inputwrap::before{content:"";position:absolute;left:16px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--card)}
+.inputwrap input{flex:1;min-width:0;border:0;background:transparent;font-size:30px;font-weight:800;padding:12px 0;color:var(--tag-ink)}
+.inputwrap input::placeholder{color:color-mix(in srgb, var(--tag-ink) 45%, transparent);font-weight:600;font-size:22px}
+.inputwrap input:focus{outline:none}
+.inputwrap:focus-within{box-shadow:0 0 0 3px var(--cobalt)}
+.inputwrap span{font-size:28px;font-weight:800}
+.sent{font-size:20px;font-weight:600;padding:16px 20px;border:2px dashed var(--line);border-radius:14px}
+.sent small{color:var(--muted);font-weight:400}
+.qstatus{margin-top:16px;color:var(--muted);font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.rev .itemline{display:flex;gap:14px;align-items:center;margin-bottom:22px}
+.rev .itemline .e{font-size:48px}
+.rev .itemline h2{font-size:24px;line-height:1.15}
+.rev .itemline p{margin:2px 0 0;color:var(--muted)}
+.pricetag{
+  display:inline-block;background:var(--tag);color:var(--tag-ink);
+  border-radius:12px 26px 26px 12px;padding:18px 30px 18px 62px;position:relative;
+  transform:rotate(-2.5deg);margin:4px 0 28px;
+  box-shadow:0 8px 0 -2px color-mix(in srgb, var(--tag) 45%, #000);
+  animation:drop .55s cubic-bezier(.2,1.6,.4,1) both;
+}
+.pricetag::before{content:"";position:absolute;left:24px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--card);box-shadow:inset 0 2px 3px rgba(0,0,0,.25)}
+.pricetag small{display:block;font-weight:600;font-size:15px}
+.pricetag strong{font-size:clamp(36px,6vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1}
+@keyframes drop{from{transform:translateY(-30px) rotate(-12deg);opacity:0}to{transform:rotate(-2.5deg);opacity:1}}
+@media (prefers-reduced-motion: reduce){.pricetag{animation:none}}
+.results{list-style:none;margin:0 0 24px;padding:0}
+.results li{display:grid;grid-template-columns:1fr auto auto;gap:6px 16px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
+.results .who{font-weight:800}
+.results .g{text-align:right}
+.results .g small{display:block;color:var(--muted);font-size:14px}
+.results .p{font-weight:800;font-size:22px;min-width:64px;text-align:right;color:var(--good)}
+.results .p.zero{color:var(--muted)}
+.bonus{display:inline-block;margin-left:6px;font-size:13px;font-weight:800;background:var(--tag);color:var(--tag-ink);padding:1px 8px;border-radius:999px}
+
+/* ---------- final ---------- */
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:end;margin:26px 0 30px;text-align:center}
+.pod{border-radius:14px 14px 4px 4px;padding:14px 8px;font-weight:800}
+.pod .n{font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pod .s{font-size:26px}
+.pod.p1{background:var(--tag);color:var(--tag-ink);min-height:190px}
+.pod.p2{background:color-mix(in srgb, var(--cobalt) 30%, var(--card));min-height:150px}
+.pod.p3{background:color-mix(in srgb, var(--cobalt) 15%, var(--card));min-height:120px}
+.pod .medal{font-size:40px}
+
+/* ---------- misc ---------- */
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(120px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:12px;font-weight:600;transition:transform .25s;z-index:50;max-width:90vw}
+#toast.show{transform:translateX(-50%) translateY(0)}
+#busy{position:fixed;inset:0;background:color-mix(in srgb, var(--bg) 80%, transparent);display:none;align-items:center;justify-content:center;z-index:40;font-weight:800;font-size:22px;backdrop-filter:blur(3px)}
+#gone{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;z-index:60;text-align:center;padding:24px}
+footer{max-width:1200px;margin:0 auto;padding:0 24px 30px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="logo"><span class="mini-tag">₺</span> Fiyat Bil!</div>
+  <div class="roomcode" id="roomLabel"></div>
+</header>
+
+<!-- ========== GİRİŞ ========== -->
+<section id="joinScreen">
+  <div class="hero-tag">
+    <h1>Kaç para<br>bu?</h1>
+    <p>Evden arabaya, simitten parfüme. En yakın tahmini yapan puanı kapar.</p>
+  </div>
+
+  <label class="field"><span>Nick'in</span>
+    <input id="nick" maxlength="16" autocomplete="off" placeholder="ör. FiyatAvcısı">
+  </label>
+
+  <button class="btn full" onclick="createRoom()">Yeni oda kur</button>
+
+  <div class="or">ya da arkadaşının odasına katıl</div>
+
+  <div class="joinrow">
+    <label class="field" style="margin:0"><span>Oda kodu</span>
+      <input id="code" maxlength="6" autocomplete="off" placeholder="ör. K7QX2" style="text-transform:uppercase;letter-spacing:.1em" onkeydown="if(event.key==='Enter')joinRoom()">
+    </label>
+    <button class="btn ghost" onclick="joinRoom()">Katıl</button>
+  </div>
+</section>
+
+<!-- ========== OYUN ========== -->
+<div id="app">
+  <div class="layout">
+    <main id="main"></main>
+    <aside>
+      <div class="panel">
+        <h3>Puan tablosu <small id="pcount"></small></h3>
+        <ol class="board" id="board"></ol>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>Fiyatlar 2026 Türkiye piyasasına göre yaklaşık değerlerdir; kaynak koddaki ITEMS listesinden düzenlenebilir.</footer>
+
+<div id="toast"></div>
+<div id="busy"></div>
+<div id="gone">
+  <div style="font-size:64px">🔌</div>
+  <h2 style="margin:0">Oda kapandı</h2>
+  <p style="margin:0;color:var(--muted)">Oda sahibi oyundan çıktı ya da bağlantı koptu.</p>
+  <button class="btn" onclick="location.href=location.pathname">Ana sayfaya dön</button>
+</div>
+
+<script>
+/* =========================================================
+   ÜRÜN LİSTESİ — [kategori, emoji, başlık, açıklama, fiyat ₺]
+   Kendi ürünlerinizi eklemek için buraya satır ekleyin.
+   ========================================================= */
+const RAW = [
+  // ---- Emlak ----
+  ["Emlak","🏢","Kadıköy, İstanbul · Satılık 3+1","140 m², 15 yıllık bina, 4. kat, asansörlü",14500000],
+  ["Emlak","🏢","Çankaya, Ankara · Satılık 3+1","150 m², site içinde, kombili, 10 yıllık",7500000],
+  ["Emlak","🏢","Karşıyaka, İzmir · Satılık 2+1","95 m², denize 10 dakika, 20 yıllık bina",6200000],
+  ["Emlak","🏗️","Esenyurt, İstanbul · Satılık 2+1","90 m², yeni bina, havuzlu site",3300000],
+  ["Emlak","🏢","Selçuklu, Konya · Satılık 3+1","140 m², 5 yıllık, kapalı otopark",4200000],
+  ["Emlak","🏢","Tepebaşı, Eskişehir · Satılık 2+1","100 m², üniversiteye yakın, 12 yıllık",3400000],
+  ["Emlak","🏢","Yakutiye, Erzurum · Satılık 3+1","130 m², merkezi konum, 8 yıllık",2600000],
+  ["Emlak","🏝️","Yalıkavak, Bodrum · Satılık villa 4+1","300 m², özel havuz, deniz manzaralı",75000000],
+  ["Emlak","🔑","Nilüfer, Bursa · Kiralık 2+1","AYLIK kira — 100 m², eşyasız, site içi",28000],
+  ["Emlak","🔑","Konyaaltı, Antalya · Kiralık 1+1","AYLIK kira — 55 m², eşyalı, denize 5 dakika",30000],
+  ["Emlak","🔑","Beşiktaş, İstanbul · Kiralık 2+1","AYLIK kira — 85 m², eski bina, metroya yakın",50000],
+  ["Emlak","🌲","Sapanca · Satılık arsa","500 m², villa imarlı, göl manzaralı",5500000],
+
+  // ---- Araba ----
+  ["Araba","🚗","Fiat Egea Sedan 1.4 Fire Easy","Sıfır, 2026 model, manuel, liste fiyatı",1250000],
+  ["Araba","⚡","Togg T10X V2 RWD Standart Menzil","Sıfır, 2026, elektrikli SUV, liste fiyatı",1950000],
+  ["Araba","⚡","Tesla Model Y RWD","Sıfır, Türkiye satış fiyatı, standart donanım",2400000],
+  ["Araba","🚗","Renault Clio 1.0 TCe Touch · 2020","80.000 km, benzinli, manuel, hatasız",1050000],
+  ["Araba","🚙","Volkswagen Passat 1.6 TDI Highline · 2018","150.000 km, dizel, DSG, 2 parça boyalı",1450000],
+  ["Araba","🚗","Toyota Corolla 1.4 D-4D · 2015","200.000 km, dizel, manuel",780000],
+  ["Araba","🏎️","BMW 320i M Sport · 2022","40.000 km, benzinli, otomatik",3400000],
+  ["Araba","🚘","Tofaş Doğan SLX · 1994","320.000 km, LPG'li, klasik",220000],
+  ["Araba","🚐","Ford Transit Courier 1.5 TDCi · 2017","180.000 km, ticari",720000],
+  ["Araba","🛵","Yamaha NMAX 155","Sıfır motosiklet, 2026 model",185000],
+  ["Araba","🚙","Mercedes-AMG G 63","Sıfır, Türkiye fiyatı (vergiler dahil)",40000000],
+
+  // ---- Market ----
+  ["Market","🍞","Fırın ekmeği","250 g, mahalle fırını",15],
+  ["Market","🥛","Pınar tam yağlı süt","1 litre",45],
+  ["Market","🥚","Yumurta","30'lu koli, L boy",160],
+  ["Market","🥩","Dana kıyma","1 kg, kasap",750],
+  ["Market","🌻","Ayçiçek yağı","5 litre, bilinen marka",400],
+  ["Market","🍫","Nutella","750 g kavanoz",280],
+  ["Market","🍵","Çaykur Rize Turist Çayı","1 kg",330],
+  ["Market","🥤","Coca-Cola","2,5 litre pet şişe",75],
+  ["Market","🍫","Ülker Çikolatalı Gofret","tek paket",15],
+  ["Market","🥔","Lay's Klasik","süper boy paket",80],
+  ["Market","🧀","Beyaz peynir","1 kg, tam yağlı inek peyniri",330],
+  ["Market","🍌","Muz","1 kg, ithal",110],
+  ["Market","🥫","Red Bull","250 ml kutu",65],
+  ["Market","🍬","Toz şeker","1 kg",45],
+  ["Market","🧽","Fairy bulaşık deterjanı","1,5 litre",120],
+  ["Market","🍝","Barilla spagetti","500 g",55],
+  ["Market","🐱","Pro Plan yetişkin kedi maması","3 kg",1300],
+  ["Market","💧","Damacana su","19 litre, eve teslim",120],
+  ["Market","🫒","Siyah zeytin","1 kg, iri boy",280],
+
+  // ---- Kozmetik ----
+  ["Kozmetik","💄","MAC Ruby Woo ruj","mat ruj, mağaza fiyatı",1400],
+  ["Kozmetik","👁️","Maybelline Lash Sensational maskara","tek adet",450],
+  ["Kozmetik","🧴","Nivea Soft krem","200 ml",180],
+  ["Kozmetik","🧴","Elseve şampuan","450 ml",130],
+  ["Kozmetik","🌬️","Dior Sauvage EDT","100 ml erkek parfümü",6200],
+  ["Kozmetik","🌸","Rare Beauty Soft Pinch likit allık","Sephora fiyatı",1400],
+  ["Kozmetik","🧴","La Roche-Posay Effaclar Duo+","40 ml",900],
+  ["Kozmetik","💇","Dyson Airwrap","saç şekillendirici, tam set",27000],
+  ["Kozmetik","🪒","Gillette Fusion5 yedek bıçak","4'lü paket",550],
+  ["Kozmetik","💅","Flormar oje","tek şişe",120],
+  ["Kozmetik","🧪","The Ordinary Niacinamide 10% + Zinc 1%","30 ml serum",420],
+
+  // ---- Spor ----
+  ["Spor","👟","Nike Air Force 1 '07","beyaz, erkek",4700],
+  ["Spor","👟","Adidas Samba OG","klasik model",5000],
+  ["Spor","🏋️","Ayarlanabilir dambıl seti","20 kg, Decathlon",2200],
+  ["Spor","⚽","Büyük kulüp orijinal forması","2026/27 iç saha, isimsiz",3800],
+  ["Spor","⌚","Garmin Forerunner 265","koşu saati",18000],
+  ["Spor","🏟️","Spor salonu üyeliği","büyük zincir, 12 ay, İstanbul",32000],
+  ["Spor","🏀","Molten BG4500 basketbol topu","resmi maç topu",2200],
+  ["Spor","🚵","Dağ bisikleti","27,5 jant, 21 vites, giriş seviyesi",15000],
+  ["Spor","🧘","Yoga matı","8 mm, Decathlon",450],
+  ["Spor","💪","Whey protein tozu","2,3 kg, yerli marka",3200],
+  ["Spor","🎾","Padel raketi","orta seviye, bilinen marka",5500],
+  ["Spor","⚽","Halı saha","1 saat, akşam, İstanbul",3000],
+
+  // ---- Yemek ----
+  ["Yemek","🍔","Burger King Whopper Menü","orta boy",340],
+  ["Yemek","🍔","McDonald's Big Mac Menü","orta boy",350],
+  ["Yemek","🍕","Domino's orta boy Karışık pizza","menü fiyatı, kampanyasız",400],
+  ["Yemek","☕","Starbucks Caffè Latte","Grande",175],
+  ["Yemek","🥙","İskender","1 porsiyon, orta segment kebapçı",550],
+  ["Yemek","🥯","Simit","İstanbul, seyyar tezgah",20],
+  ["Yemek","🫖","Çay","kahvehanede 1 ince belli",20],
+  ["Yemek","🦪","Midye dolma","10 adet, sokak midyecisi",150],
+  ["Yemek","☕","Türk kahvesi","Kahve Dünyası, tek",110],
+  ["Yemek","🫓","Lahmacun","1 adet, mahalle lahmacuncusu",120],
+  ["Yemek","🌯","Tavuk döner dürüm","1 adet, orta segment",180],
+  ["Yemek","🥟","Kayseri mantısı","1 porsiyon, restoranda",350],
+  ["Yemek","🍣","Sushi seti","16 parça, AVM sushi restoranı",900],
+
+  // ---- Tamir & Hırdavat ----
+  ["Hırdavat","🔩","Bosch GSR 180-LI akülü vidalama","2 akülü set",4500],
+  ["Hırdavat","🪴","Bahçe hortumu","25 metre, 1/2 inç",600],
+  ["Hırdavat","💡","Philips LED ampul","9W, E27 duy",60],
+  ["Hırdavat","🔌","Uzatma kablosu","3'lü, topraklı, 3 metre",250],
+  ["Hırdavat","🎨","Filli Boya iç cephe boyası","2,5 litre, silinebilir",1000],
+  ["Hırdavat","🔥","Kombi yıllık bakımı","yetkili servis ücreti",2000],
+  ["Hırdavat","🪛","İzeltaş tornavida seti","6 parça",600],
+  ["Hırdavat","🚰","Lavabo sifonu","plastik, standart",200],
+  ["Hırdavat","🛠️","Matkap ucu seti","metal + beton, 15 parça",450],
+  ["Hırdavat","🔧","Musluk tamiri","mahalle tesisatçısı, ev ziyareti + işçilik",1000],
+
+  // ---- Elektronik ----
+  ["Elektronik","📱","iPhone 17 Pro","256 GB, Türkiye resmi fiyatı",100000],
+  ["Elektronik","🎮","PlayStation 5 Slim","dijital sürüm",26000],
+  ["Elektronik","📺","Samsung 55\" 4K televizyon","Crystal UHD serisi",22000],
+  ["Elektronik","📱","Xiaomi Redmi Note 14","8 GB / 256 GB",13000],
+  ["Elektronik","🎧","AirPods 4","aktif gürültü engellemeli",8500],
+  ["Elektronik","🧹","Dyson V15 Detect","dikey süpürge",33000],
+  ["Elektronik","🧊","No-Frost buzdolabı","540 litre, yerli marka",40000],
+  ["Elektronik","🖱️","Logitech MX Master 3S","kablosuz mouse",4000],
+  ["Elektronik","💻","MacBook Air 13\" M4","16 GB / 256 GB",55000],
+
+  // ---- Giyim ----
+  ["Giyim","👖","Levi's 501 jean","orijinal kesim",3500],
+  ["Giyim","👕","Basic tişört","LC Waikiki, tek adet",200],
+  ["Giyim","🧥","The North Face Nuptse mont","şişme mont",13000],
+  ["Giyim","👔","Zara erkek gömlek","basic model",1500],
+  ["Giyim","🧢","Kapüşonlu sweatshirt","DeFacto",700],
+  ["Giyim","🥾","Timberland 6-inch Premium bot","klasik sarı bot",9000],
+
+  // ---- Hizmet & diğer ----
+  ["Hizmet","🚄","YHT bileti İstanbul–Ankara","ekonomi, tam bilet",950],
+  ["Hizmet","🎬","Netflix Standart","aylık abonelik",280],
+  ["Hizmet","🎵","Spotify Premium Bireysel","aylık abonelik",130],
+  ["Hizmet","💈","Berber","saç + sakal, orta segment",500],
+  ["Hizmet","🚌","İstanbulkart tam bilet","tek biniş",35],
+  ["Hizmet","⛽","Benzin","1 litre kurşunsuz 95",58],
+  ["Hizmet","🪪","B sınıfı ehliyet","kurs + sınav, toplam masraf",30000],
+  ["Hizmet","🐈","Kedi kısırlaştırma","özel veteriner, dişi kedi",4000],
+  ["Hizmet","🍿","Sinema bileti","AVM, hafta sonu, tam",320],
+];
+const ITEMS = RAW.map(([c,e,t,d,p])=>({c,e,t,d,p}));
+const CATS = [...new Set(ITEMS.map(i=>i.c))];
+const CAT_EMOJI = {Emlak:"🏠",Araba:"🚗",Market:"🛒",Kozmetik:"💄",Spor:"⚽",Yemek:"🍔",Hırdavat:"🔧",Elektronik:"📱",Giyim:"👕",Hizmet:"🎟️"};
+
+/* =========================================================
+   PUANLAMA
+   - %1 içinde: 100 puan
+   - Sonrası oransal: 100 · e^(-2.5·|ln(tahmin/fiyat)|)
+     (%10 sapma ≈ 78, %25 ≈ 57, 2 katı ya da yarısı ≈ 18)
+   - Turun en yakın tahmini: +25 bonus
+   ========================================================= */
+const BONUS = 25;
+function calcPoints(g, price){
+  if(g==null || g<=0) return 0;
+  const r = Math.abs(Math.log(g/price));
+  if(r <= 0.01) return 100;
+  const pts = Math.round(100*Math.exp(-2.5*r));
+  return pts < 1 ? 0 : Math.min(99, pts);
+}
+
+/* ========================================================= */
+const PREFIX = "fiyatbil-oyun-v1-";
+const fmt = n => new Intl.NumberFormat("tr-TR").format(n);
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+let peer=null, isHost=false, myId=null, myName="", hostConn=null;
+const conns = new Map();
+let S = null;                 // son görülen ortak durum
+let localDeadline = 0;
+let renderedKey = "";
+let myGuess = {round:0, v:null};
+let joinTimeout = null;
+
+// Oda sahibinin tuttuğu tam durum
+const H = { code:"", players:{}, phase:"lobby", settings:{rounds:10, time:30, cats:[...CATS]}, deck:[], idx:-1, deadline:0, timer:null, current:null };
+
+/* ---------- arayüz yardımcıları ---------- */
+let toastT;
+function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2600); }
+function setBusy(on, msg=""){ const b=$("#busy"); b.textContent=msg; b.style.display=on?"flex":"none"; }
+function readName(){ const n=$("#nick").value.trim().slice(0,16); if(!n){ toast("Önce bir nick yaz."); $("#nick").focus(); return null; } return n; }
+function genCode(){ const a="ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let s=""; for(let i=0;i<5;i++) s+=a[Math.floor(Math.random()*a.length)]; return s; }
+function inviteLink(){ return location.origin + location.pathname + "?oda=" + S.code; }
+function copyInvite(){
+  const link = inviteLink();
+  if(navigator.clipboard) navigator.clipboard.writeText(link).then(()=>toast("Davet linki kopyalandı."),()=>prompt("Linki kopyala:",link));
+  else prompt("Linki kopyala:", link);
+}
+
+/* ---------- oda kurma (host) ---------- */
+function createRoom(){
+  const n = readName(); if(!n) return;
+  if(typeof Peer==="undefined"){ toast("Bağlantı kütüphanesi yüklenemedi. Sayfayı normal tarayıcıda aç."); return; }
+  myName=n; isHost=true; setBusy(true,"Oda kuruluyor…");
+  const code = genCode();
+  peer = new Peer(PREFIX+code);
+  clearTimeout(joinTimeout);
+  joinTimeout = setTimeout(()=>{ if(!myId){ setBusy(false); toast("Sunucuya bağlanılamadı. İnterneti kontrol et ya da sayfayı Chrome'da aç."); try{peer.destroy();}catch(e){} peer=null; } }, 12000);
+  peer.on("open", id=>{
+    clearTimeout(joinTimeout);
+    myId=id; H.code=code; H.players={};
+    addPlayer(id, n, true);
+    setBusy(false); hostBroadcast();
+    window.addEventListener("beforeunload", e=>{ e.preventDefault(); e.returnValue=""; });
+  });
+  peer.on("connection", conn=>{
+    conn.on("data", m=>onHostData(conn,m));
+    conn.on("close", ()=>onHostClose(conn));
+    conn.on("error", ()=>onHostClose(conn));
+  });
+  peer.on("error", err=>{
+    if(err.type==="unavailable-id"){ peer.destroy(); createRoom(); return; }
+    if(err.type==="peer-unavailable") return;
+    setBusy(false); toast("Bağlantı hatası: "+err.type);
+  });
+  peer.on("disconnected", ()=>{ try{ peer.reconnect(); }catch(e){} });
+}
+
+function addPlayer(id, name, host=false){
+  H.players[id] = {id, name, score:0, guess:null, pts:null, bonus:false, host, online:true};
+}
+function onHostData(conn, m){
+  if(!m || typeof m!=="object") return;
+  if(m.t==="join"){
+    conns.set(conn.peer, conn);
+    const name = String(m.name||"Oyuncu").slice(0,16);
+    if(H.players[conn.peer]) H.players[conn.peer].online=true; else addPlayer(conn.peer, name);
+    toast(name+" katıldı");
+    hostBroadcast();
+  } else if(m.t==="guess"){
+    submitGuess(conn.peer, m.v);
+  }
+}
+function onHostClose(conn){
+  conns.delete(conn.peer);
+  const p = H.players[conn.peer];
+  if(p && p.online){ p.online=false; toast(p.name+" ayrıldı"); hostBroadcast(); }
+  maybeAllGuessed();
+}
+function submitGuess(id, v){
+  if(H.phase!=="question") return;
+  const p = H.players[id]; if(!p || p.guess!=null) return;
+  v = Math.round(Number(v)); if(!isFinite(v) || v<=0) return;
+  if(Date.now() > H.deadline+1500) return;
+  p.guess = v;
+  hostBroadcast(); maybeAllGuessed();
+}
+function maybeAllGuessed(){
+  if(H.phase!=="question") return;
+  const on = Object.values(H.players).filter(p=>p.online);
+  if(on.length && on.every(p=>p.guess!=null)) setTimeout(reveal, 400);
+}
+
+function startGame(){
+  const cats = [...document.querySelectorAll(".catchk:checked")].map(x=>x.value);
+  if(!cats.length){ toast("En az bir kategori seç."); return; }
+  H.settings = { rounds:+$("#setRounds").value, time:+$("#setTime").value, cats };
+  const pool = ITEMS.filter(i=>cats.includes(i.c));
+  H.deck = shuffle(pool).slice(0, Math.min(H.settings.rounds, pool.length));
+  Object.values(H.players).forEach(p=>{ p.score=0; p.pts=null; p.guess=null; p.bonus=false; });
+  H.idx = -1;
+  nextRound();
+}
+function nextRound(){
+  H.idx++;
+  if(H.idx >= H.deck.length){ H.phase="final"; hostBroadcast(); return; }
+  Object.values(H.players).forEach(p=>{ p.guess=null; p.pts=null; p.bonus=false; });
+  H.current = H.deck[H.idx];
+  H.phase = "question";
+  H.deadline = Date.now() + H.settings.time*1000;
+  clearTimeout(H.timer);
+  H.timer = setTimeout(reveal, H.settings.time*1000 + 800);
+  hostBroadcast();
+}
+function reveal(){
+  if(H.phase!=="question") return;
+  clearTimeout(H.timer);
+  const price = H.current.p;
+  const all = Object.values(H.players);
+  let best=[], bestR=Infinity;
+  all.forEach(p=>{
+    p.pts = calcPoints(p.guess, price);
+    if(p.guess!=null){
+      const r = Math.abs(Math.log(p.guess/price));
+      if(r < bestR - 1e-12){ bestR=r; best=[p]; } else if(Math.abs(r-bestR)<1e-12) best.push(p);
+    }
+  });
+  if(all.filter(p=>p.guess!=null).length > 1) best.forEach(p=>{ if(p.pts>0){ p.pts+=BONUS; p.bonus=true; } });
+  all.forEach(p=>{ p.score += p.pts||0; });
+  H.phase = "reveal";
+  hostBroadcast();
+}
+function backToLobby(){ H.phase="lobby"; H.idx=-1; H.deck=[]; Object.values(H.players).forEach(p=>{p.score=0;p.pts=null;p.guess=null;p.bonus=false;}); hostBroadcast(); }
+
+function publicState(){
+  const showGuess = H.phase==="reveal";
+  const players = Object.values(H.players).map(p=>({
+    id:p.id, name:p.name, score:p.score, host:p.host, online:p.online,
+    guessed:p.guess!=null, guess:showGuess?p.guess:null, pts:showGuess?p.pts:null, bonus:showGuess?p.bonus:false
+  }));
+  const s = { phase:H.phase, code:H.code, players, settings:H.settings, round:H.idx+1, total:H.deck.length };
+  if(H.phase==="question" || H.phase==="reveal"){ const {c,e,t,d}=H.current; s.item={c,e,t,d}; }
+  if(H.phase==="question") s.msLeft = Math.max(0, H.deadline-Date.now());
+  if(H.phase==="reveal") s.price = H.current.p;
+  return s;
+}
+function hostBroadcast(){
+  const s = publicState();
+  for(const c of conns.values()){ if(c.open){ try{ c.send({t:"state", s}); }catch(e){} } }
+  S = s; applyState();
+}
+
+/* ---------- odaya katılma (oyuncu) ---------- */
+function joinRoom(){
+  const n = readName(); if(!n) return;
+  const code = $("#code").value.trim().toUpperCase();
+  if(code.length<4){ toast("Oda kodunu yaz."); $("#code").focus(); return; }
+  if(typeof Peer==="undefined"){ toast("Bağlantı kütüphanesi yüklenemedi. Sayfayı normal tarayıcıda aç."); return; }
+  myName=n; isHost=false; setBusy(true,"Odaya bağlanılıyor…");
+  if(peer){ try{ peer.destroy(); }catch(e){} }
+  peer = new Peer();
+  peer.on("open", id=>{
+    myId = id;
+    hostConn = peer.connect(PREFIX+code, {reliable:true, serialization:"json"});
+    hostConn.on("open", ()=>hostConn.send({t:"join", name:n}));
+    hostConn.on("data", m=>{ if(m && m.t==="state"){ clearTimeout(joinTimeout); setBusy(false); S=m.s; applyState(); } });
+    hostConn.on("close", ()=>{ if(S) $("#gone").style.display="flex"; });
+  });
+  peer.on("error", err=>{
+    clearTimeout(joinTimeout); setBusy(false);
+    if(err.type==="peer-unavailable") toast("Oda bulunamadı. Kodu kontrol et.");
+    else toast("Bağlantı hatası: "+err.type);
+    try{ peer.destroy(); }catch(e){} peer=null;
+  });
+  clearTimeout(joinTimeout);
+  joinTimeout = setTimeout(()=>{ if(!S){ setBusy(false); toast("Bağlanılamadı. Kodu ve interneti kontrol et."); } }, 15000);
+}
+
+/* ---------- tahmin gönderme ---------- */
+function onGuessInput(e){
+  const d = e.target.value.replace(/\D/g,"").replace(/^0+/,"").slice(0,12);
+  e.target.value = d ? fmt(+d) : "";
+}
+function sendGuess(){
+  const el = $("#guess"); if(!el) return;
+  const v = +el.value.replace(/\D/g,"");
+  if(!v){ toast("Bir fiyat yaz."); el.focus(); return; }
+  if(Date.now() > localDeadline + 1000){ toast("Süre doldu."); return; }
+  myGuess = {round:S.round, v};
+  if(isHost) submitGuess(myId, v); else hostConn.send({t:"guess", v});
+  updateMain();
+}
+
+/* ---------- çizim ---------- */
+function applyState(){
+  if(!S) return;
+  if(S.msLeft!=null) localDeadline = Date.now() + S.msLeft;
+  $("#joinScreen").style.display="none";
+  $("#app").style.display="block";
+  $("#roomLabel").innerHTML = "Oda: <b>"+esc(S.code)+"</b>";
+  renderBoard();
+  const key = S.phase+":"+S.round;
+  if(key!==renderedKey){ renderedKey=key; renderMain(); } else updateMain();
+}
+
+function renderBoard(){
+  const ps = [...S.players].sort((a,b)=>b.score-a.score);
+  $("#pcount").textContent = ps.filter(p=>p.online).length+" oyuncu";
+  $("#board").innerHTML = ps.map((p,i)=>{
+    let st="", cls="st";
+    if(S.phase==="question") st = p.guessed ? "✅" : "⏳";
+    if(S.phase==="reveal"){ st = "+"+(p.pts||0); cls="st plus"; }
+    return `<li class="${p.id===myId?"me":""} ${p.online?"":"off"}">
+      <span class="rank">${i+1}</span>
+      <span class="nm">${esc(p.name)}${p.host?' <small title="Oda sahibi">🎙️</small>':''}${p.id===myId?' <small>(sen)</small>':''}</span>
+      <span class="${cls}">${st}</span>
+      <span class="sc">${p.score}</span></li>`;
+  }).join("");
+}
+
+function scoringHelp(){
+  return `<details><summary>Puanlama nasıl?</summary><ul>
+    <li>Fiyatı %1 içinde bilen <b>100 puan</b> alır.</li>
+    <li>Uzaklaştıkça puan düşer: %10 sapma ≈ 78, %25 sapma ≈ 57, iki katı ya da yarısı ≈ 18 puan.</li>
+    <li>Fazla ya da eksik tahmin aynı cezayı alır (oransal hesap).</li>
+    <li>Turun en yakın tahmini <b>+${BONUS} bonus</b> kazanır.</li>
+    <li>Süre içinde tahmin yapmayan 0 alır.</li></ul></details>`;
+}
+
+function renderMain(){
+  const m = $("#main");
+  if(S.phase==="lobby"){
+    const st = S.settings;
+    m.innerHTML = `<section class="panel lobby">
+      <h2>Oda hazır</h2>
+      <div class="codebox"><div class="bigcode">${esc(S.code)}</div>
+        <button class="btn ghost" onclick="copyInvite()">Davet linkini kopyala</button></div>
+      <p class="hint">Arkadaşların siteye girip bu kodu yazsın ya da linke tıklasın.</p>
+      ${isHost ? `
+        <div class="settings">
+          <label>Tur sayısı<select id="setRounds">${[5,10,15,20,30].map(n=>`<option ${n==st.rounds?"selected":""}>${n}</option>`).join("")}</select></label>
+          <label>Tahmin süresi<select id="setTime">${[15,20,30,45,60].map(n=>`<option value="${n}" ${n==st.time?"selected":""}>${n} saniye</option>`).join("")}</select></label>
+        </div>
+        <div class="chips">${CATS.map(c=>`<label class="chip"><input type="checkbox" class="catchk" value="${c}" ${st.cats.includes(c)?"checked":""}><span>${CAT_EMOJI[c]||""} ${c}</span></label>`).join("")}</div>
+        <button class="btn" onclick="startGame()">Oyunu başlat</button>`
+      : `<div class="waiting">⏳ Oda sahibinin oyunu başlatması bekleniyor…</div>`}
+      ${scoringHelp()}
+    </section>`;
+  }
+  else if(S.phase==="question"){
+    const it = S.item;
+    m.innerHTML = `<section class="panel q">
+      <div class="qmeta"><span>Ürün ${S.round} / ${S.total}</span><span class="cat">${CAT_EMOJI[it.c]||""} ${esc(it.c)}</span></div>
+      <div class="timer" id="timer"><div class="bar" id="bar"></div></div>
+      <div class="secs" id="secs"></div>
+      <div class="itememoji">${it.e}</div>
+      <h2>${esc(it.t)}</h2>
+      <p class="desc">${esc(it.d)}</p>
+      <div id="guessArea"></div>
+      <div class="qstatus"><span id="qcount"></span>${isHost?`<button class="btn ghost" onclick="reveal()">Süreyi bitir, fiyatı göster</button>`:""}</div>
+    </section>`;
+    updateMain();
+    const g=$("#guess"); if(g) g.focus();
+  }
+  else if(S.phase==="reveal"){
+    const it = S.item;
+    const rows = [...S.players].filter(p=>p.online || p.guess!=null).sort((a,b)=>(b.pts||0)-(a.pts||0));
+    m.innerHTML = `<section class="panel rev">
+      <div class="qmeta"><span>Ürün ${S.round} / ${S.total}</span><span class="cat">${CAT_EMOJI[it.c]||""} ${esc(it.c)}</span></div>
+      <div class="itemline"><span class="e">${it.e}</span><div><h2>${esc(it.t)}</h2><p>${esc(it.d)}</p></div></div>
+      <div class="pricetag"><small>Gerçek fiyat</small><strong>${fmt(S.price)} ₺</strong></div>
+      <ul class="results">${rows.map(p=>{
+        let g = "<span>tahmin yok</span>";
+        if(p.guess!=null){ const d=(p.guess-S.price)/S.price*100; g = `${fmt(p.guess)} ₺<small>${d>0?"+":""}${Math.abs(d)<10?d.toFixed(1):Math.round(d)}%</small>`; }
+        return `<li><span class="who">${esc(p.name)}${p.bonus?'<span class="bonus">en yakın +'+BONUS+'</span>':''}</span>
+          <span class="g">${g}</span><span class="p ${p.pts?"":"zero"}">+${p.pts||0}</span></li>`;
+      }).join("")}</ul>
+      ${isHost ? `<button class="btn" onclick="nextRound()">${S.round>=S.total?"Sonuçları göster":"Sonraki ürün"}</button>`
+               : `<div class="waiting">Oda sahibi sıradaki ürüne geçecek…</div>`}
+    </section>`;
+  }
+  else if(S.phase==="final"){
+    const ps = [...S.players].sort((a,b)=>b.score-a.score);
+    const pod = (p,cls,medal)=> p ? `<div class="pod ${cls}"><div class="medal">${medal}</div><div class="n">${esc(p.name)}</div><div class="s">${p.score}</div></div>` : `<div></div>`;
+    m.innerHTML = `<section class="panel fin">
+      <h2>Oyun bitti! ${ps[0]?esc(ps[0].name)+" kazandı 🎉":""}</h2>
+      <div class="podium">${pod(ps[1],"p2","🥈")}${pod(ps[0],"p1","🥇")}${pod(ps[2],"p3","🥉")}</div>
+      ${isHost ? `<button class="btn" onclick="backToLobby()">Yeni oyun kur</button>` : `<div class="waiting">Oda sahibi yeni oyun başlatabilir.</div>`}
+    </section>`;
+  }
+}
+
+function updateMain(){
+  if(S.phase==="question"){
+    const area = $("#guessArea"); if(!area) return;
+    const me = S.players.find(p=>p.id===myId);
+    const done = (me && me.guessed) || (myGuess.round===S.round && myGuess.v!=null);
+    const mode = done ? "done" : "input";
+    if(area.dataset.mode!==mode){
+      area.dataset.mode = mode;
+      area.innerHTML = done
+        ? `<div class="sent">✅ Tahminin gönderildi${myGuess.round===S.round&&myGuess.v?`: <b>${fmt(myGuess.v)} ₺</b>`:""}<br><small>Diğerleri bekleniyor…</small></div>`
+        : `<div class="guessrow"><div class="inputwrap"><input id="guess" inputmode="numeric" autocomplete="off" placeholder="Tahminin" aria-label="Fiyat tahminin" oninput="onGuessInput(event)" onkeydown="if(event.key==='Enter')sendGuess()"><span>₺</span></div>
+           <button class="btn" onclick="sendGuess()">Tahmini gönder</button></div>`;
+    }
+    const on = S.players.filter(p=>p.online);
+    $("#qcount").textContent = on.filter(p=>p.guessed).length+" / "+on.length+" kişi tahmin etti";
+  }
+}
+
+/* zamanlayıcı */
+setInterval(()=>{
+  if(!S || S.phase!=="question") return;
+  const bar=$("#bar"), secs=$("#secs"), tm=$("#timer"); if(!bar) return;
+  const total = S.settings.time*1000;
+  const left = Math.max(0, localDeadline-Date.now());
+  bar.style.width = (left/total*100)+"%";
+  secs.textContent = left>0 ? Math.ceil(left/1000)+" sn" : "Süre doldu";
+  tm.classList.toggle("urgent", left<6000);
+  if(left<=0){ const g=$("#guess"); if(g) g.disabled=true; }
+}, 150);
+
+/* davet linkiyle gelindiyse kodu doldur */
+(function(){
+  const oda = new URLSearchParams(location.search).get("oda");
+  if(oda){ $("#code").value = oda.toUpperCase(); }
+  $("#nick").focus();
+  $("#nick").addEventListener("keydown", e=>{ if(e.key==="Enter"){ oda ? joinRoom() : createRoom(); } });
+})();
+</script>
+</body>
+</html>
