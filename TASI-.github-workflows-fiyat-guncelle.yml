@@ -1,0 +1,34 @@
+# Her sabah 06:00'da (Türkiye saati) ürün fiyatlarını kaynak sitelerden çeker
+# ve fiyatlar.json dosyasını günceller. Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir.
+name: Günlük fiyat güncelleme
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 03:00 UTC = 06:00 TR
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fiyat-guncelle
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fiyatları çek
+        run: node scripts/fiyat-guncelle.mjs
+      - name: Değişiklikleri kaydet
+        run: |
+          git config user.name "fiyat-botu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fiyatlar.json
+          git commit -m "Günlük fiyat güncellemesi $(TZ=Europe/Istanbul date +%Y-%m-%d)" || echo "Değişiklik yok"
+          git push

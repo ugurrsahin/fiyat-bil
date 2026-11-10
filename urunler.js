@@ -8,6 +8,11 @@
    foto: ürün fotoğrafının adresi (sitede fotoğrafa sağ tık →
          "Resim adresini kopyala"). Boş bırakılırsa emoji görünür.
    kaynak: fiyatın alındığı sayfanın linki (fiyat açılınca görünür).
+           Her sabah bu sayfa açılıp güncel fiyat okunur (fiyatlar.json).
+           En iyi sonuç tek bir ürünün sayfasıyla alınır: mağaza ürün
+           sayfası, Cimri/Akakçe ürün sayfası, emlakjet/arabam ilanı.
+   otomatik: false → kaynak bir haber/broşür/liste sayfasıysa yaz;
+           günlük okuma atlanır, buradaki fiyat kullanılır.
    --------------------------------------------------------- */
 window.URUNLER_KAYNAKLI = [
   {
@@ -103,6 +108,7 @@ window.URUNLER_KAYNAKLI = [
     fiyat: 1499900,
     foto: "https://shiftdelete.net/static/img/content/26-11/08/fiat-fiyat-listesi-kasim-2026.jpg",
     kaynak: "https://shiftdelete.net/fiat-fiyat-listesi",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "ShiftDelete.Net"
   },
   {
@@ -112,6 +118,7 @@ window.URUNLER_KAYNAKLI = [
     fiyat: 60,
     foto: "https://cdn.akakce.com/pinar/pinar-1-lt-x.jpg",
     kaynak: "https://www.akakce.com/pinar,1.html",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Akakçe (en ucuz fiyat)"
   },
   {
@@ -120,6 +127,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "750 g kavanoz",
     fiyat: 261, foto: "",
     kaynak: "https://www.trendyol.com/nutella-x-b107764",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Trendyol"
   },
   {
@@ -128,6 +136,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "30'lu koli, L boy, zincir market",
     fiyat: 210, foto: "",
     kaynak: "https://www.endeks24.com/yumurta-zammi-market-raflarina-ne-zaman-yansiyacak",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Endeks24 (CarrefourSA fiyatı)"
   },
   {
@@ -136,6 +145,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "1 kg paket",
     fiyat: 349, foto: "",
     kaynak: "https://www.iscihaber.net/gundem/cay-fiyatlarinda-son-durum-1-kilo-cay-ne-kadar-oldu/259886",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "İşçi Haber (Eylül 2026)"
   },
   {
@@ -144,6 +154,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "2,5 litre pet şişe",
     fiyat: 100, foto: "",
     kaynak: "https://www.karekod.org/blog/icecek-fiyatlari-2022/",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Karekod (Eylül 2026 market fiyatı)"
   },
   {
@@ -152,6 +163,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "250 ml kutu",
     fiyat: 58, foto: "",
     kaynak: "https://www.karekod.org/blog/icecek-fiyatlari-2022/",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Karekod (Eylül 2026 market fiyatı)"
   },
   {
@@ -160,6 +172,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "5 litre pet",
     fiyat: 587, foto: "",
     kaynak: "https://www.karekod.org/blog/yag-fiyatlari/",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Karekod (normal fiyat)"
   },
   {
@@ -168,6 +181,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "900 g",
     fiyat: 219, foto: "",
     kaynak: "https://www.karekod.org/blog/bim-fiyatlari-2022/",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Karekod (BİM fiyatı)"
   },
   {
@@ -176,6 +190,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "300 g paket",
     fiyat: 219, foto: "",
     kaynak: "https://www.habergazetesi.com.tr/a101-19-agustos-2026-aktuel-katalogu-temel-gida-temizlik-ve-atistirmaliklarda-indirimler-suruyor",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "A101 aktüel (Ağustos 2026)"
   },
   {
@@ -184,6 +199,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "2 kg",
     fiyat: 215, foto: "",
     kaynak: "https://www.haberturk.com/bilgi/foto/yarin-satista-bim-18-19-21-agustos-2026-aktuel-katalogu-bu-hafta-bim-markette-indirimli-urunler-neler-tv-cep-telefonu-elektrikli-bisiklet-geliyor-3906958",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "BİM aktüel (Ağustos 2026)"
   },
   {
@@ -192,6 +208,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "9 kg, Dağ Esintisi",
     fiyat: 499, foto: "",
     kaynak: "https://www.istiklal.com.tr/editorun-sectikleri/bim-11-eylul-2026-aktuel-urunler-katalogu-fiyatlari-1104227h",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "BİM aktüel (Eylül 2026)"
   },
   {
@@ -200,6 +217,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "230 g, büyükşehir fırın tarifesi",
     fiyat: 20, foto: "",
     kaynak: "https://www.evrensel.net/haber/5977680/sofradaki-yangin-buyuyor-ekmege-zam-geldi",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Evrensel (Nisan 2026 tarifesi)"
   },
   {
@@ -208,6 +226,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "Parti boy paket",
     fiyat: 75, foto: "https://cdn.akakce.com/lays/lays-klasik-150-gr-parti-boy-patates-x.jpg",
     kaynak: "https://www.karekod.org/blog/?p=36656",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Karekod (2026 cips fiyatları)"
   },
   {
@@ -216,6 +235,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "5 kg paket",
     fiyat: 250, foto: "",
     kaynak: "https://www.akakce.com/seker,28.html",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Akakçe (en ucuz fiyat)"
   },
   {
@@ -224,6 +244,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "1 kg, zincir market",
     fiyat: 120, foto: "",
     kaynak: "https://www.gzt.com/ekonomi/mersinde-yerli-muz-ithalden-yuzde-50-ucuz-ureticiler-destek-istedi-4244324",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "GZT (Temmuz 2026 market fiyatı)"
   },
   {
@@ -232,6 +253,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "500 g",
     fiyat: 48, foto: "",
     kaynak: "https://www.akakce.com/barilla.html",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Akakçe (en ucuz fiyat)"
   },
   {
@@ -248,6 +270,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "36 g, tek paket",
     fiyat: 17, foto: "",
     kaynak: "https://www.cimri.com/gofret/cikolatali",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Cimri (en ucuz fiyat)"
   },
   {
@@ -256,6 +279,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "19 litre, eve teslim (Ankara bayi)",
     fiyat: 251, foto: "",
     kaynak: "https://www.yeniankara.com.tr/ekonomi/ankaralilarin-gizli-faturasi-ayda-kac-lira-damacana-suya-gidiyor-188385",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yeni Ankara (Ekim 2026)"
   },
   {
@@ -264,6 +288,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "Sıfır, elektrikli SUV, Kasım 2026 anahtar teslim fiyatı",
     fiyat: 1909048, foto: "https://shiftdelete.net/static/img/content/26-11/08/togg-fiyat-listesi-kasim-2026.jpg",
     kaynak: "https://shiftdelete.net/togg-fiyat-listesi",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "ShiftDelete.Net (Kasım 2026)"
   },
   {
@@ -272,6 +297,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "Sıfır, Kasım 2026 Türkiye anahtar teslim fiyatı",
     fiyat: 2474985, foto: "",
     kaynak: "https://www.webtekno.com/tesla-kasim-2026-fiyat-listesi-h228466.html",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Webtekno (Kasım 2026)"
   },
   {
@@ -336,6 +362,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "Sıfır, Eylül 2026 Türkiye liste fiyatı",
     fiyat: 31361000, foto: "",
     kaynak: "https://www.sondakika.com/otomobil/haber-mercedes-benz-eylul-2026-fiyatlarini-acikladi-en-u-20219962/",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Sondakika (Mercedes Eylül 2026 listesi)"
   },
   {
@@ -376,6 +403,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "AYLIK kira — 120 m², 2. kat",
     fiyat: 23000, foto: "",
     kaynak: "https://www.emlakjet.com/kiralik-daire/bursa-nilufer/emlakcidan?sayfa=11",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Emlakjet (ilan listesi)"
   },
   {
@@ -384,6 +412,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "AYLIK kira — 75 m², eşyalı, havuzlu site",
     fiyat: 35000, foto: "",
     kaynak: "https://daire.trovit.com.tr/kiral%C4%B1k-antalya-konyaalt%C4%B1-ev/10",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Trovit (ilan listesi)"
   },
   {
@@ -392,6 +421,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "AYLIK kira — ana cadde üzeri, balkonlu, asansörlü",
     fiyat: 65000, foto: "",
     kaynak: "https://daire.trovit.com.tr/kiral%C4%B1k-villa-besiktas/14",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Trovit (ilan listesi)"
   },
   {
@@ -400,6 +430,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "456 m², göl manzaralı, %60 imarlı",
     fiyat: 8550000, foto: "",
     kaynak: "https://www.emlakjet.com/emlak-ofisleri/re-max-klas-381885",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Emlakjet (RE/MAX Klas ilanları)"
   },
   {
@@ -408,6 +439,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "Ruby Woo serisi, tam boy",
     fiyat: 1449, foto: "",
     kaynak: "https://yandex.com.tr/shopping/t/mac-ruj",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yandex Alışveriş (Trendyol / Hepsiburada fiyatı)"
   },
   {
@@ -416,6 +448,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "400 ml",
     fiyat: 150, foto: "",
     kaynak: "https://www.akakce.com/sampuan/loreal-paris,18.html",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Akakçe (market broşür fiyatı)"
   },
   {
@@ -432,6 +465,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "3,5 g, mat",
     fiyat: 4235, foto: "",
     kaynak: "https://yandex.com.tr/shopping/t/ruj",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yandex Alışveriş (Trendyol fiyatı)"
   },
   {
@@ -448,6 +482,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "saç şekillendirme ve kurutma seti",
     fiyat: 44999, foto: "",
     kaynak: "https://www.teknosa.com/dyson-kampanya-c-5368",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Teknosa"
   },
   {
@@ -456,6 +491,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "4'lü paket",
     fiyat: 808, foto: "",
     kaynak: "https://www.trendyol.com/gillette-erkek-x-b947-g2?pi=2",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Trendyol"
   },
   {
@@ -464,6 +500,7 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "007 Pinky",
     fiyat: 209, foto: "",
     kaynak: "https://yandex.com.tr/shopping/t/ruj",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yandex Alışveriş (n11 fiyatı)"
   },
   {
@@ -472,7 +509,16 @@ window.URUNLER_KAYNAKLI = [
     aciklama: "likit mat ruj, Montreal",
     fiyat: 890, foto: "",
     kaynak: "https://yandex.com.tr/shopping/t/ruj",
+    otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yandex Alışveriş (Hepsiburada fiyatı)"
+  },
+  {
+    kategori: "Spor", emoji: "👟",
+    baslik: "Nike Air Force 1 '07",
+    aciklama: "beyaz, erkek",
+    fiyat: 7199, foto: "",
+    kaynak: "https://www.cimri.com/spor-ayakkabi/en-ucuz-nike-air-force-1-07-iq7593-133-beyaz-erkek-spor-ayakkabi-fiyatlari,2572339126",
+    kaynakAdi: "Cimri (en ucuz fiyat)"
   },
 ];
 
@@ -491,7 +537,6 @@ window.URUNLER_TAHMINI = [
   // ---- Kozmetik ----
 
   // ---- Spor ----
-  ["Spor","👟","Nike Air Force 1 '07","beyaz, erkek",4700],
   ["Spor","👟","Adidas Samba OG","klasik model",5000],
   ["Spor","🏋️","Ayarlanabilir dambıl seti","20 kg, Decathlon",2200],
   ["Spor","⚽","Büyük kulüp orijinal forması","2026/27 iç saha, isimsiz",3800],
