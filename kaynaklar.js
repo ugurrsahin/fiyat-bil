@@ -86,7 +86,7 @@ window.KAYNAKLAR = [
   { kategori: "Elektronik", url: "https://www.akakce.com/kulaklik.html", adet: 2 },
 
   // ---- Yemek: Yemeksepeti Ankara şubeleri (menü ürünleri; fiyat şubeye göre değişir) ----
-  { kategori: "Yemek", emoji: "🍔", url: "https://www.yemeksepeti.com/#menu-burger-king", menu: "yemeksepeti", sehir: "Ankara", marka: "Burger King", min: 150, adet: 3,
+  { kategori: "Yemek", emoji: "🍔", url: "https://www.yemeksepeti.com/#menu-burger-king", menu: "yemeksepeti", sehir: "Ankara", marka: "Burger King", min: 150, adet: 6,
     urller: [
       "https://www.yemeksepeti.com/restaurant/zmj9/burger-king-zmj9",
       "https://www.yemeksepeti.com/restaurant/k0jo/burger-king-k0jo",
@@ -97,7 +97,7 @@ window.KAYNAKLAR = [
       "https://www.yemeksepeti.com/restaurant/sb6i/burger-king-sb6i",
       "https://www.yemeksepeti.com/restaurant/ckv9/burger-king-ckv9"
     ] },
-  { kategori: "Yemek", emoji: "🍟", url: "https://www.yemeksepeti.com/#menu-mcdonalds", menu: "yemeksepeti", sehir: "Ankara", marka: "McDonald's", min: 150, adet: 3,
+  { kategori: "Yemek", emoji: "🍟", url: "https://www.yemeksepeti.com/#menu-mcdonalds", menu: "yemeksepeti", sehir: "Ankara", marka: "McDonald's", min: 150, adet: 6,
     urller: [
       "https://www.yemeksepeti.com/restaurant/c4hx/mcdonalds-c4hx",
       "https://www.yemeksepeti.com/restaurant/vr48/mcdonalds-vr48",
