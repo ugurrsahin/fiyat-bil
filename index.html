@@ -83,6 +83,9 @@ aside h3 small{font-weight:600;color:var(--muted);font-size:14px}
 .board li + li{border-top:1px solid var(--line)}
 .board li.me{background:color-mix(in srgb, var(--cobalt) 12%, transparent)}
 .board li.off{opacity:.45}
+.board li.canKick{grid-template-columns:28px 1fr auto auto 30px}
+.board .kick{width:30px;height:30px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;font-size:16px;line-height:1}
+.board .kick:hover,.board .kick:focus-visible{background:color-mix(in srgb, var(--hot) 22%, transparent);color:var(--hot)}
 .board .rank{font-weight:800;color:var(--muted);text-align:center}
 .board li:first-child .rank{color:var(--tag-ink);background:var(--tag);border-radius:6px}
 .board .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -401,6 +404,7 @@ function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){ const j=Math.floor
 
 let peer=null, isHost=false, myId=null, myName="", hostConn=null;
 const conns = new Map();
+const banned = new Set();   // oda sahibinin çıkardığı nickler (bu oda boyunca)
 let S = null;                 // son görülen ortak durum
 let localDeadline = 0;
 let renderedKey = "";
@@ -458,14 +462,34 @@ function addPlayer(id, name, host=false){
 function onHostData(conn, m){
   if(!m || typeof m!=="object") return;
   if(m.t==="join"){
-    conns.set(conn.peer, conn);
     const name = String(m.name||"Oyuncu").slice(0,16);
+    if(banned.has(name.toLocaleLowerCase("tr"))){
+      try{ conn.send({t:"kick", neden:"yasak"}); }catch(e){}
+      setTimeout(()=>{ try{ conn.close(); }catch(e){} }, 500);
+      return;
+    }
+    conns.set(conn.peer, conn);
     if(H.players[conn.peer]) H.players[conn.peer].online=true; else addPlayer(conn.peer, name);
     toast(name+" katıldı");
     hostBroadcast();
   } else if(m.t==="guess"){
     submitGuess(conn.peer, m.v);
   }
+}
+function kickPlayer(id){
+  if(!isHost) return;
+  const p = H.players[id]; if(!p || p.host) return;
+  if(!confirm(p.name+" odadan çıkarılsın mı?")) return;
+  banned.add(p.name.toLocaleLowerCase("tr"));
+  const c = conns.get(id);
+  delete H.players[id];
+  conns.delete(id);
+  if(c){
+    try{ c.send({t:"kick"}); }catch(e){}
+    setTimeout(()=>{ try{ c.close(); }catch(e){} }, 500);
+  }
+  toast(p.name+" odadan çıkarıldı");
+  hostBroadcast(); maybeAllGuessed();
 }
 function onHostClose(conn){
   conns.delete(conn.peer);
@@ -560,6 +584,16 @@ function hostBroadcast(){
 }
 
 /* ---------- odaya katılma (oyuncu) ---------- */
+function kickedOut(neden){
+  clearTimeout(joinTimeout); setBusy(false);
+  const g = $("#gone");
+  g.querySelector("div").textContent = "🚪";
+  g.querySelector("h2").textContent = neden==="yasak" ? "Bu odaya giremezsin" : "Odadan çıkarıldın";
+  g.querySelector("p").textContent = neden==="yasak" ? "Oda sahibi bu nick'i odadan çıkarmıştı." : "Oda sahibi seni bu odadan çıkardı.";
+  g.style.display = "flex";
+  try{ hostConn.close(); }catch(e){}
+  try{ peer.destroy(); }catch(e){}
+}
 function joinRoom(){
   const n = readName(); if(!n) return;
   const code = $("#code").value.trim().toUpperCase();
@@ -572,7 +606,7 @@ function joinRoom(){
     myId = id;
     hostConn = peer.connect(PREFIX+code, {reliable:true, serialization:"json"});
     hostConn.on("open", ()=>hostConn.send({t:"join", name:n}));
-    hostConn.on("data", m=>{ if(m && m.t==="state"){ clearTimeout(joinTimeout); setBusy(false); S=m.s; applyState(); } });
+    hostConn.on("data", m=>{ if(m && m.t==="state"){ clearTimeout(joinTimeout); setBusy(false); S=m.s; applyState(); } else if(m && m.t==="kick"){ kickedOut(m.neden); } });
     hostConn.on("close", ()=>{ if(S) $("#gone").style.display="flex"; });
   });
   peer.on("error", err=>{
@@ -619,11 +653,11 @@ function renderBoard(){
     let st="", cls="st";
     if(S.phase==="question") st = p.guessed ? "✅" : "⏳";
     if(S.phase==="reveal"){ st = "+"+(p.pts||0); cls="st plus"; }
-    return `<li class="${p.id===myId?"me":""} ${p.online?"":"off"}">
+    return `<li class="${p.id===myId?"me":""} ${p.online?"":"off"} ${isHost?"canKick":""}">
       <span class="rank">${i+1}</span>
       <span class="nm">${esc(p.name)}${p.host?' <small title="Oda sahibi">🎙️</small>':''}${p.id===myId?' <small>(sen)</small>':''}</span>
       <span class="${cls}">${st}</span>
-      <span class="sc">${p.score}</span></li>`;
+      <span class="sc">${p.score}</span>${isHost ? (p.host ? "<span></span>" : `<button class="kick" title="Odadan çıkar" aria-label="${esc(p.name)} oyuncusunu odadan çıkar" onclick="kickPlayer('${esc(p.id)}')">✕</button>`) : ""}</li>`;
   }).join("");
 }
 
