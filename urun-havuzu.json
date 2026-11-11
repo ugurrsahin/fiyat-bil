@@ -1,0 +1,673 @@
+{
+ "guncelleme": "2026-11-11T07:23:07.617Z",
+ "ozet": {
+  "toplam": 21,
+  "yeni": 21,
+  "kategoriler": {
+   "Emlak": 16,
+   "Kozmetik": 5
+  }
+ },
+ "kaynaklar": [
+  {
+   "kategori": "Araba",
+   "url": "https://www.arabam.com/ikinci-el/otomobil",
+   "istenen": 6,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.cimri.com/televizyonlar",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/",
+   "istenen": 5,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/satilik-daire/ankara-cankaya",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Araba",
+   "url": "https://www.arabam.com/ikinci-el/arazi-suv-pick-up",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.vatanbilgisayar.com/notebook/",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.cimri.com/sarjli-supurgeler",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Araba",
+   "url": "https://www.arabam.com/ikinci-el/motosiklet",
+   "istenen": 2,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.cimri.com/kahve-makineleri",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.cimri.com/camasir-makineleri",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.dermoeczanem.com/cilt-bakimi",
+   "istenen": 5,
+   "alinan": 5,
+   "link": 60,
+   "hatalar": [
+    "sayfada 64 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 612)"
+   ]
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.cimri.com/kadin-parfumleri",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.cimri.com/erkek-parfumleri",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/satilik-daire/antalya-muratpasa",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.cimri.com/sampuan-ve-sac-kremi",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/peynir",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/zeytin",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/kiralik-daire/istanbul-besiktas",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/sivi-yag",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Emlak",
+   "url": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 30,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/hazir-kahve",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/gofret",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/toz-deterjan",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.cimri.com/kuru-kedi-mamasi",
+   "istenen": 2,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.cimri.com/spor-ayakkabi",
+   "istenen": 5,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.cimri.com/protein-tozlari",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.cimri.com/dag-bisikletleri",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.cimri.com/basketbol-topu",
+   "istenen": 2,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.cimri.com/fitness-kondisyon-aksesuarlari",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.cimri.com/erkek-mont",
+   "istenen": 5,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.cimri.com/mont",
+   "istenen": 4,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.cimri.com/erkek-palto",
+   "istenen": 3,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Hırdavat",
+   "url": "https://www.cimri.com/matkaplar",
+   "istenen": 5,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  },
+  {
+   "kategori": "Hırdavat",
+   "url": "https://www.cimri.com/akulu-vidalama-makinesi",
+   "istenen": 5,
+   "alinan": 0,
+   "link": 0,
+   "hatalar": [
+    "HTTP 403"
+   ],
+   "eskiden": 0
+  }
+ ],
+ "urunler": [
+  {
+   "id": "hz1ynui",
+   "c": "Emlak",
+   "e": "",
+   "t": "Çarşı'dan Sıfır Binada Ara Kat Şık 1+1",
+   "d": "Çankaya, Ankara · Satılık · Bahçeli Çarşı Emlak Ankara Çankaya Emek Mahallesi 45 m² 1+1 Oda Satılık Daire ilanı…",
+   "p": 8750000,
+   "f": "https://imaj.emlakjet.com/listing/20084483/9C84F87B3BD1D488A998AF1E85450A2020084483.jpg",
+   "k": "https://www.emlakjet.com/ilan/carsi-dan-sifir-binada-ara-kat-sik-11-20084483",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
+  },
+  {
+   "id": "h1fbvzay",
+   "c": "Emlak",
+   "e": "",
+   "t": "Sahibinden Satılık Daire",
+   "d": "Çankaya, Ankara · Satılık · Sahibinden Ankara Çankaya Arka Topraklık Mahallesi 75 m² 2+1 Oda Satılık Daire ilanı…",
+   "p": 3300000,
+   "f": "https://imaj.emlakjet.com/listing/20083855/2A9C3E1A414CAE30C57927008F38FA9520083855.jpg",
+   "k": "https://www.emlakjet.com/ilan/sahibinden-satilik-daire-20083855",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
+  },
+  {
+   "id": "h104ggh2",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "La Roche Posay Saf C12 Vitamini Işıltı Veren Serum 30 ml",
+   "d": "",
+   "p": 2505,
+   "f": "https://witcdn.dermoeczanem.com/la-roche-posay-saf-c12-vitamini-isilti-veren-serum-30-ml-la-roche-posay-194922-66-O.jpg",
+   "k": "https://www.dermoeczanem.com/la-roche-posay-saf-c12-vitamini-isilti-veren-serum-30-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "hed4yvf",
+   "c": "Emlak",
+   "e": "",
+   "t": "Cebeci Atom Sokakta Üniversite Metroya Yakın Satılık 2+1 Daire",
+   "d": "Çankaya, Ankara · Satılık · Good İnvest Yeni Batı Ankara Çankaya Ertuğrulgazi Mahallesi 85 m² 2+1 Oda Satılık Daire…",
+   "p": 3100000,
+   "f": "https://imaj.emlakjet.com/listing/20079115/011FF66206B2A6EB16B75395D7CC599C20079115.jpg",
+   "k": "https://www.emlakjet.com/ilan/cebeci-atom-sokakta-universite-metroya-yakin-satilik-21-daire-20079115",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
+  },
+  {
+   "id": "h1f7535k",
+   "c": "Emlak",
+   "e": "",
+   "t": "Poyraz'dan Caddebostan Sahil Parseli Balkonlu 3+1 Satılık Daire",
+   "d": "Kadıköy, İstanbul · Satılık · Poyraz Gayrimenkul Suadiye İstanbul Kadıköy Caddebostan Mahallesi 130 m² 3+1 Oda Satılık…",
+   "p": 29950000,
+   "f": "https://imaj.emlakjet.com/listing/20083758/7C710F0BEFD3F47E67E14DD0DB66497320083758.jpg",
+   "k": "https://www.emlakjet.com/ilan/poyraz-dan-caddebostan-sahil-parseli-balkonlu-31-satilik-daire-20083758",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
+  },
+  {
+   "id": "h1iqblq9",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "La Roche Posay Effaclar Duo+M Yağlı Ve Akneye Eğilimli Ciltler için Yüz Bakım Kremi 40 ml",
+   "d": "",
+   "p": 1035,
+   "f": "https://witcdn.dermoeczanem.com/la-roche-posay-effaclar-duo-m-yagli-ve-akneye-egilimli-ciltler-icin-yuz-bakim-kremi-40-ml-la-roche-posay-182844-16-O.jpg",
+   "k": "https://www.dermoeczanem.com/la-roche-posay-effaclar-duo-m-yagli-ve-akneye-egilimli-ciltler-icin-yuz-bakim-kremi-40-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "h1ihwxng",
+   "c": "Emlak",
+   "e": "",
+   "t": "Poyraz'dan Şaşkınbakkal Sahil'de Sıfır Binada 2+1 Satılık Daire",
+   "d": "Kadıköy, İstanbul · Satılık · Poyraz Gayrimenkul Suadiye İstanbul Kadıköy Suadiye Mahallesi 79 m² 2+1 Oda Satılık…",
+   "p": 24950000,
+   "f": "https://imaj.emlakjet.com/listing/20069327/6E73A6A5A6102E152B7675371505D18620069327.jpg",
+   "k": "https://www.emlakjet.com/ilan/poyraz-dan-saskinbakkal-sahil-de-sifir-binada-21-satilik-daire-20069327",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
+  },
+  {
+   "id": "h1syy2x6",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "İdea Derma ATO Yoğun Nemlendirici Balsam 350 ml",
+   "d": "",
+   "p": 315,
+   "f": "https://witcdn.dermoeczanem.com/idea-derma-ato-yogun-nemlendirici-balsam-350-ml-idea-derma-201407-85-O.jpg",
+   "k": "https://www.dermoeczanem.com/idea-derma-ato-yogun-nemlendirici-balsam-350-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "h1l7gew5",
+   "c": "Emlak",
+   "e": "",
+   "t": "Bostancı Yeni Binada Arakat 3+1 Özel Yapım Daire",
+   "d": "Kadıköy, İstanbul · Satılık · Vip Internatıonal World Plus Gayrimenkul İstanbul Kadıköy Bostancı Mahallesi 100 m² 3+1…",
+   "p": 18250000,
+   "f": "https://imaj.emlakjet.com/listing/20070744/EA8669C02C42622B997E5CD89C58B33D20070744.jpg",
+   "k": "https://www.emlakjet.com/ilan/bostanci-yeni-binada-arakat-31-ozel-yapim-daire-20070744",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
+  },
+  {
+   "id": "h2giw2s",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Cream Co. Moisturizer Face Cream 50 ml",
+   "d": "",
+   "p": 300,
+   "f": "https://witcdn.dermoeczanem.com/cream-co-moisturizer-50-ml-cream-co-195138-74-O.jpg",
+   "k": "https://www.dermoeczanem.com/cream-co-moisturizer-50-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "h25lp1r",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Avene Cicalfate+ Hassas ve Yıpranmış Ciltler İçin Bakım Kremi 40 ml",
+   "d": "",
+   "p": 459,
+   "f": "https://witcdn.dermoeczanem.com/avene-cicalfate-hassas-ve-yipranmis-ciltler-icin-bakim-kremi-40-ml-avene-230906-17-O.jpg",
+   "k": "https://www.dermoeczanem.com/avene-cicalfate-hassas-ve-yipranmis-ciltler-icin-bakim-kremi-40-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "h1k46whg",
+   "c": "Emlak",
+   "e": "",
+   "t": "32 Karşıyaka Donanmacı Mahallesi’nde Satılık 3+1 Ara Kat Daire",
+   "d": "Karşıyaka, İzmir · Satılık · Remax Best İzmir Karşıyaka Donanmacı Mahallesi 125 m² 3+1 Oda Satılık Daire ilanı…",
+   "p": 4750000,
+   "f": "https://imaj.emlakjet.com/listing/20077928/B92E9731347E2FA7FDF0FEAD044EEA9720077928.jpg",
+   "k": "https://www.emlakjet.com/ilan/32-karsiyaka-donanmaci-mahallesi-nde-satilik-31-ara-kat-daire-20077928",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka"
+  },
+  {
+   "id": "hq4y8ce",
+   "c": "Emlak",
+   "e": "",
+   "t": "Latife Hanımda Tadilatlı Merkezi Konumda 3+1 Daire",
+   "d": "Karşıyaka, İzmir · Satılık · Köycüler Gayrimenkul Limited İzmir Karşıyaka Latife Hanım Mahallesi 120 m² 3+1 Oda…",
+   "p": 4500000,
+   "f": "https://imaj.emlakjet.com/listing/20072700/78E4719F0F55BD7EDB2614CDEF29597D20072700.jpg",
+   "k": "https://www.emlakjet.com/ilan/latife-hanimda-tadilatli-merkezi-konumda-31-daire-20072700",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka"
+  },
+  {
+   "id": "hktikfh",
+   "c": "Emlak",
+   "e": "",
+   "t": "Güzeloba'da Merkezi Konumda Yeni Tadilatlı 3+1 Satılık Daire",
+   "d": "Muratpaşa, Antalya · Satılık · Hazar Yatırım Antalya Muratpaşa Güzeloba Mahallesi 125 m² 3+1 Oda Satılık Daire ilanı…",
+   "p": 7750000,
+   "f": "https://imaj.emlakjet.com/listing/20084406/BB98378457AC8A2D512888FC58E350A120084406.jpg",
+   "k": "https://www.emlakjet.com/ilan/guzeloba-da-merkezi-konumda-yeni-tadilatli-31-satilik-daire-20084406",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/antalya-muratpasa"
+  },
+  {
+   "id": "h9qekr4",
+   "c": "Emlak",
+   "e": "",
+   "t": "Çağlayanda Yeni Bina, Jeneratörlü, Deniz Görür 3+1 Satılık",
+   "d": "Muratpaşa, Antalya · Satılık · Neo Gayrimenkul Antalya Muratpaşa Çağlayan Mahallesi 152 m² 3+1 Oda Satılık Daire ilanı…",
+   "p": 45500000,
+   "f": "https://imaj.emlakjet.com/listing/20077343/4CA4E6047BCB335E7FB7E9494B6FADD520077343.jpg",
+   "k": "https://www.emlakjet.com/ilan/caglayanda-yeni-bina-jeneratorlu-deniz-gorur-31-satilik-20077343",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/antalya-muratpasa"
+  },
+  {
+   "id": "h7o1qsj",
+   "c": "Emlak",
+   "e": "",
+   "t": "Akademi'den Kira Getirili Asansörlü Geniş Satılık 1+1",
+   "d": "Tepebaşı, Eskişehir · Satılık · Akademi Emlak Danışmanlık Eskişehir Tepebaşı Sütlüce Mahallesi 58 m² 1+1 Oda Satılık…",
+   "p": 1975000,
+   "f": "https://imaj.emlakjet.com/listing/20077488/A5AA63240563075177D8CE887A83734020077488.jpg",
+   "k": "https://www.emlakjet.com/ilan/akademi-den-14-000-tl-kira-getirili-asansorlu-genis-satilik-11-20077488",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi"
+  },
+  {
+   "id": "h1ogpob1",
+   "c": "Emlak",
+   "e": "",
+   "t": "Emlakcımdan Işıklar Mah.full Yapılı Köşe 2+1 Satılık Daire",
+   "d": "Tepebaşı, Eskişehir · Satılık · Emlakcım Gayrimenkul Eskişehir Tepebaşı Işıklar Mahallesi 90 m² 2+1 Oda Satılık Daire…",
+   "p": 2850000,
+   "f": "https://imaj.emlakjet.com/listing/20082716/DD9502140526A81FC4BFE19D455D9F5A20082716.jpg",
+   "k": "https://www.emlakjet.com/ilan/emlakcimdan-isiklar-mah-full-yapili-kose-21-satilik-daire-20082716",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi"
+  },
+  {
+   "id": "h8erpx1",
+   "c": "Emlak",
+   "e": "",
+   "t": "Beşiktaş Gazi Refik Sokak'ta Bakımlı 130 M2 3+1 Bakımlı Dubleks Daire",
+   "d": "AYLIK kira — Beşiktaş, İstanbul · Burç Emlak İstanbul Beşiktaş Türkali Mahallesi 130 m² 3+1 Oda Kiralık Daire ilanı…",
+   "p": 60000,
+   "f": "https://imaj.emlakjet.com/listing/20012276/C993B931612158D960627775089071AD20012276.jpg",
+   "k": "https://www.emlakjet.com/ilan/besiktas-gazi-refik-sokak-ta-bakimli-130-m2-31-bakimli-dubleks-daire-20012276",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/kiralik-daire/istanbul-besiktas"
+  },
+  {
+   "id": "h1f7lbd7",
+   "c": "Emlak",
+   "e": "",
+   "t": "Gayrettepe Merkezde 3+1 155 M2 3.kat Asansörlü Otoparklı Klimalı Çift Balkonlu Çift…",
+   "d": "AYLIK kira — Beşiktaş, İstanbul · Net Emlak İstanbul Beşiktaş Gayrettepe Mahallesi 155 m² 3+1 Oda Kiralık Daire ilanı…",
+   "p": 85000,
+   "f": "https://imaj.emlakjet.com/listing/20079241/AE3F3D9291E3B61DBB66BC980424D71520079241.jpg",
+   "k": "https://www.emlakjet.com/ilan/gayrettepe-merkezde-31-155-m2-3-kat-asansorlu-otoparkli-klimali-cift-balkonlu-cift-tuvaletli-ferah-20079241",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/kiralik-daire/istanbul-besiktas"
+  },
+  {
+   "id": "h8w4et9",
+   "c": "Emlak",
+   "e": "",
+   "t": "Gaziosmanpaşa Kuleli Sokakda Özel Bahçeli Kombili Eşyalı 2+1",
+   "d": "AYLIK kira — Çankaya, Ankara · Ata Gayrimenkul Ankara Çankaya Kazım Özalp Mahallesi 96 m² 2+1 Oda Kiralık Daire ilanı…",
+   "p": 42000,
+   "f": "https://imaj.emlakjet.com/listing/20075269/A840E0C4617F1CC51B584ECEE364157020075269.jpg",
+   "k": "https://www.emlakjet.com/ilan/gaziosmanpasa-kuleli-sokakda-ozel-bahceli-kombili-esyali-21-20075269",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya"
+  },
+  {
+   "id": "h1vpjxc7",
+   "c": "Emlak",
+   "e": "",
+   "t": "Öncebecı Ünıversıteler Bölgesı 3+1 Katta Kıralık Daıre",
+   "d": "AYLIK kira — Çankaya, Ankara · Remax Vesta Ankara Çankaya Ön Cebeci Mahallesi 85 m² 3+1 Oda Kiralık Daire ilanı…",
+   "p": 30000,
+   "f": "https://imaj.emlakjet.com/listing/20080538/AAE2D78B7CBD50CB54FD77FFB75D283520080538.jpg",
+   "k": "https://www.emlakjet.com/ilan/oncebeci-universiteler-bolgesi-31-katta-kiralik-daire-20080538",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T07:23:07.617Z",
+   "liste": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya"
+  }
+ ]
+}

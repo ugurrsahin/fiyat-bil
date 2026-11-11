@@ -1,0 +1,436 @@
+{
+ "guncelleme": "2026-11-11T07:22:49.371Z",
+ "ozet": {
+  "toplam": 58,
+  "guncel": 7,
+  "eski": 13,
+  "elle": 33,
+  "kaldirildi": 5
+ },
+ "urunler": {
+  "elektronik-apple-iphone-17-pro": {
+   "fiyat": 111999,
+   "referans": 111999,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "elektronik-sony-playstation-5-slim-dijital": {
+   "fiyat": 52999,
+   "referans": 52999,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "elektronik-logitech-mx-master-3s": {
+   "fiyat": 6259,
+   "referans": 6259,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "elektronik-apple-airpods-4": {
+   "fiyat": 8799,
+   "referans": 8799,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "kozmetik-maybelline-lash-sensational-sky-high-maskara": {
+   "fiyat": 1050,
+   "referans": 1050,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "kozmetik-nivea-soft-krem": {
+   "fiyat": 201,
+   "referans": 177,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "emlak-goztepe-kadikoy-satilik-3-1": {
+   "fiyat": 17750000,
+   "referans": 17750000,
+   "kontrol": null,
+   "durum": "kaldirildi",
+   "yontem": null,
+   "hata": "sayfa artık yok (HTTP 410)"
+  },
+  "emlak-ayranci-cankaya-satilik-3-1": {
+   "fiyat": 6950000,
+   "referans": 7250000,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "emlak-bahcelievler-karsiyaka-satilik-2-1": {
+   "fiyat": 3700000,
+   "referans": 3700000,
+   "kontrol": null,
+   "durum": "kaldirildi",
+   "yontem": null,
+   "hata": "sayfa artık yok (HTTP 410)"
+  },
+  "emlak-talatpasa-esenyurt-satilik-2-1": {
+   "fiyat": 2425000,
+   "referans": 2750000,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "araba-fiat-egea-sedan-1-6-multijet-easy": {
+   "fiyat": 1499900,
+   "referans": 1499900,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-pinar-tam-yagli-sut": {
+   "fiyat": 60,
+   "referans": 60,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-nutella": {
+   "fiyat": 261,
+   "referans": 261,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-yumurta": {
+   "fiyat": 210,
+   "referans": 210,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-caykur-rize-turist-cay": {
+   "fiyat": 349,
+   "referans": 349,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-coca-cola": {
+   "fiyat": 100,
+   "referans": 100,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-red-bull": {
+   "fiyat": 58,
+   "referans": 58,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-yudum-aycicek-yagi": {
+   "fiyat": 587,
+   "referans": 587,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-pinar-beyaz-peynir": {
+   "fiyat": 219,
+   "referans": 219,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-balikesir-hoyuk-dana-kiyma": {
+   "fiyat": 219,
+   "referans": 219,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-rem-siyah-zeytin": {
+   "fiyat": 215,
+   "referans": 215,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-ariel-toz-deterjan": {
+   "fiyat": 499,
+   "referans": 499,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-firin-ekmegi": {
+   "fiyat": 20,
+   "referans": 20,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-lay-s-klasik": {
+   "fiyat": 75,
+   "referans": 75,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-tarim-kredi-birlik-toz-seker": {
+   "fiyat": 250,
+   "referans": 250,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-ithal-muz": {
+   "fiyat": 120,
+   "referans": 120,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-barilla-no-5-spagetti": {
+   "fiyat": 48,
+   "referans": 48,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-pro-plan-adult-tavuklu-kedi-mamasi": {
+   "fiyat": 1492,
+   "referans": 1492,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "market-ulker-cikolatali-gofret": {
+   "fiyat": 17,
+   "referans": 17,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "market-erikli-damacana-su": {
+   "fiyat": 251,
+   "referans": 251,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "araba-togg-t10x-v1-rwd-standart-menzil": {
+   "fiyat": 1909048,
+   "referans": 1909048,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "araba-tesla-model-y-arkadan-cekis": {
+   "fiyat": 2474985,
+   "referans": 2474985,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "araba-renault-clio-1-0-tce-touch-2020": {
+   "fiyat": 1189000,
+   "referans": 1189000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-volkswagen-passat-1-6-tdi-highline-2018": {
+   "fiyat": 1765000,
+   "referans": 1765000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-toyota-corolla-1-4-d-4d-active-2015": {
+   "fiyat": 1090750,
+   "referans": 1090750,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-bmw-320i-sport-line-2023": {
+   "fiyat": 3125000,
+   "referans": 3125000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-tofas-dogan-slx-1994": {
+   "fiyat": 240000,
+   "referans": 240000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-ford-transit-courier-1-5-tdci-trend-2017": {
+   "fiyat": 485000,
+   "referans": 485000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-yamaha-nmax-155-2023": {
+   "fiyat": 215000,
+   "referans": 215000,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  },
+  "araba-mercedes-amg-g-63-performance": {
+   "fiyat": 31361000,
+   "referans": 31361000,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "emlak-yazir-selcuklu-konya-satilik-3-1": {
+   "fiyat": 4750000,
+   "referans": 4750000,
+   "kontrol": null,
+   "durum": "kaldirildi",
+   "yontem": null,
+   "hata": "sayfa artık yok (HTTP 410)"
+  },
+  "emlak-sutluce-tepebasi-eskisehir-satilik-2-1": {
+   "fiyat": 2680000,
+   "referans": 2680000,
+   "kontrol": null,
+   "durum": "kaldirildi",
+   "yontem": null,
+   "hata": "sayfa artık yok (HTTP 410)"
+  },
+  "emlak-hilalkent-yakutiye-erzurum-satilik-3-1": {
+   "fiyat": 3650000,
+   "referans": 3650000,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "emlak-geris-yalikavak-bodrum-satilik-villa-4-1": {
+   "fiyat": 90000000,
+   "referans": 90000000,
+   "kontrol": null,
+   "durum": "kaldirildi",
+   "yontem": null,
+   "hata": "sayfa artık yok (HTTP 410)"
+  },
+  "emlak-fethiye-mah-nilufer-bursa-kiralik-2-1": {
+   "fiyat": 23000,
+   "referans": 23000,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "emlak-liman-mah-konyaalti-antalya-kiralik-1-1": {
+   "fiyat": 35000,
+   "referans": 35000,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "emlak-ortakoy-besiktas-kiralik-2-1": {
+   "fiyat": 65000,
+   "referans": 65000,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "emlak-sapanca-satilik-arsa": {
+   "fiyat": 8550000,
+   "referans": 8550000,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-mac-macximal-silky-matte-ruj": {
+   "fiyat": 1449,
+   "referans": 1449,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-elseve-sampuan": {
+   "fiyat": 150,
+   "referans": 150,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-dior-sauvage-eau-de-parfum": {
+   "fiyat": 8250,
+   "referans": 8250,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "gomulu"
+  },
+  "kozmetik-chanel-rouge-allure-velvet-ruj": {
+   "fiyat": 4235,
+   "referans": 4235,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-la-roche-posay-effaclar-duo-m": {
+   "fiyat": 1035,
+   "referans": 1450,
+   "kontrol": "2026-11-11T07:22:49.371Z",
+   "durum": "guncel",
+   "yontem": "json-ld"
+  },
+  "kozmetik-dyson-airwrap-co-anda2x": {
+   "fiyat": 44999,
+   "referans": 44999,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-gillette-fusion-yedek-tiras-bicagi": {
+   "fiyat": 808,
+   "referans": 808,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-flormar-yari-parlak-stick-ruj": {
+   "fiyat": 209,
+   "referans": 209,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "kozmetik-nyx-soft-matte-lip-cream": {
+   "fiyat": 890,
+   "referans": 890,
+   "kontrol": null,
+   "durum": "elle",
+   "yontem": null
+  },
+  "spor-nike-air-force-1-07": {
+   "fiyat": 7199,
+   "referans": 7199,
+   "kontrol": null,
+   "durum": "eski",
+   "yontem": null,
+   "hata": "HTTP 403"
+  }
+ }
+}
