@@ -61,7 +61,6 @@ window.KAYNAKLAR = [
   { kategori: "Market", url: "https://www.akakce.com/toz-deterjan.html", adet: 2, max: 5000 },
   { kategori: "Market", url: "https://www.akakce.com/seker,28.html", adet: 2, max: 5000 },
   { kategori: "Market", url: "https://www.akakce.com/kedi-mamasi.html", adet: 2, max: 10000 },
-  { kategori: "Spor", url: "https://www.akakce.com/spor-ayakkabi.html", adet: 3 },
   { kategori: "Spor", url: "https://www.akakce.com/protein-tozu.html", adet: 2 },
   { kategori: "Spor", url: "https://www.akakce.com/dag-bisikleti.html", adet: 2 },
   { kategori: "Spor", url: "https://www.akakce.com/basketbol-topu.html", adet: 2 },
@@ -72,4 +71,17 @@ window.KAYNAKLAR = [
   { kategori: "Hırdavat", url: "https://www.akakce.com/matkap.html", adet: 4 },
   { kategori: "Hırdavat", url: "https://www.akakce.com/akulu-matkap.html", adet: 3 },
   { kategori: "Hırdavat", url: "https://www.akakce.com/testere.html", adet: 2 },
+
+  // Marka siteleri: ürün adresleri sitemap'ten rastgele seçilir
+  { kategori: "Spor",  url: "https://www.newbalance.com.tr/#sitemap", sitemap: "https://www.newbalance.com.tr", adet: 3 },
+  { kategori: "Spor",  url: "https://tr.puma.com/#sitemap", sitemap: "https://tr.puma.com", adet: 3 },
+  { kategori: "Giyim", url: "https://tr.tommy.com/#sitemap", sitemap: "https://tr.tommy.com", adet: 3 },
+  { kategori: "Giyim", url: "https://www.timberland.com.tr/#sitemap", sitemap: "https://www.timberland.com.tr", adet: 2 },
+
+  // FLO (giyim ve ayakkabı; indirimliyse indirimli fiyat okunur)
+  { kategori: "Giyim", url: "https://www.flo.com.tr/#sitemap", sitemap: "https://www.flo.com.tr", adet: 4 },
+
+  // ---- Elektronik: akıllı saat ve kulaklık (kulaklık sayfası adı tahmin; 404 verirse silinebilir) ----
+  { kategori: "Elektronik", url: "https://www.akakce.com/akilli-saat.html", adet: 2 },
+  { kategori: "Elektronik", url: "https://www.akakce.com/kulaklik.html", adet: 2 },
 ];

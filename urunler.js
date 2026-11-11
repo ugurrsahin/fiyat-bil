@@ -512,14 +512,6 @@ window.URUNLER_KAYNAKLI = [
     otomatik: false, // haber/liste sayfası: günlük okunamaz, fiyat elle güncellenir
     kaynakAdi: "Yandex Alışveriş (Hepsiburada fiyatı)"
   },
-  {
-    kategori: "Spor", emoji: "👟",
-    baslik: "Nike Air Force 1 '07",
-    aciklama: "beyaz, erkek",
-    fiyat: 7199, foto: "",
-    kaynak: "https://www.cimri.com/spor-ayakkabi/en-ucuz-nike-air-force-1-07-iq7593-133-beyaz-erkek-spor-ayakkabi-fiyatlari,2572339126",
-    kaynakAdi: "Cimri (en ucuz fiyat)"
-  },
 ];
 
 /* ---------------------------------------------------------
@@ -537,7 +529,6 @@ window.URUNLER_TAHMINI = [
   // ---- Kozmetik ----
 
   // ---- Spor ----
-  ["Spor","👟","Adidas Samba OG","klasik model",5000],
   ["Spor","🏋️","Ayarlanabilir dambıl seti","20 kg, Decathlon",2200],
   ["Spor","⚽","Büyük kulüp orijinal forması","2026/27 iç saha, isimsiz",3800],
   ["Spor","⌚","Garmin Forerunner 265","koşu saati",18000],
@@ -589,7 +580,6 @@ window.URUNLER_TAHMINI = [
   ["Giyim","🧥","The North Face Nuptse mont","şişme mont",13000],
   ["Giyim","👔","Zara erkek gömlek","basic model",1500],
   ["Giyim","🧢","Kapüşonlu sweatshirt","DeFacto",700],
-  ["Giyim","🥾","Timberland 6-inch Premium bot","klasik sarı bot",9000],
 
   // ---- Hizmet & diğer ----
   ["Hizmet","🚄","YHT bileti İstanbul–Ankara","ekonomi, tam bilet",950],

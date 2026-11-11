@@ -12,6 +12,7 @@
 import fs from "node:fs/promises";
 import vm from "node:vm";
 import path from "node:path";
+import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 import { fiyatSec, sayfaGetir } from "./fiyat-guncelle.mjs";
 
@@ -22,7 +23,7 @@ const ESKI_GUN = 7;   // bir kaynak okunamazsa en fazla kaç günlük eski ürü
 /* aynı siteye art arda istek atmamak için bekleme süresi (ms) */
 const BEKLEME = { "akakce.com": 4000, "cimri.com": 3000, default: 1500 };
 const SITE_ADI = {
-  "cimri.com": "Cimri (en ucuz fiyat)", "akakce.com": "Akakçe (en ucuz fiyat)", "emlakjet.com": "Emlakjet ilanı", "arabam.com": "arabam.com ilanı",
+  "cimri.com": "Cimri (en ucuz fiyat)", "akakce.com": "Akakçe (en ucuz fiyat)", "flo.com.tr": "FLO", "newbalance.com.tr": "New Balance Türkiye", "tr.puma.com": "Puma Türkiye", "tr.tommy.com": "Tommy Hilfiger Türkiye", "timberland.com.tr": "Timberland Türkiye", "emlakjet.com": "Emlakjet ilanı", "arabam.com": "arabam.com ilanı",
   "vatanbilgisayar.com": "Vatan Bilgisayar", "dermoeczanem.com": "Dermoeczanem", "mediamarkt.com.tr": "MediaMarkt",
 };
 const KAT_SINIR = { Emlak: [1000, 2e9], Araba: [5000, 2e8] };   // varsayılan [5, 5e6]
@@ -66,6 +67,15 @@ export function urunLinkleri(html, kaynakUrl) {
     const yol = m[1].replace(/\\\//g, "/");
     if (kural(yol, kaynak.pathname)) out.add(kaynak.origin + yol);
   }
+  // Akakçe liste sayfalarında üstte/yanda "popüler ürünler" (telefon, saat…) de var: yalnızca sayfanın
+  // asıl kategorisinin klasöründeki ürünleri (en çok geçen klasör) al
+  if (host === "akakce.com" && out.size) {
+    const klasor = u => new URL(u).pathname.split("/")[1];
+    const sayac = {};
+    for (const u of out) sayac[klasor(u)] = (sayac[klasor(u)] || 0) + 1;
+    const ANA_KLASOR = Object.entries(sayac).sort((a, b) => b[1] - a[1])[0][0];
+    return [...out].filter(u => klasor(u) === ANA_KLASOR);
+  }
   return [...out];
 }
 
@@ -108,10 +118,38 @@ function siteEkiniAt(ad, host) {
 }
 const kisalt = (s, n) => s.length <= n ? s : s.slice(0, n - 1).replace(/\s+\S*$/, "") + "…";
 
+/* Ayakkabılar: pazar yerlerindeki en ucuz satıcılar sahte/outlet olabilir. Ayakkabı yalnızca markanın
+   kendi sitesinden (ya da kabul ettiğimiz perakendeciden) alınırsa oyuna girer. */
+const MARKA_SITELERI = ["nike.com", "adidas.com.tr", "decathlon.com.tr", "defacto.com.tr", "mavi.com", "newbalance.com.tr", "puma.com", "tommy.com", "timberland.com.tr", "flo.com.tr"];
+const AYAKKABI_AD = /ayakkab|sneaker|krampon|terlik|sandalet|çizme|\bbot\b/i;
+
+/* Akakçe: en ucuz teklif (lowPrice) kullanılır, ama en ucuz fiyat satıcıların ortanca fiyatından
+   AKAKCE_FARK'tan fazla ucuzsa (sahte/outlet satıcı ihtimali) ürün hiç alınmaz. */
+const AKAKCE_FARK = 0.15;        // 0,15 = en ucuz fiyat ortancadan %15'ten fazla ucuzsa ürün alınmaz
+const AKAKCE_MIN_TEKLIF = 3;     // karşılaştırma için sayfada en az bu kadar satıcı fiyatı görünmeli
+const ortanca = a => { const s = [...a].sort((x, y) => x - y), n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
+const teklifFiyati = v => { let t = String(v).trim(); if (t.includes(",")) t = t.replace(/\./g, "").replace(",", "."); const n = Number(t); return n > 0 ? n : 0; };
+export function akakceTutarli(html, enUcuz) {
+  let fiyatlar = [];
+  for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
+    let j; try { j = JSON.parse(m[1].trim()); } catch { continue; }
+    for (const x of (Array.isArray(j) ? j : [j])) {
+      const o = x && x.offers;
+      const liste = o && (Array.isArray(o.offers) ? o.offers : (Array.isArray(o) ? o : []));
+      if (liste && liste.length) fiyatlar = liste.map(t => teklifFiyati(t.price)).filter(Boolean);
+    }
+  }
+  if (fiyatlar.length < AKAKCE_MIN_TEKLIF) return "karşılaştırma için yeterli satıcı fiyatı yok";
+  const med = ortanca(fiyatlar);
+  if (enUcuz < med * (1 - AKAKCE_FARK)) return `en ucuz fiyat (${Math.round(enUcuz)}) ortancadan (${Math.round(med)}) çok uzak`;
+  return null;
+}
+
 export function urunBilgisi(html, url, kaynak) {
   const host = hostAdi(url);
   const sec = fiyatSec(html, host, null, null);
   if (sec.hata) return { hata: sec.hata };
+  if (/akakce\.com$/.test(host)) { const g = akakceTutarli(html, sec.fiyat); if (g) return { hata: g }; }
   const fiyat = Math.round(sec.fiyat);
   const [alt, ust] = [kaynak.min ?? (KAT_SINIR[kaynak.kategori] || [5])[0], kaynak.max ?? (KAT_SINIR[kaynak.kategori] || [5, 5e6])[1]];
   if (fiyat < alt || fiyat > ust) return { hata: `fiyat aralık dışında (${fiyat})` };
@@ -122,6 +160,7 @@ export function urunBilgisi(html, url, kaynak) {
   let ad = varlik(ana.name || meta(html, "og:title") || (html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "");
   ad = kisalt(fiyatsiz(siteEkiniAt(ad, host), fiyat), 90);
   if (ad.length < 4) return { hata: "ürün adı bulunamadı" };
+  if (AYAKKABI_AD.test(ad) && !MARKA_SITELERI.some(h => host === h || host.endsWith("." + h))) return { hata: "ayakkabı: marka sitesinden doğrulanamadı" };
 
   // açıklama: yapısal bilgilerden (yıl, km, oda, m²…), yoksa marka; ilan sitelerinde og:description
   const parca = [];
@@ -155,6 +194,37 @@ async function kaynaklariYukle() {
   return ctx.window.KAYNAKLAR || [];
 }
 
+/* ---------- marka sitelerinde: ürün adreslerini sitemap'ten bul ---------- */
+const SM_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
+const SM_URUN_IZI = /product|urun|ürün|pdp|item|catalog|shop|\/p[-_.]/i;
+async function sitemapMetni(url) {
+  const r = await fetch(url, { headers: { "User-Agent": SM_UA, "Accept": "*/*", "Accept-Language": "tr-TR,tr;q=0.9" }, signal: AbortSignal.timeout(25000), redirect: "follow" });
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  let b = Buffer.from(await r.arrayBuffer());
+  if (b.length > 40e6) throw new Error("sitemap çok büyük");
+  if (/\.gz(\?|$)/.test(url) || (b[0] === 0x1f && b[1] === 0x8b)) b = zlib.gunzipSync(b);
+  return b.toString("utf8");
+}
+const sitemapLoc = x => [...x.matchAll(/<loc>\s*(?:<!\[CDATA\[)?\s*([^<\]\s]+)\s*(?:\]\]>)?\s*<\/loc>/gi)].map(m => m[1].replace(/&amp;/g, "&"));
+export async function sitemapAdresleri(site, yol) {
+  const bulunan = [];
+  let haritalar = [];
+  try { haritalar = [...(await sitemapMetni(site + "/robots.txt")).matchAll(/^\s*sitemap:\s*(\S+)/gim)].map(m => m[1]); } catch {}
+  if (!haritalar.length) haritalar = [site + "/sitemap.xml"];
+  const gez = async (u, derinlik) => {
+    if (bulunan.length > 3000 || derinlik > 2) return;
+    let x; try { x = await sitemapMetni(u); } catch { return; }
+    await bekle(800);
+    const l = sitemapLoc(x);
+    if (/<sitemapindex/i.test(x)) {
+      const sirali = [...l.filter(s => SM_URUN_IZI.test(s)), ...l.filter(s => !SM_URUN_IZI.test(s))];
+      for (const s of sirali.slice(0, 2)) await gez(s, derinlik + 1);
+    } else bulunan.push(...l.filter(u => u.startsWith("http") && (!yol || u.includes(yol))));
+  };
+  for (const h of haritalar.slice(0, 6)) { await gez(h, 0); if (bulunan.length > 200) break; }
+  return [...new Set(bulunan)];
+}
+
 async function main() {
   const kaynaklar = await kaynaklariYukle();
   let eski = { urunler: [] };
@@ -173,9 +243,14 @@ async function main() {
     for (const k of liste) {
       const r = { kategori: k.kategori, url: k.url, istenen: k.adet || 4, alinan: 0, link: 0, hatalar: [] };
       try {
-        const s = await getir(k.url);
-        if (s.kaldirildi) throw new Error(`liste sayfası yok (HTTP ${s.durumKodu})`);
-        const linkler = karistir(urunLinkleri(s.html, s.sonUrl || k.url)).filter(u => !gorulenUrl.has(u));
+        let linkler;
+        if (k.sitemap) {
+          linkler = karistir(await sitemapAdresleri(k.sitemap, k.yol || "")).filter(u => !gorulenUrl.has(u));
+        } else {
+          const s = await getir(k.url);
+          if (s.kaldirildi) throw new Error(`liste sayfası yok (HTTP ${s.durumKodu})`);
+          linkler = karistir(urunLinkleri(s.html, s.sonUrl || k.url)).filter(u => !gorulenUrl.has(u));
+        }
         r.link = linkler.length;
         if (!linkler.length) throw new Error("sayfada ürün linki bulunamadı");
         for (const u of linkler.slice(0, r.istenen * 2 + 2)) {
