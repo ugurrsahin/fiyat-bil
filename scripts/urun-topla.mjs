@@ -20,9 +20,9 @@ const CIKTI = path.join(KOK, "urun-havuzu.json");
 const ESKI_GUN = 7;   // bir kaynak okunamazsa en fazla kaç günlük eski ürünler tutulur
 
 /* aynı siteye art arda istek atmamak için bekleme süresi (ms) */
-const BEKLEME = { "cimri.com": 3000, default: 1500 };
+const BEKLEME = { "akakce.com": 4000, "cimri.com": 3000, default: 1500 };
 const SITE_ADI = {
-  "cimri.com": "Cimri (en ucuz fiyat)", "emlakjet.com": "Emlakjet ilanı", "arabam.com": "arabam.com ilanı",
+  "cimri.com": "Cimri (en ucuz fiyat)", "akakce.com": "Akakçe (en ucuz fiyat)", "emlakjet.com": "Emlakjet ilanı", "arabam.com": "arabam.com ilanı",
   "vatanbilgisayar.com": "Vatan Bilgisayar", "dermoeczanem.com": "Dermoeczanem", "mediamarkt.com.tr": "MediaMarkt",
 };
 const KAT_SINIR = { Emlak: [1000, 2e9], Araba: [5000, 2e8] };   // varsayılan [5, 5e6]
@@ -39,6 +39,7 @@ const varlik = s => String(s ?? "")
 
 /* ---------- liste sayfasından ürün linklerini bul ---------- */
 const LINK_KURALI = {
+  "akakce.com": yol => /^\/[a-z0-9-]+\/en-ucuz-[a-z0-9-]+-fiyati,\d+\.html$/.test(yol),
   "cimri.com": (yol, kaynakYol) => /^\/[a-z0-9-]+\/en-ucuz-[a-z0-9-]+-fiyatlari,\d+$/.test(yol) && yol.startsWith(kaynakYol.replace(/\/$/, "") + "/"),
   "emlakjet.com": yol => /^\/ilan\/[a-z0-9-]+-\d+\/?$/.test(yol),
   "arabam.com": yol => /^\/ilan\/[a-z0-9-]+\/[a-z0-9-]+\/\d+\/?$/.test(yol),

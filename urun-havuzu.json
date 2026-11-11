@@ -1,47 +1,19 @@
 {
- "guncelleme": "2026-11-11T07:23:07.617Z",
+ "guncelleme": "2026-11-11T08:07:11.504Z",
  "ozet": {
-  "toplam": 21,
-  "yeni": 21,
+  "toplam": 97,
+  "yeni": 97,
   "kategoriler": {
    "Emlak": 16,
-   "Kozmetik": 5
+   "Elektronik": 23,
+   "Kozmetik": 16,
+   "Market": 16,
+   "Spor": 9,
+   "Giyim": 11,
+   "Hırdavat": 6
   }
  },
  "kaynaklar": [
-  {
-   "kategori": "Araba",
-   "url": "https://www.arabam.com/ikinci-el/otomobil",
-   "istenen": 6,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Elektronik",
-   "url": "https://www.cimri.com/televizyonlar",
-   "istenen": 4,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Elektronik",
-   "url": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/",
-   "istenen": 5,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
   {
    "kategori": "Emlak",
    "url": "https://www.emlakjet.com/satilik-daire/ankara-cankaya",
@@ -49,61 +21,6 @@
    "alinan": 3,
    "link": 30,
    "hatalar": []
-  },
-  {
-   "kategori": "Araba",
-   "url": "https://www.arabam.com/ikinci-el/arazi-suv-pick-up",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Elektronik",
-   "url": "https://www.vatanbilgisayar.com/notebook/",
-   "istenen": 4,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Elektronik",
-   "url": "https://www.cimri.com/sarjli-supurgeler",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Araba",
-   "url": "https://www.arabam.com/ikinci-el/motosiklet",
-   "istenen": 2,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Elektronik",
-   "url": "https://www.cimri.com/kahve-makineleri",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
   },
   {
    "kategori": "Emlak",
@@ -115,35 +32,11 @@
   },
   {
    "kategori": "Elektronik",
-   "url": "https://www.cimri.com/camasir-makineleri",
+   "url": "https://www.akakce.com/televizyon.html",
    "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Kozmetik",
-   "url": "https://www.dermoeczanem.com/cilt-bakimi",
-   "istenen": 5,
-   "alinan": 5,
-   "link": 60,
-   "hatalar": [
-    "sayfada 64 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 612)"
-   ]
-  },
-  {
-   "kategori": "Kozmetik",
-   "url": "https://www.cimri.com/kadin-parfumleri",
-   "istenen": 4,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
+   "alinan": 3,
+   "link": 82,
+   "hatalar": []
   },
   {
    "kategori": "Emlak",
@@ -155,14 +48,33 @@
   },
   {
    "kategori": "Kozmetik",
-   "url": "https://www.cimri.com/erkek-parfumleri",
-   "istenen": 4,
-   "alinan": 0,
-   "link": 0,
+   "url": "https://www.dermoeczanem.com/cilt-bakimi",
+   "istenen": 5,
+   "alinan": 5,
+   "link": 60,
    "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
+    "sayfada fiyat bulunamadı",
+    "sayfada 64 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 899)",
+    "sayfada 64 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 747.92)",
+    "sayfada 64 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 510)"
+   ]
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/",
+   "istenen": 5,
+   "alinan": 4,
+   "link": 75,
+   "hatalar": [
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı",
+    "sayfada 1 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 14239)",
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı"
+   ]
   },
   {
    "kategori": "Emlak",
@@ -173,17 +85,6 @@
    "hatalar": []
   },
   {
-   "kategori": "Kozmetik",
-   "url": "https://www.cimri.com/sampuan-ve-sac-kremi",
-   "istenen": 4,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
    "kategori": "Emlak",
    "url": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi",
    "istenen": 2,
@@ -192,26 +93,12 @@
    "hatalar": []
   },
   {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/peynir",
+   "kategori": "Elektronik",
+   "url": "https://www.akakce.com/cep-telefonu.html",
    "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/zeytin",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
+   "alinan": 3,
+   "link": 95,
+   "hatalar": []
   },
   {
    "kategori": "Emlak",
@@ -222,17 +109,6 @@
    "hatalar": []
   },
   {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/sivi-yag",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
    "kategori": "Emlak",
    "url": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya",
    "istenen": 2,
@@ -241,290 +117,470 @@
    "hatalar": []
   },
   {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/hazir-kahve",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/gofret",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/toz-deterjan",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Market",
-   "url": "https://www.cimri.com/kuru-kedi-mamasi",
-   "istenen": 2,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Spor",
-   "url": "https://www.cimri.com/spor-ayakkabi",
-   "istenen": 5,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Spor",
-   "url": "https://www.cimri.com/protein-tozlari",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Spor",
-   "url": "https://www.cimri.com/dag-bisikletleri",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Spor",
-   "url": "https://www.cimri.com/basketbol-topu",
-   "istenen": 2,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Spor",
-   "url": "https://www.cimri.com/fitness-kondisyon-aksesuarlari",
-   "istenen": 3,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Giyim",
-   "url": "https://www.cimri.com/erkek-mont",
-   "istenen": 5,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Giyim",
-   "url": "https://www.cimri.com/mont",
+   "kategori": "Elektronik",
+   "url": "https://www.vatanbilgisayar.com/notebook/",
    "istenen": 4,
-   "alinan": 0,
-   "link": 0,
+   "alinan": 3,
+   "link": 62,
    "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
+    "sayfada fiyat bulunamadı",
+    "sayfada fiyat bulunamadı",
+    "sayfada 1 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 38999)",
+    "sayfada fiyat bulunamadı",
+    "sayfada 1 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 25999)",
+    "sayfada 1 fiyat bulundu ama hiçbiri makul aralıkta değil (ör. 33039)",
+    "sayfada fiyat bulunamadı"
+   ]
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.akakce.com/notebook.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 79,
+   "hatalar": []
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.akakce.com/dikey-supurge.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 92,
+   "hatalar": []
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.akakce.com/kahve-makinesi.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 39,
+   "hatalar": []
+  },
+  {
+   "kategori": "Elektronik",
+   "url": "https://www.akakce.com/camasir-makinesi.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 71,
+   "hatalar": []
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.akakce.com/parfum.html",
+   "istenen": 5,
+   "alinan": 5,
+   "link": 82,
+   "hatalar": []
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.akakce.com/sampuan,47.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 64,
+   "hatalar": []
+  },
+  {
+   "kategori": "Kozmetik",
+   "url": "https://www.akakce.com/ruj.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 75,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/peynir.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 83,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/zeytin.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 76,
+   "hatalar": [
+    "fiyat aralık dışında (109825)"
+   ]
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/aycicek-yagi.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 53,
+   "hatalar": [
+    "fiyat aralık dışında (67999)"
+   ]
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/kahve.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 34,
+   "hatalar": [
+    "fiyat aralık dışında (79000)",
+    "fiyat aralık dışında (66399)",
+    "fiyat aralık dışında (11940)",
+    "fiyat aralık dışında (229999)"
+   ]
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/gofret.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 80,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/toz-deterjan.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 71,
+   "hatalar": []
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/seker,28.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 37,
+   "hatalar": [
+    "fiyat aralık dışında (99999)"
+   ]
+  },
+  {
+   "kategori": "Market",
+   "url": "https://www.akakce.com/kedi-mamasi.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 82,
+   "hatalar": [
+    "fiyat aralık dışında (82050)",
+    "fiyat aralık dışında (143004)",
+    "fiyat aralık dışında (99999)",
+    "fiyat aralık dışında (24394)"
+   ]
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.akakce.com/spor-ayakkabi.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 80,
+   "hatalar": []
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.akakce.com/protein-tozu.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 76,
+   "hatalar": []
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.akakce.com/dag-bisikleti.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 51,
+   "hatalar": []
+  },
+  {
+   "kategori": "Spor",
+   "url": "https://www.akakce.com/basketbol-topu.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 71,
+   "hatalar": []
   },
   {
    "kategori": "Giyim",
-   "url": "https://www.cimri.com/erkek-palto",
+   "url": "https://www.akakce.com/mont.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 79,
+   "hatalar": []
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.akakce.com/palto.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 43,
+   "hatalar": []
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.akakce.com/sweatshirt.html",
+   "istenen": 3,
+   "alinan": 3,
+   "link": 61,
+   "hatalar": []
+  },
+  {
+   "kategori": "Giyim",
+   "url": "https://www.akakce.com/kot-pantolon.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 44,
+   "hatalar": []
+  },
+  {
+   "kategori": "Hırdavat",
+   "url": "https://www.akakce.com/matkap.html",
+   "istenen": 4,
+   "alinan": 4,
+   "link": 57,
+   "hatalar": []
+  },
+  {
+   "kategori": "Hırdavat",
+   "url": "https://www.akakce.com/akulu-matkap.html",
    "istenen": 3,
    "alinan": 0,
    "link": 0,
    "hatalar": [
-    "HTTP 403"
+    "liste sayfası yok (HTTP 404)"
    ],
    "eskiden": 0
   },
   {
    "kategori": "Hırdavat",
-   "url": "https://www.cimri.com/matkaplar",
-   "istenen": 5,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
-  },
-  {
-   "kategori": "Hırdavat",
-   "url": "https://www.cimri.com/akulu-vidalama-makinesi",
-   "istenen": 5,
-   "alinan": 0,
-   "link": 0,
-   "hatalar": [
-    "HTTP 403"
-   ],
-   "eskiden": 0
+   "url": "https://www.akakce.com/testere.html",
+   "istenen": 2,
+   "alinan": 2,
+   "link": 43,
+   "hatalar": []
   }
  ],
  "urunler": [
   {
-   "id": "hz1ynui",
+   "id": "hhfy3ek",
    "c": "Emlak",
    "e": "",
-   "t": "Çarşı'dan Sıfır Binada Ara Kat Şık 1+1",
-   "d": "Çankaya, Ankara · Satılık · Bahçeli Çarşı Emlak Ankara Çankaya Emek Mahallesi 45 m² 1+1 Oda Satılık Daire ilanı…",
-   "p": 8750000,
-   "f": "https://imaj.emlakjet.com/listing/20084483/9C84F87B3BD1D488A998AF1E85450A2020084483.jpg",
-   "k": "https://www.emlakjet.com/ilan/carsi-dan-sifir-binada-ara-kat-sik-11-20084483",
+   "t": "Sbell'den Emekte Yeni Bina Ön Cephe Mükemmel Teraslı 2+1 Dubleks",
+   "d": "Çankaya, Ankara · Satılık · Sbell Gayri̇menkul Ankara Çankaya Emek Mahallesi 135 m² 2+1 Oda Satılık Daire ilanı…",
+   "p": 12900000,
+   "f": "https://imaj.emlakjet.com/listing/20083903/97B267AF610907A9153C741B6FAFDF6920083903.jpg",
+   "k": "https://www.emlakjet.com/ilan/sbell-den-emekte-yeni-bina-on-cephe-mukemmel-terasli-21-dubleks-20083903",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
   },
   {
-   "id": "h1fbvzay",
+   "id": "h1dgt031",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Samsung Galaxy A08 4/128 GB Akıllı Telefon Lacivert",
+   "d": "",
+   "p": 12499,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/160479-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/samsung-galaxy-a08-4-128-gb-akilli-telefon-lacivert.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/"
+  },
+  {
+   "id": "hdpoxrw",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "İdea Derma %10 Saf C Vitamini Serum 30 ml",
+   "d": "",
+   "p": 258,
+   "f": "https://witcdn.dermoeczanem.com/idea-derma-10-saf-c-vitamini-serum-30-ml-idea-derma-211249-87-O.jpg",
+   "k": "https://www.dermoeczanem.com/idea-derma-10-saf-c-vitamini-serum-30-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "h10sxz",
    "c": "Emlak",
    "e": "",
-   "t": "Sahibinden Satılık Daire",
-   "d": "Çankaya, Ankara · Satılık · Sahibinden Ankara Çankaya Arka Topraklık Mahallesi 75 m² 2+1 Oda Satılık Daire ilanı…",
-   "p": 3300000,
-   "f": "https://imaj.emlakjet.com/listing/20083855/2A9C3E1A414CAE30C57927008F38FA9520083855.jpg",
-   "k": "https://www.emlakjet.com/ilan/sahibinden-satilik-daire-20083855",
+   "t": "Asyapıdan 3+1 110m2 Arakat Yeni Süper Lüks Kombili",
+   "d": "Çankaya, Ankara · Satılık · Asyapi Emlak Ofi̇si̇ Ankara Çankaya Aşıkpaşa Mahallesi 110 m² 3+1 Oda Satılık Daire…",
+   "p": 6990000,
+   "f": "https://imaj.emlakjet.com/listing/19660377/83723F33BAD14798E74BF80345E60BCE19660377.jpg",
+   "k": "https://www.emlakjet.com/ilan/asyapidan-31-110m2-arakat-yeni-super-luks-kombili-19660377",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
   },
   {
-   "id": "h104ggh2",
+   "id": "h1ggtl0i",
    "c": "Kozmetik",
    "e": "",
-   "t": "La Roche Posay Saf C12 Vitamini Işıltı Veren Serum 30 ml",
+   "t": "From Natura Yenileyici Yaşlanma Karşıtı Retinol Gece Serumu 30 ml",
    "d": "",
-   "p": 2505,
-   "f": "https://witcdn.dermoeczanem.com/la-roche-posay-saf-c12-vitamini-isilti-veren-serum-30-ml-la-roche-posay-194922-66-O.jpg",
-   "k": "https://www.dermoeczanem.com/la-roche-posay-saf-c12-vitamini-isilti-veren-serum-30-ml",
+   "p": 253,
+   "f": "https://witcdn.dermoeczanem.com/from-natura-yenileyici-yaslanma-karsiti-retinol-gece-serumu-30-ml-from-natura-212409-75-O.jpg",
+   "k": "https://www.dermoeczanem.com/from-natura-yenileyici-yaslanma-karsiti-retinol-gece-serumu-30-ml",
    "kn": "Dermoeczanem",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.dermoeczanem.com/cilt-bakimi"
   },
   {
-   "id": "hed4yvf",
+   "id": "h1oxhk81",
    "c": "Emlak",
    "e": "",
-   "t": "Cebeci Atom Sokakta Üniversite Metroya Yakın Satılık 2+1 Daire",
-   "d": "Çankaya, Ankara · Satılık · Good İnvest Yeni Batı Ankara Çankaya Ertuğrulgazi Mahallesi 85 m² 2+1 Oda Satılık Daire…",
-   "p": 3100000,
-   "f": "https://imaj.emlakjet.com/listing/20079115/011FF66206B2A6EB16B75395D7CC599C20079115.jpg",
-   "k": "https://www.emlakjet.com/ilan/cebeci-atom-sokakta-universite-metroya-yakin-satilik-21-daire-20079115",
+   "t": "Çankayada Kızalaya Tunalıya Yürüme Mesafesinde Komple Yapılı 3 Cepheli Balkonlu Krediye…",
+   "d": "Çankaya, Ankara · Satılık · Re/max Elma Ankara Çankaya Tınaztepe Mahallesi 85 m² 2+1 Oda Satılık Daire ilanı…",
+   "p": 5750000,
+   "f": "https://imaj.emlakjet.com/listing/20081334/5DFB2A5D1B0245E3CF8CBD59E076724C20081334.jpg",
+   "k": "https://www.emlakjet.com/ilan/cankayada-kizalaya-tunaliya-yurume-mesafesinde-komple-yapili-3-cepheli-balkonlu-krediye-uygun-20081334",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/ankara-cankaya"
   },
   {
-   "id": "h1f7535k",
+   "id": "hr5ux9n",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Samsung Galaxy S24 128 GB",
+   "d": "",
+   "p": 49999,
+   "f": "https://cdn.akakce.com/z/samsung/samsung-galaxy-s24.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-samsung-galaxy-s24-fiyati,176112489.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/televizyon.html"
+  },
+  {
+   "id": "h1ya14r0",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Samsung Galaxy S26 Ultra 5G 12/256 Gb Akıllı Telefon Siyah",
+   "d": "",
+   "p": 98999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/156546-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/samsung-galaxy-s26-ultra-akilli-telefon.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/"
+  },
+  {
+   "id": "hafxzuo",
    "c": "Emlak",
    "e": "",
-   "t": "Poyraz'dan Caddebostan Sahil Parseli Balkonlu 3+1 Satılık Daire",
-   "d": "Kadıköy, İstanbul · Satılık · Poyraz Gayrimenkul Suadiye İstanbul Kadıköy Caddebostan Mahallesi 130 m² 3+1 Oda Satılık…",
-   "p": 29950000,
-   "f": "https://imaj.emlakjet.com/listing/20083758/7C710F0BEFD3F47E67E14DD0DB66497320083758.jpg",
-   "k": "https://www.emlakjet.com/ilan/poyraz-dan-caddebostan-sahil-parseli-balkonlu-31-satilik-daire-20083758",
+   "t": "Erenköy De Caddeye Çok Yakın Geniş M2'de 2+1 Balkonlu Ebeveynli",
+   "d": "Kadıköy, İstanbul · Satılık · Si̇nem Çapan Gayri̇menkul İstanbul Kadıköy Erenköy Mahallesi 90 m² 2+1 Oda Satılık Daire…",
+   "p": 21950000,
+   "f": "https://imaj.emlakjet.com/listing/20083317/C306F7F070901AAEF1338E472746D3F720083317.jpg",
+   "k": "https://www.emlakjet.com/ilan/erenkoy-de-caddeye-cok-yakin-genis-m2-de-21-balkonlu-ebeveynli-20083317",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
   },
   {
-   "id": "h1iqblq9",
-   "c": "Kozmetik",
+   "id": "h8k9xno",
+   "c": "Elektronik",
    "e": "",
-   "t": "La Roche Posay Effaclar Duo+M Yağlı Ve Akneye Eğilimli Ciltler için Yüz Bakım Kremi 40 ml",
+   "t": "TCL 65T8C 4K Ultra HD 65\" 165 Ekran Uydu Alıcılı Google Smart QLED TV",
    "d": "",
-   "p": 1035,
-   "f": "https://witcdn.dermoeczanem.com/la-roche-posay-effaclar-duo-m-yagli-ve-akneye-egilimli-ciltler-icin-yuz-bakim-kremi-40-ml-la-roche-posay-182844-16-O.jpg",
-   "k": "https://www.dermoeczanem.com/la-roche-posay-effaclar-duo-m-yagli-ve-akneye-egilimli-ciltler-icin-yuz-bakim-kremi-40-ml",
-   "kn": "Dermoeczanem",
-   "kontrol": "2026-11-11T07:23:07.617Z",
-   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+   "p": 43999,
+   "f": "https://cdn.akakce.com/z/tcl/tcl-65t8c-4k-ultra-hd-65-165-ekran-uydu-alicili-google-smart-qled-tv.jpg",
+   "k": "https://www.akakce.com/televizyon/en-ucuz-tcl-65t8c-4k-ultra-hd-65-165-ekran-uydu-alicili-google-smart-qled-tv-fiyati,1090120609.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/televizyon.html"
   },
   {
-   "id": "h1ihwxng",
+   "id": "hyud0k8",
    "c": "Emlak",
    "e": "",
-   "t": "Poyraz'dan Şaşkınbakkal Sahil'de Sıfır Binada 2+1 Satılık Daire",
-   "d": "Kadıköy, İstanbul · Satılık · Poyraz Gayrimenkul Suadiye İstanbul Kadıköy Suadiye Mahallesi 79 m² 2+1 Oda Satılık…",
-   "p": 24950000,
-   "f": "https://imaj.emlakjet.com/listing/20069327/6E73A6A5A6102E152B7675371505D18620069327.jpg",
-   "k": "https://www.emlakjet.com/ilan/poyraz-dan-saskinbakkal-sahil-de-sifir-binada-21-satilik-daire-20069327",
+   "t": "Suadiye De Caddeye Yakın 4+1 220 M2 Arsa Payı Yüksek Fırsat",
+   "d": "Kadıköy, İstanbul · Satılık · Si̇nem Çapan Gayri̇menkul İstanbul Kadıköy Suadiye Mahallesi 220 m² 4+1 Oda Satılık…",
+   "p": 24250000,
+   "f": "https://imaj.emlakjet.com/listing/20081769/F0A404A3BBA5BDF2C6E4320FA17CAA7520081769.jpg",
+   "k": "https://www.emlakjet.com/ilan/suadiye-de-caddeye-yakin-41-220-m2-arsa-payi-yuksek-firsat-20081769",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
   },
   {
-   "id": "h1syy2x6",
-   "c": "Kozmetik",
+   "id": "h14534zp",
+   "c": "Elektronik",
    "e": "",
-   "t": "İdea Derma ATO Yoğun Nemlendirici Balsam 350 ml",
-   "d": "",
-   "p": 315,
-   "f": "https://witcdn.dermoeczanem.com/idea-derma-ato-yogun-nemlendirici-balsam-350-ml-idea-derma-201407-85-O.jpg",
-   "k": "https://www.dermoeczanem.com/idea-derma-ato-yogun-nemlendirici-balsam-350-ml",
-   "kn": "Dermoeczanem",
-   "kontrol": "2026-11-11T07:23:07.617Z",
-   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+   "t": "iPhone 16 128 GB Akıllı Telefon Pembe",
+   "d": "APPLE",
+   "p": 72999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/apple/thumb/1-247_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/iphone-16-128-gb-akilli-telefon-pembe.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/"
   },
   {
-   "id": "h1l7gew5",
+   "id": "h1mn22j7",
    "c": "Emlak",
    "e": "",
-   "t": "Bostancı Yeni Binada Arakat 3+1 Özel Yapım Daire",
-   "d": "Kadıköy, İstanbul · Satılık · Vip Internatıonal World Plus Gayrimenkul İstanbul Kadıköy Bostancı Mahallesi 100 m² 3+1…",
-   "p": 18250000,
-   "f": "https://imaj.emlakjet.com/listing/20070744/EA8669C02C42622B997E5CD89C58B33D20070744.jpg",
-   "k": "https://www.emlakjet.com/ilan/bostanci-yeni-binada-arakat-31-ozel-yapim-daire-20070744",
+   "t": "Poyraz'dan Suadiyede Metroya,marmaraya Yakın 105m2 Net 3+1 Daire",
+   "d": "Kadıköy, İstanbul · Satılık · Poyraz Gayrimenkul Suadiye İstanbul Kadıköy Suadiye Mahallesi 135 m² 3+1 Oda Satılık…",
+   "p": 18900000,
+   "f": "https://imaj.emlakjet.com/listing/20078229/8BCC94797FA6E133CD49C4348D05503220078229.jpg",
+   "k": "https://www.emlakjet.com/ilan/poyraz-dan-suadiyede-metroya-marmaraya-yakin-105m2-net-31-daire-20078229",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/istanbul-kadikoy"
   },
   {
-   "id": "h2giw2s",
+   "id": "h1e6oyty",
    "c": "Kozmetik",
    "e": "",
-   "t": "Cream Co. Moisturizer Face Cream 50 ml",
+   "t": "Bioderma Atoderm Krem Ultra 200 ml",
    "d": "",
-   "p": 300,
-   "f": "https://witcdn.dermoeczanem.com/cream-co-moisturizer-50-ml-cream-co-195138-74-O.jpg",
-   "k": "https://www.dermoeczanem.com/cream-co-moisturizer-50-ml",
+   "p": 739,
+   "f": "https://witcdn.dermoeczanem.com/bioderma-atoderm-cream-ultra-200-ml-bioderma-216060-74-O.jpg",
+   "k": "https://www.dermoeczanem.com/bioderma-atoderm-cream-ultra-200-ml",
    "kn": "Dermoeczanem",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.dermoeczanem.com/cilt-bakimi"
+  },
+  {
+   "id": "hyy6t1l",
+   "c": "Elektronik",
+   "e": "",
+   "t": "TCL 55C6K Premium 4K Ultra HD 55\" 140 Ekran Uydu Alıcılı Google Smart Mini LED TV",
+   "d": "",
+   "p": 51000,
+   "f": "https://cdn.akakce.com/z/tcl/tcl-55c6k-4k-ultra-hd-55-140-ekran-uydu-alicili-google-smart-miniled-tv.jpg",
+   "k": "https://www.akakce.com/televizyon/en-ucuz-tcl-55c6k-4k-ultra-hd-55-140-ekran-uydu-alicili-google-smart-miniled-tv-fiyati,1049959231.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/televizyon.html"
+  },
+  {
+   "id": "hdx2mma",
+   "c": "Emlak",
+   "e": "",
+   "t": "6 Karşıyaka Şemiklerde İzban Ve Bulvara Yakın Satılık 2+1",
+   "d": "Karşıyaka, İzmir · Satılık · Remax Best İzmir Karşıyaka Şemikler Mahallesi 75 m² 2+1 Oda Satılık Daire ilanı…",
+   "p": 5600000,
+   "f": "https://imaj.emlakjet.com/listing/20071625/30835F930CA127A939A9134A6CDF26AD20071625.jpg",
+   "k": "https://www.emlakjet.com/ilan/6-karsiyaka-semiklerde-izban-ve-bulvara-yakin-satilik-21-20071625",
+   "kn": "Emlakjet ilanı",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka"
+  },
+  {
+   "id": "h1fy4lwp",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Samsung Galaxy S26 FE 5G 8/256 Gb Akıllı Telefon Yaban Mersini",
+   "d": "",
+   "p": 49999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/samsung/thumb/160136-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/samsung-galaxy-s26-fe-5g-8-256-gb-akilli-telefon-yaban-mersini.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/cep-telefonu-modelleri/"
   },
   {
    "id": "h25lp1r",
@@ -536,138 +592,1035 @@
    "f": "https://witcdn.dermoeczanem.com/avene-cicalfate-hassas-ve-yipranmis-ciltler-icin-bakim-kremi-40-ml-avene-230906-17-O.jpg",
    "k": "https://www.dermoeczanem.com/avene-cicalfate-hassas-ve-yipranmis-ciltler-icin-bakim-kremi-40-ml",
    "kn": "Dermoeczanem",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.dermoeczanem.com/cilt-bakimi"
   },
   {
-   "id": "h1k46whg",
+   "id": "hhesy7j",
    "c": "Emlak",
    "e": "",
-   "t": "32 Karşıyaka Donanmacı Mahallesi’nde Satılık 3+1 Ara Kat Daire",
-   "d": "Karşıyaka, İzmir · Satılık · Remax Best İzmir Karşıyaka Donanmacı Mahallesi 125 m² 3+1 Oda Satılık Daire ilanı…",
-   "p": 4750000,
-   "f": "https://imaj.emlakjet.com/listing/20077928/B92E9731347E2FA7FDF0FEAD044EEA9720077928.jpg",
-   "k": "https://www.emlakjet.com/ilan/32-karsiyaka-donanmaci-mahallesi-nde-satilik-31-ara-kat-daire-20077928",
+   "t": "Karşıyaka Aksoy Mahallesi'nde Park Manzaralı Satılık 3+1 Daire",
+   "d": "Karşıyaka, İzmir · Satılık · Startkey A Plus Gayri̇menkul İzmir Karşıyaka Aksoy Mahallesi 145 m² 3+1 Oda Satılık…",
+   "p": 6650000,
+   "f": "https://imaj.emlakjet.com/listing/20069122/4874FA223DBC3C1C96E3A93DA718B08920069122.jpg",
+   "k": "https://www.emlakjet.com/ilan/karsiyaka-aksoy-mahallesi-nde-park-manzarali-satilik-31-daire-20069122",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka"
   },
   {
-   "id": "hq4y8ce",
-   "c": "Emlak",
+   "id": "hokb9d9",
+   "c": "Kozmetik",
    "e": "",
-   "t": "Latife Hanımda Tadilatlı Merkezi Konumda 3+1 Daire",
-   "d": "Karşıyaka, İzmir · Satılık · Köycüler Gayrimenkul Limited İzmir Karşıyaka Latife Hanım Mahallesi 120 m² 3+1 Oda…",
-   "p": 4500000,
-   "f": "https://imaj.emlakjet.com/listing/20072700/78E4719F0F55BD7EDB2614CDEF29597D20072700.jpg",
-   "k": "https://www.emlakjet.com/ilan/latife-hanimda-tadilatli-merkezi-konumda-31-daire-20072700",
-   "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
-   "liste": "https://www.emlakjet.com/satilik-daire/izmir-karsiyaka"
+   "t": "Bioderma Sensibio H2O İkili Set 500 ml + 500 ml",
+   "d": "",
+   "p": 1799,
+   "f": "https://witcdn.dermoeczanem.com/bioderma-sensibio-h2o-ikili-set-500-ml-bioderma-205009-32-O.jpg",
+   "k": "https://www.dermoeczanem.com/bioderma-sensibio-h2o-ikili-set-500-ml",
+   "kn": "Dermoeczanem",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.dermoeczanem.com/cilt-bakimi"
   },
   {
-   "id": "hktikfh",
+   "id": "h1sg4em8",
    "c": "Emlak",
    "e": "",
-   "t": "Güzeloba'da Merkezi Konumda Yeni Tadilatlı 3+1 Satılık Daire",
-   "d": "Muratpaşa, Antalya · Satılık · Hazar Yatırım Antalya Muratpaşa Güzeloba Mahallesi 125 m² 3+1 Oda Satılık Daire ilanı…",
-   "p": 7750000,
-   "f": "https://imaj.emlakjet.com/listing/20084406/BB98378457AC8A2D512888FC58E350A120084406.jpg",
-   "k": "https://www.emlakjet.com/ilan/guzeloba-da-merkezi-konumda-yeni-tadilatli-31-satilik-daire-20084406",
+   "t": "Antalya'nın Kalbınde, Hasan Subaşı Caddesı Üzerınde 1+1",
+   "d": "Muratpaşa, Antalya · Satılık · Remax Aqua Antalya Muratpaşa Elmalı Mahallesi 60 m² 1+1 Oda Satılık Daire ilanı…",
+   "p": 2300000,
+   "f": "https://imaj.emlakjet.com/listing/20081046/FBB3355E495903D481859628F489278920081046.jpg",
+   "k": "https://www.emlakjet.com/ilan/antalya-nin-kalbinde-hasan-subasi-caddesi-uzerinde-11-20081046",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/antalya-muratpasa"
   },
   {
-   "id": "h9qekr4",
+   "id": "h64qdd5",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Reeder S919 512 GB Siyah",
+   "d": "",
+   "p": 44100,
+   "f": "https://cdn.akakce.com/z/reeder/reeder-s919-512-gb-siyah.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-reeder-s919-512-gb-siyah-fiyati,1213006658.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/cep-telefonu.html"
+  },
+  {
+   "id": "h1nk38ss",
    "c": "Emlak",
    "e": "",
-   "t": "Çağlayanda Yeni Bina, Jeneratörlü, Deniz Görür 3+1 Satılık",
-   "d": "Muratpaşa, Antalya · Satılık · Neo Gayrimenkul Antalya Muratpaşa Çağlayan Mahallesi 152 m² 3+1 Oda Satılık Daire ilanı…",
-   "p": 45500000,
-   "f": "https://imaj.emlakjet.com/listing/20077343/4CA4E6047BCB335E7FB7E9494B6FADD520077343.jpg",
-   "k": "https://www.emlakjet.com/ilan/caglayanda-yeni-bina-jeneratorlu-deniz-gorur-31-satilik-20077343",
+   "t": "Acil!!-şarampol Cd. Üzeri - Konut & İş Yerine Uygun 2+1",
+   "d": "Muratpaşa, Antalya · Satılık · Remax Aqua Antalya Muratpaşa Üçgen Mahallesi 110 m² 2+1 Oda Satılık Daire ilanı…",
+   "p": 3750000,
+   "f": "https://imaj.emlakjet.com/listing/20081131/E7A5B24883258C411C631B6B9FAFE3C020081131.jpg",
+   "k": "https://www.emlakjet.com/ilan/acil-sarampol-cd-uzeri-konut-is-yerine-uygun-21-20081131",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/antalya-muratpasa"
   },
   {
-   "id": "h7o1qsj",
+   "id": "h1tdw99v",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Barty Kapsüllü Kokteyl Makinesi",
+   "d": "",
+   "p": 28999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/barty/thumb/155806-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/barty-kapsullu-kokteyl-makinesi.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/notebook/"
+  },
+  {
+   "id": "h1ds1py1",
+   "c": "Elektronik",
+   "e": "",
+   "t": "iPhone 17 256 GB Beyaz",
+   "d": "Apple",
+   "p": 82050,
+   "f": "https://cdn.akakce.com/z/apple/iphone-17-256-gb-beyaz.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-17-256-gb-beyaz-fiyati,1182756125.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/cep-telefonu.html"
+  },
+  {
+   "id": "hy36nh9",
    "c": "Emlak",
    "e": "",
-   "t": "Akademi'den Kira Getirili Asansörlü Geniş Satılık 1+1",
-   "d": "Tepebaşı, Eskişehir · Satılık · Akademi Emlak Danışmanlık Eskişehir Tepebaşı Sütlüce Mahallesi 58 m² 1+1 Oda Satılık…",
-   "p": 1975000,
-   "f": "https://imaj.emlakjet.com/listing/20077488/A5AA63240563075177D8CE887A83734020077488.jpg",
-   "k": "https://www.emlakjet.com/ilan/akademi-den-14-000-tl-kira-getirili-asansorlu-genis-satilik-11-20077488",
+   "t": "Rba Dan Şirintepe Mh Satılık 3+1 Daire",
+   "d": "Tepebaşı, Eskişehir · Satılık · Rba Gayri̇menkul Eskişehir Tepebaşı Şirintepe Mahallesi 145 m² 3+1 Oda Satılık Daire…",
+   "p": 3650000,
+   "f": "https://imaj.emlakjet.com/listing/20069406/7A5A25103A95389C46B5ABEA09EBFC6D20069406.jpg",
+   "k": "https://www.emlakjet.com/ilan/rba-dan-sirintepe-mh-satilik-31-daire-20069406",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi"
   },
   {
-   "id": "h1ogpob1",
+   "id": "hc47av8",
    "c": "Emlak",
    "e": "",
-   "t": "Emlakcımdan Işıklar Mah.full Yapılı Köşe 2+1 Satılık Daire",
-   "d": "Tepebaşı, Eskişehir · Satılık · Emlakcım Gayrimenkul Eskişehir Tepebaşı Işıklar Mahallesi 90 m² 2+1 Oda Satılık Daire…",
-   "p": 2850000,
-   "f": "https://imaj.emlakjet.com/listing/20082716/DD9502140526A81FC4BFE19D455D9F5A20082716.jpg",
-   "k": "https://www.emlakjet.com/ilan/emlakcimdan-isiklar-mah-full-yapili-kose-21-satilik-daire-20082716",
+   "t": "Rba Dan Fatih Mh Satılık Fırsat Daire",
+   "d": "Tepebaşı, Eskişehir · Satılık · Rba Gayri̇menkul Eskişehir Tepebaşı Fatih Mahallesi 120 m² 3+1 Oda Satılık Daire ilanı…",
+   "p": 3650000,
+   "f": "https://imaj.emlakjet.com/listing/19957212/878D22D9C243B34CB0C50E6D7AD601A219957212.jpg",
+   "k": "https://www.emlakjet.com/ilan/rba-dan-fatih-mh-satilik-firsat-daire-19957212",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/satilik-daire/eskisehir-tepebasi"
   },
   {
-   "id": "h8erpx1",
+   "id": "h1rirhez",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Samsung Galaxy A57 256 GB 8 GB",
+   "d": "",
+   "p": 28999,
+   "f": "https://cdn.akakce.com/z/samsung/samsung-galaxy-a57-256-gb.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-samsung-galaxy-a57-256-gb-fiyati,1465700697.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/cep-telefonu.html"
+  },
+  {
+   "id": "hq4jmjk",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Msi Cyborg 15 Max 13.Nesil Core i7 13620H-RTX5060 8GB-16GB-1Tb Ssd-15.6inc-W11",
+   "d": "",
+   "p": 79999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/msi/thumb/159934-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/msi-cyborg-15-max-13-nesil-core-i7-13460h-rtx5060-8gb-16gb-1tb-ssd-15-6inc-w11.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/notebook/"
+  },
+  {
+   "id": "h18r24zj",
    "c": "Emlak",
    "e": "",
-   "t": "Beşiktaş Gazi Refik Sokak'ta Bakımlı 130 M2 3+1 Bakımlı Dubleks Daire",
-   "d": "AYLIK kira — Beşiktaş, İstanbul · Burç Emlak İstanbul Beşiktaş Türkali Mahallesi 130 m² 3+1 Oda Kiralık Daire ilanı…",
-   "p": 60000,
-   "f": "https://imaj.emlakjet.com/listing/20012276/C993B931612158D960627775089071AD20012276.jpg",
-   "k": "https://www.emlakjet.com/ilan/besiktas-gazi-refik-sokak-ta-bakimli-130-m2-31-bakimli-dubleks-daire-20012276",
+   "t": "Ulus Mef Konutları Sitesi Havuzlu Ve Otoparklı Kiralık 2+1 Daire",
+   "d": "AYLIK kira — Beşiktaş, İstanbul · Remax Hills İstanbul Beşiktaş Ulus Mahallesi 100 m² 2+1 Oda Kiralık Daire ilanı…",
+   "p": 100000,
+   "f": "https://imaj.emlakjet.com/listing/20065453/9E63ECC7C1476E97DC3F8E790661562220065453.jpg",
+   "k": "https://www.emlakjet.com/ilan/ulus-mef-konutlari-sitesi-havuzlu-ve-otoparkli-kiralik-21-daire-20065453",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/kiralik-daire/istanbul-besiktas"
   },
   {
-   "id": "h1f7lbd7",
+   "id": "h1yf4dzu",
    "c": "Emlak",
    "e": "",
-   "t": "Gayrettepe Merkezde 3+1 155 M2 3.kat Asansörlü Otoparklı Klimalı Çift Balkonlu Çift…",
-   "d": "AYLIK kira — Beşiktaş, İstanbul · Net Emlak İstanbul Beşiktaş Gayrettepe Mahallesi 155 m² 3+1 Oda Kiralık Daire ilanı…",
-   "p": 85000,
-   "f": "https://imaj.emlakjet.com/listing/20079241/AE3F3D9291E3B61DBB66BC980424D71520079241.jpg",
-   "k": "https://www.emlakjet.com/ilan/gayrettepe-merkezde-31-155-m2-3-kat-asansorlu-otoparkli-klimali-cift-balkonlu-cift-tuvaletli-ferah-20079241",
+   "t": "Fırsat Çarşıda Yokuşsuz Eşyalı Masrafsız Boş İskeleye 3.dk.",
+   "d": "AYLIK kira — Beşiktaş, İstanbul · Mehmethan Emlak İstanbul Beşiktaş Sinanpaşa Mahallesi 70 m² 1+1 Oda Kiralık Daire ilanı…",
+   "p": 37000,
+   "f": "https://imaj.emlakjet.com/listing/20048380/6E14DFDA9DBD9D8F09109C4E44250C1420048380.jpg",
+   "k": "https://www.emlakjet.com/ilan/firsat-carsida-yokussuz-esyali-masrafsiz-bos-iskeleye-3-dk-20048380",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/kiralik-daire/istanbul-besiktas"
   },
   {
-   "id": "h8w4et9",
+   "id": "hdiv3t5",
    "c": "Emlak",
    "e": "",
-   "t": "Gaziosmanpaşa Kuleli Sokakda Özel Bahçeli Kombili Eşyalı 2+1",
-   "d": "AYLIK kira — Çankaya, Ankara · Ata Gayrimenkul Ankara Çankaya Kazım Özalp Mahallesi 96 m² 2+1 Oda Kiralık Daire ilanı…",
-   "p": 42000,
-   "f": "https://imaj.emlakjet.com/listing/20075269/A840E0C4617F1CC51B584ECEE364157020075269.jpg",
-   "k": "https://www.emlakjet.com/ilan/gaziosmanpasa-kuleli-sokakda-ozel-bahceli-kombili-esyali-21-20075269",
+   "t": "Çankaya Gaziosmapaşa Nenehatun Cadddesi Yeni Binada 1+1 Asansör Garajlı Kiralık Ofis &…",
+   "d": "AYLIK kira — Çankaya, Ankara · Borsem Kuleli Temsilciliği Ankara Çankaya 100.yıl Mahallesi 65 m² 1+1 Oda Kiralık Daire…",
+   "p": 37000,
+   "f": "https://imaj.emlakjet.com/listing/20082596/2E3C1B290ED729E51C69113250732AEC20082596.jpg",
+   "k": "https://www.emlakjet.com/ilan/cankaya-gaziosmapasa-nenehatun-cadddesi-yeni-binada-11-asansor-garajli-kiralik-ofis-isyerleri-20082596",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya"
   },
   {
-   "id": "h1vpjxc7",
+   "id": "huuf597",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Asus Tuf Gaming A16 8.Nesil Ryzen 9 8940HX-RTX5070 8Gb-16Gb-1Tb-16inc-W11",
+   "d": "",
+   "p": 104999,
+   "f": "https://cdn.vatanbilgisayar.com/Upload/PRODUCT/asus/thumb/159276-1_small.jpg",
+   "k": "https://www.vatanbilgisayar.com/asus-tuf-gaming-a16-8-nesil-ryzen-9-8940hx-rtx5070-8gb-16gb-1tb-16inc-w11-159276.html",
+   "kn": "Vatan Bilgisayar",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.vatanbilgisayar.com/notebook/"
+  },
+  {
+   "id": "h12z6802",
    "c": "Emlak",
    "e": "",
-   "t": "Öncebecı Ünıversıteler Bölgesı 3+1 Katta Kıralık Daıre",
-   "d": "AYLIK kira — Çankaya, Ankara · Remax Vesta Ankara Çankaya Ön Cebeci Mahallesi 85 m² 3+1 Oda Kiralık Daire ilanı…",
-   "p": 30000,
-   "f": "https://imaj.emlakjet.com/listing/20080538/AAE2D78B7CBD50CB54FD77FFB75D283520080538.jpg",
-   "k": "https://www.emlakjet.com/ilan/oncebeci-universiteler-bolgesi-31-katta-kiralik-daire-20080538",
+   "t": "Çamkaya Cebeci Ertuğrul Gazi Mah 3+1 Full Yapılı Kiralık Daire",
+   "d": "AYLIK kira — Çankaya, Ankara · Cadde Emlak Ankara Çankaya Ertuğrulgazi Mahallesi 120 m² 3+1 Oda Kiralık Daire ilanı…",
+   "p": 41000,
+   "f": "https://imaj.emlakjet.com/listing/20079436/6B2D4E10C8D0BF6FB6A6D7CCFCAB849920079436.jpg",
+   "k": "https://www.emlakjet.com/ilan/camkaya-cebeci-ertugrul-gazi-mah-31-full-yapili-kiralik-daire-20079436",
    "kn": "Emlakjet ilanı",
-   "kontrol": "2026-11-11T07:23:07.617Z",
+   "kontrol": "2026-11-11T08:07:11.504Z",
    "liste": "https://www.emlakjet.com/kiralik-daire/ankara-cankaya"
+  },
+  {
+   "id": "h18r9zvz",
+   "c": "Elektronik",
+   "e": "",
+   "t": "MacBook Pro M5 16 GB 1 TB SSD 14.2\" Notebook",
+   "d": "Apple",
+   "p": 113000,
+   "f": "https://cdn.akakce.com/z/apple/macbook-pro-m5-16-gb-1-tb-ssd-14-2-notebook.jpg",
+   "k": "https://www.akakce.com/laptop-notebook/en-ucuz-macbook-pro-m5-16-gb-1-tb-ssd-14-2-notebook-fiyati,1226492636.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/notebook.html"
+  },
+  {
+   "id": "hlo4cst",
+   "c": "Elektronik",
+   "e": "",
+   "t": "MacBook Pro M5 Pro 48 GB 1 TB SSD 16.2\" MGEC4TU/A Uzay Siyahı",
+   "d": "Apple",
+   "p": 194999,
+   "f": "https://cdn.akakce.com/z/apple/macbook-pro-m5-pro-48-gb-1-tb-ssd-16-2-mgec4tu-a-uzay-siyahi.jpg",
+   "k": "https://www.akakce.com/laptop-notebook/en-ucuz-macbook-pro-m5-pro-48-gb-1-tb-ssd-16-2-mgec4tu-a-uzay-siyahi-fiyati,1435644324.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/notebook.html"
+  },
+  {
+   "id": "hw5w91r",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Lenovo Ideapad Slim 3 15AMN8 82XQ01D2TX Ryzen 5 40 8 GB 512 GB SSD Radeon 610M 15.6\"…",
+   "d": "",
+   "p": 26196,
+   "f": "https://cdn.akakce.com/z/lenovo/lenovo-ideapad-slim-3-15amn8-82xq01d2tx-ryzen-5-40-8-gb-512-gb-ssd-radeon-610m-15-6-full-hd-notebook.jpg",
+   "k": "https://www.akakce.com/laptop-notebook/en-ucuz-lenovo-ideapad-slim-3-15amn8-82xq01d2tx-ryzen-5-40-8-gb-512-gb-ssd-radeon-610m-15-6-full-hd-notebook-fiyati,1666977932.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/notebook.html"
+  },
+  {
+   "id": "h1r9wo76",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Dyson V16 Piston Animal Submarine Islak Kuru Dikey Süpürge",
+   "d": "",
+   "p": 49999,
+   "f": "https://cdn.akakce.com/z/dyson/dyson-v16-piston-animal-submarine-islak-kuru.jpg",
+   "k": "https://www.akakce.com/dikey-supurge/en-ucuz-dyson-v16-piston-animal-submarine-islak-kuru-fiyati,1170469170.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/dikey-supurge.html"
+  },
+  {
+   "id": "hh7f14x",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Dyson V15S Detect Submarine Islak Kuru Şarjlı Dikey Süpürge",
+   "d": "",
+   "p": 31499,
+   "f": "https://cdn.akakce.com/z/dyson/dyson-v15s-detect-submarine-islak-ve-kuru-dikey.jpg",
+   "k": "https://www.akakce.com/dikey-supurge/en-ucuz-dyson-v15s-detect-submarine-islak-ve-kuru-dikey-fiyati,480448971.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/dikey-supurge.html"
+  },
+  {
+   "id": "h1ukd3tk",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Dyson V16 Piston Animal Şarjlı Dikey Süpürge",
+   "d": "",
+   "p": 45571,
+   "f": "https://cdn.akakce.com/z/dyson/dyson-v16-piston-animal-sarjli.jpg",
+   "k": "https://www.akakce.com/dikey-supurge/en-ucuz-dyson-v16-piston-animal-sarjli-fiyati,1170469189.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/dikey-supurge.html"
+  },
+  {
+   "id": "h45pr8a",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Philips 2200 Serisi EP2220/10 Tam Otomatik Espresso Makinesi",
+   "d": "",
+   "p": 9458,
+   "f": "https://cdn.akakce.com/z/philips/philips-2200-serisi-ep2220-10-tam-otomatik.jpg",
+   "k": "https://www.akakce.com/espresso-makinesi/en-ucuz-philips-2200-serisi-ep2220-10-tam-otomatik-fiyati,511317475.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kahve-makinesi.html"
+  },
+  {
+   "id": "hp7s00r",
+   "c": "Elektronik",
+   "e": "",
+   "t": "iPhone 16 Pro Max 256 GB",
+   "d": "Apple",
+   "p": 111999,
+   "f": "https://cdn.akakce.com/z/apple/iphone-16-pro-max.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-16-pro-max-fiyati,491759906.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kahve-makinesi.html"
+  },
+  {
+   "id": "hq0wa6s",
+   "c": "Elektronik",
+   "e": "",
+   "t": "Bosch WGK264Z0TR 1400 Devir 11 kg Çamaşır Makinesi",
+   "d": "",
+   "p": 34257,
+   "f": "https://cdn.akakce.com/z/bosch/bosch-wgk264z0tr-1400-devir-11-kg.jpg",
+   "k": "https://www.akakce.com/camasir-makinesi/en-ucuz-bosch-wgk264z0tr-1400-devir-11-kg-fiyati,1114575042.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/camasir-makinesi.html"
+  },
+  {
+   "id": "huy4t1",
+   "c": "Elektronik",
+   "e": "",
+   "t": "LG W4W8BVKKZHM WashTower 1400 Devir 12 kg / 10 kg Kurutmalı Çamaşır Makinesi",
+   "d": "",
+   "p": 85875,
+   "f": "https://cdn.akakce.com/z/lg/lg-w4w8bvkkzhm-washtower-12-kg-10-kg-kurutmali.jpg",
+   "k": "https://www.akakce.com/camasir-makinesi/en-ucuz-lg-w4w8bvkkzhm-washtower-12-kg-10-kg-kurutmali-fiyati,538508924.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/camasir-makinesi.html"
+  },
+  {
+   "id": "hjuhzq",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "iPhone 14 Pro Max 128 GB",
+   "d": "Apple",
+   "p": 78787,
+   "f": "https://cdn.akakce.com/z/apple/iphone-14-pro-max.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-14-pro-max-fiyati,1411234580.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/parfum.html"
+  },
+  {
+   "id": "h77hygi",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Chanel Bleu De Chanel EDT 100 ml Erkek Parfüm",
+   "d": "",
+   "p": 2352,
+   "f": "https://cdn.akakce.com/z/chanel/chanel-bleu-de-edt-100-ml-erkek.jpg",
+   "k": "https://www.akakce.com/parfum/en-ucuz-chanel-bleu-de-edt-100-ml-erkek-fiyati,737825.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/parfum.html"
+  },
+  {
+   "id": "hnht0ee",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Bentley For Men Intense EDP 100 ml Erkek Parfüm",
+   "d": "",
+   "p": 2499,
+   "f": "https://cdn.akakce.com/z/bentley/bentley-for-men-intense-edp-100-ml.jpg",
+   "k": "https://www.akakce.com/parfum/en-ucuz-bentley-for-men-intense-edp-100-ml-fiyati,5703320.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/parfum.html"
+  },
+  {
+   "id": "h5527tk",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Loris K-204 EDP 50 ml Kadın Parfüm",
+   "d": "",
+   "p": 144,
+   "f": "https://cdn.akakce.com/z/loris/loris-k-204-edp-50-ml-kadin.jpg",
+   "k": "https://www.akakce.com/parfum/en-ucuz-loris-k-204-edp-50-ml-kadin-fiyati,1253259228.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/parfum.html"
+  },
+  {
+   "id": "h2nkt76",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "iPhone 13 128 GB",
+   "d": "Apple",
+   "p": 49659,
+   "f": "https://cdn.akakce.com/z/apple/iphone-13.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-13-fiyati,1101115595.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/parfum.html"
+  },
+  {
+   "id": "huwv3cs",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "iPhone 14 128 GB",
+   "d": "Apple",
+   "p": 59687,
+   "f": "https://cdn.akakce.com/z/apple/iphone-14.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-14-fiyati,1411233953.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sampuan,47.html"
+  },
+  {
+   "id": "h1me4bei",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Siveno Tüm Saçlar İçin Kepek Önleyici Şampuan 300 ml",
+   "d": "",
+   "p": 270,
+   "f": "https://img.pzrmcdn.com/asset/8681511098889/images/siveno100doalkepeekaretkiliampuangnlkbakmyalsalarayaackeklikzmvegan300ml-18d496da7-eafe-4bfc-b46b-178b9259e742.jpg",
+   "k": "https://www.akakce.com/sampuan/en-ucuz-siveno-tum-saclar-icin-kepek-onleyici-300-ml-fiyati,1135916032.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sampuan,47.html"
+  },
+  {
+   "id": "h10v74ue",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "VASSO WOMEN Yıpranmış Saçlar Için Keratinli Acil Kurtarma Bakım Şampuanı 500 ml",
+   "d": "",
+   "p": 957,
+   "f": "https://image01.idefix.com/resize/500/500/product/28559493/vassovasso-yipranmis-saclar-icin-keratinli-acil-kurtarma-bakim-sampuani-500-ml-6a61b363a8f32.jpg?productpriceid=35309504",
+   "k": "https://www.akakce.com/sampuan/en-ucuz-vasso-women-yipranmis-saclar-icin-keratinli-acil-kurtarma-bakim-i-500-ml-fiyati,1105864484.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sampuan,47.html"
+  },
+  {
+   "id": "h1h4vowe",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "Samsung Galaxy S25 128 GB",
+   "d": "",
+   "p": 47328,
+   "f": "https://cdn.akakce.com/z/samsung/samsung-galaxy-s25.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-samsung-galaxy-s25-fiyati,2095843206.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/ruj.html"
+  },
+  {
+   "id": "heixk6c",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "LYKD Merry Ruj 291 Soft Coral",
+   "d": "",
+   "p": 332,
+   "f": "https://cdn.akakce.com/z/lykd/lykd-good-mood-merry-291-soft-coral.jpg",
+   "k": "https://www.akakce.com/ruj/en-ucuz-lykd-good-mood-merry-291-soft-coral-fiyati,1774474580.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/ruj.html"
+  },
+  {
+   "id": "h3xih7s",
+   "c": "Kozmetik",
+   "e": "",
+   "t": "KIKO Milano Gossamer Emotion Creamy Stick Ruj",
+   "d": "",
+   "p": 699,
+   "f": "https://cdn.akakce.com/z/kiko/kiko-gossamer-emotion-creamy-stick.jpg",
+   "k": "https://www.akakce.com/ruj/en-ucuz-kiko-gossamer-emotion-creamy-stick-fiyati,1345611814.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/ruj.html"
+  },
+  {
+   "id": "h1jwma12",
+   "c": "Market",
+   "e": "",
+   "t": "Pınar Labne 400 gr",
+   "d": "",
+   "p": 178,
+   "f": "https://cdn.akakce.com/z/pinar/pinar-400-gr-labne-i.jpg",
+   "k": "https://www.akakce.com/peynir/en-ucuz-pinar-labne-400-g-fiyati,5897619.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/peynir.html"
+  },
+  {
+   "id": "h1tod1to",
+   "c": "Market",
+   "e": "",
+   "t": "İçim Taze Kaşar Peyniri 600 gr",
+   "d": "",
+   "p": 290,
+   "f": "https://cdn.akakce.com/z/icim/icim-600-gr-kasar-i.jpg",
+   "k": "https://www.akakce.com/peynir/en-ucuz-icim-kasar-i-600-gr-fiyati,527929117.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/peynir.html"
+  },
+  {
+   "id": "h1rge7qa",
+   "c": "Market",
+   "e": "",
+   "t": "Kavlak Gold 1 kg Gemlik Siyah Zeytin",
+   "d": "",
+   "p": 965,
+   "f": "https://cdn.akakce.com/z/kavlak/kavlak-gold-gemlik-siyah-1-kg.jpg",
+   "k": "https://www.akakce.com/zeytin/en-ucuz-kavlak-gold-gemlik-siyah-1-kg-fiyati,786880777.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/zeytin.html"
+  },
+  {
+   "id": "hzvbh5e",
+   "c": "Market",
+   "e": "",
+   "t": "Şems 231-260 Kalibre Yağlı Siyah Sele Zeytin 2 kg",
+   "d": "",
+   "p": 900,
+   "f": "https://cdn.akakce.com/z/sems/sems-231-260-kalibre-yagli-siyah-sele-2-kg.jpg",
+   "k": "https://www.akakce.com/zeytin/en-ucuz-sems-231-260-kalibre-yagli-siyah-sele-2-kg-fiyati,117223864.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/zeytin.html"
+  },
+  {
+   "id": "h1aim58r",
+   "c": "Market",
+   "e": "",
+   "t": "Biryağ Ayçiçek Yağı 5 lt 4'lü Pet",
+   "d": "",
+   "p": 2120,
+   "f": "https://www.bunlareve.com/idea/hr/29/myassets/products/454/5-lt-pet-ambalaj-4-lu-paket-23560.jpeg?revision=1775738541",
+   "k": "https://www.akakce.com/sivi-yag/en-ucuz-biryag-aycicek-yagi-5-lt-pet-x-4-adet-fiyati,1218624531.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/aycicek-yagi.html"
+  },
+  {
+   "id": "h1kvaccl",
+   "c": "Market",
+   "e": "",
+   "t": "Komili Ayçiçek Yağı 5 lt Pet",
+   "d": "",
+   "p": 520,
+   "f": "https://cdn.akakce.com/z/komili/komili-kubbeli-pet-aycicek-yagi-5lt.jpg",
+   "k": "https://www.akakce.com/sivi-yag/en-ucuz-komili-kubbeli-pet-aycicek-yagi-5lt-fiyati,48056176.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/aycicek-yagi.html"
+  },
+  {
+   "id": "h1gqhpfs",
+   "c": "Market",
+   "e": "",
+   "t": "Tchibo Professional Espresso Çekirdek Kahve 1 kg",
+   "d": "",
+   "p": 679,
+   "f": "https://cdn.akakce.com/tchibo/tchibo-proffessional-espresso-1000-gr-cekirdek-kahve-z.jpg",
+   "k": "https://www.akakce.com/espresso-kahve/en-ucuz-tchibo-proffessional-espresso-1000-gr-cekirdek-kahve-fiyati,305855193.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kahve.html"
+  },
+  {
+   "id": "hn9x4gq",
+   "c": "Market",
+   "e": "",
+   "t": "Kurukahveci Mehmet Efendi Türk Kahvesi 100 gr 25'li",
+   "d": "",
+   "p": 1989,
+   "f": "https://cdn.akakce.com/z/kurukahveci-mehmet-efendi/kurukahveci-mehmet-efendi-100-gr-25-li-paket.jpg",
+   "k": "https://www.akakce.com/turk-kahvesi/en-ucuz-kurukahveci-mehmet-efendi-100-gr-25-li-paket-fiyati,8957075.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kahve.html"
+  },
+  {
+   "id": "hf7iwjb",
+   "c": "Market",
+   "e": "",
+   "t": "Ülker 9 Kat Rulokat Fındıklı Gofret 170 gr",
+   "d": "",
+   "p": 75,
+   "f": "https://cdn.akakce.com/ulker/ulker-9-kat-tat-rulokat-170-gr-findikli-kremali-z.jpg",
+   "k": "https://www.akakce.com/gofret/en-ucuz-ulker-rulokat-findikli-170-gr-fiyati,688775706.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/gofret.html"
+  },
+  {
+   "id": "h89o8hf",
+   "c": "Market",
+   "e": "",
+   "t": "Şölen Nutymax Antep Fıstıklı Kremalı Gofret 44 gr 3'lü",
+   "d": "",
+   "p": 106,
+   "f": "https://cdn.akakce.com/z/solen/solen-nutymax-44-gr-3-lu-paket-antep-fistikli-kremali.jpg",
+   "k": "https://www.akakce.com/gofret/en-ucuz-solen-nutymax-44-gr-3-lu-paket-antep-fistikli-kremali-fiyati,1347341210.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/gofret.html"
+  },
+  {
+   "id": "h1xd5t4d",
+   "c": "Market",
+   "e": "",
+   "t": "Arex Matik Bahar Esintisi Beyazlar için 9 kg Toz Deterjan",
+   "d": "",
+   "p": 300,
+   "f": "https://cdn.akakce.com/z/arex/arex-matik-bahar-esintisi-beyazlar-icin-9-kg.jpg",
+   "k": "https://www.akakce.com/toz-deterjan/en-ucuz-arex-matik-bahar-esintisi-beyazlar-icin-9-kg-fiyati,1258689923.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/toz-deterjan.html"
+  },
+  {
+   "id": "h10yh8nf",
+   "c": "Market",
+   "e": "",
+   "t": "Persil Sık Yıkananlar Beyazlar ve Renkliler için 9 kg Toz Deterjan",
+   "d": "",
+   "p": 342,
+   "f": "https://cdn.akakce.com/z/persil/persil-sik-yikananlar-beyazlarlar-ve-renkliler-icin-9-kg.jpg",
+   "k": "https://www.akakce.com/toz-deterjan/en-ucuz-persil-sik-yikananlar-beyazlarlar-ve-renkliler-icin-9-kg-fiyati,986721791.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/toz-deterjan.html"
+  },
+  {
+   "id": "h3ay4gj",
+   "c": "Market",
+   "e": "",
+   "t": "New Balance 9060 Sneaker",
+   "d": "",
+   "p": 3184,
+   "f": "https://cdn.akakce.com/z/new-balance/new-balance-9060-unisex.jpg",
+   "k": "https://www.akakce.com/spor-ayakkabi/en-ucuz-new-balance-9060-unisex-fiyati,353454243.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/seker,28.html"
+  },
+  {
+   "id": "h1ugyz4d",
+   "c": "Market",
+   "e": "",
+   "t": "New Balance 530 Spor Ayakkabı",
+   "d": "",
+   "p": 2699,
+   "f": "https://cdn.akakce.com/z/new-balance/new-balance-530-unisex.jpg",
+   "k": "https://www.akakce.com/spor-ayakkabi/en-ucuz-new-balance-530-unisex-fiyati,2038198368.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/seker,28.html"
+  },
+  {
+   "id": "h1noobuv",
+   "c": "Market",
+   "e": "",
+   "t": "Trendline Gourmet 15 kg Yetişkin Kedi Maması",
+   "d": "",
+   "p": 964,
+   "f": "https://cdn.akakce.com/trendline/trendline-gourmet-15-kg-yetiskin-kuru-z.jpg",
+   "k": "https://www.akakce.com/kedi-mamasi/en-ucuz-trendline-gourmet-15-kg-yetiskin-kuru-fiyati,21667801.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kedi-mamasi.html"
+  },
+  {
+   "id": "h1wril5h",
+   "c": "Market",
+   "e": "",
+   "t": "Pawnee Tavuklu 15 kg Yetişkin Kedi Maması",
+   "d": "",
+   "p": 1400,
+   "f": "https://cdn.akakce.com/z/pawnee/pawnee-tavuklu-15-kg-yetiskin.jpg",
+   "k": "https://www.akakce.com/kedi-mamasi/en-ucuz-pawnee-tavuklu-15-kg-yetiskin-fiyati,1667044623.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kedi-mamasi.html"
+  },
+  {
+   "id": "hnx9rd1",
+   "c": "Spor",
+   "e": "",
+   "t": "Adidas Terrex Anylander Rain.Rdy Erkek Yürüyüş Ayakkabısı",
+   "d": "",
+   "p": 3836,
+   "f": "https://cdn.akakce.com/z/adidas/adidas-terrex-anylander-rain-rdy-erkek-yuruyus-ayakkabisi.jpg",
+   "k": "https://www.akakce.com/spor-ayakkabi/en-ucuz-adidas-terrex-anylander-rain-rdy-erkek-yuruyus-ayakkabisi-fiyati,785010229.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/spor-ayakkabi.html"
+  },
+  {
+   "id": "h1j9wr6s",
+   "c": "Spor",
+   "e": "",
+   "t": "Adidas Terrex Skychaser AX5 Gore-Tex Erkek Outdoor Ayakkabı",
+   "d": "",
+   "p": 4726,
+   "f": "https://cdn.akakce.com/z/adidas/adidas-terrex-skychaser-ax5-gore-tex-erkek-outdoor-ayakkabi.jpg",
+   "k": "https://www.akakce.com/spor-ayakkabi/en-ucuz-adidas-terrex-skychaser-ax5-gore-tex-erkek-outdoor-ayakkabi-fiyati,1164341503.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/spor-ayakkabi.html"
+  },
+  {
+   "id": "h14pycnh",
+   "c": "Spor",
+   "e": "",
+   "t": "New Balance 408 ML408WS Beyaz-Gümüş Spor Ayakkabı",
+   "d": "",
+   "p": 3067,
+   "f": "https://cdn.akakce.com/z/new-balance/new-balance-408-beyaz-unisex-ml408ws.jpg",
+   "k": "https://www.akakce.com/spor-ayakkabi/en-ucuz-new-balance-408-beyaz-unisex-ml408ws-fiyati,588412093.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/spor-ayakkabi.html"
+  },
+  {
+   "id": "hsd4md",
+   "c": "Spor",
+   "e": "",
+   "t": "Supplementler Whey Protein 30 gr Tek Kullanımlık",
+   "d": "",
+   "p": 99,
+   "f": "https://cdn.akakce.com/supplementler/supplementler-whey-protein-30-gr-tek-kullanimlik-z.jpg",
+   "k": "https://www.akakce.com/protein-tozu/en-ucuz-supplementler-whey-protein-30-gr-tek-kullanimlik-fiyati,1121165823.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/protein-tozu.html"
+  },
+  {
+   "id": "hk6lm8n",
+   "c": "Spor",
+   "e": "",
+   "t": "iPhone Duo 256 GB",
+   "d": "Apple",
+   "p": 229999,
+   "f": "https://cdn.akakce.com/z/apple/iphone-duo.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-duo-fiyati,1704447546.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/protein-tozu.html"
+  },
+  {
+   "id": "h1vqi69x",
+   "c": "Spor",
+   "e": "",
+   "t": "iPhone 17 256 GB",
+   "d": "Apple",
+   "p": 82050,
+   "f": "https://cdn.akakce.com/z/apple/iphone-17.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-17-fiyati,370526300.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/dag-bisikleti.html"
+  },
+  {
+   "id": "h1xy0zoe",
+   "c": "Spor",
+   "e": "",
+   "t": "Rockrider Expl 100 29 Inç Jant Mekanik Disk Fren Dağ Bisikleti Gri Decathlon",
+   "d": "",
+   "p": 26990,
+   "f": "https://contents.mediadecathlon.com/p3047824/k$d198bfec5fa2b3c6ce3fcabfefdfab22/picture.jpg",
+   "k": "https://www.akakce.com/bisiklet/en-ucuz-rockrider-expl-100-29-inc-jant-mekanik-disk-fren-dag-i-gri-decathlon-fiyati,1478113277.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/dag-bisikleti.html"
+  },
+  {
+   "id": "hhzw37q",
+   "c": "Spor",
+   "e": "",
+   "t": "Molten B7G4500 FIBA Onaylı 7 Numara Basketbol Topu",
+   "d": "",
+   "p": 5857,
+   "f": "https://cdn.akakce.com/z/molten/molten-b7g4500-fiba-onayli-7-no-tbl-basketbol-mac-topu.jpg",
+   "k": "https://www.akakce.com/basketbol-topu/en-ucuz-molten-b7g4500-fiba-onayli-7-no-tbl-basketbol-mac-topu-fiyati,1366956160.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/basketbol-topu.html"
+  },
+  {
+   "id": "htt2f8w",
+   "c": "Spor",
+   "e": "",
+   "t": "Molten B7G5000 FIBA Onaylı 7 Numara Basketbol Topu",
+   "d": "",
+   "p": 4656,
+   "f": "https://cdn.akakce.com/z/molten/molten-b7g5000-fiba-onayli-deri-7-no-basketbol-mac-topu.jpg",
+   "k": "https://www.akakce.com/basketbol-topu/en-ucuz-molten-b7g5000-fiba-onayli-deri-7-no-basketbol-mac-topu-fiyati,1155712357.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/basketbol-topu.html"
+  },
+  {
+   "id": "hnvk343",
+   "c": "Giyim",
+   "e": "",
+   "t": "Puma Ess+ Padded 849349 Erkek Şişme Mont",
+   "d": "",
+   "p": 2243,
+   "f": "https://cdn.akakce.com/z/puma/puma-ess-padded-849349-erkek-sisme-mont.jpg",
+   "k": "https://www.akakce.com/mont/en-ucuz-puma-ess-padded-849349-erkek-sisme-mont-fiyati,276323855.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/mont.html"
+  },
+  {
+   "id": "h1a2zlnu",
+   "c": "Giyim",
+   "e": "",
+   "t": "Adidas Helionic Down Kapüşonlu Erkek Şişme Mont",
+   "d": "",
+   "p": 5123,
+   "f": "https://cdn.akakce.com/z/adidas/adidas-helionic-down-kapusonlu-erkek-sisme-mont.jpg",
+   "k": "https://www.akakce.com/mont/en-ucuz-adidas-helionic-down-kapusonlu-erkek-sisme-mont-fiyati,803722271.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/mont.html"
+  },
+  {
+   "id": "hteid5j",
+   "c": "Giyim",
+   "e": "",
+   "t": "Millet Fitz Roy MIV8628 Kapüşonlu Erkek Outdoor Mont",
+   "d": "",
+   "p": 3667,
+   "f": "https://cdn.akakce.com/z/millet/millet-fitz-roy-miv8628-kapusonlu-erkek-outdoor-mont.jpg",
+   "k": "https://www.akakce.com/mont/en-ucuz-millet-fitz-roy-miv8628-kapusonlu-erkek-outdoor-mont-fiyati,320843437.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/mont.html"
+  },
+  {
+   "id": "hro1ajr",
+   "c": "Giyim",
+   "e": "",
+   "t": "iPhone 17 Pro 256 GB",
+   "d": "Apple",
+   "p": 99999,
+   "f": "https://cdn.akakce.com/z/apple/iphone-17-pro.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-17-pro-fiyati,370526308.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/palto.html"
+  },
+  {
+   "id": "h10u55w8",
+   "c": "Giyim",
+   "e": "",
+   "t": "iPhone 15 Pro 128 GB",
+   "d": "Apple",
+   "p": 90724,
+   "f": "https://cdn.akakce.com/z/apple/iphone-15-pro.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-15-pro-fiyati,1745758200.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/palto.html"
+  },
+  {
+   "id": "h1nk2l27",
+   "c": "Giyim",
+   "e": "",
+   "t": "Samsung Galaxy S25 Ultra 256 GB",
+   "d": "",
+   "p": 68160,
+   "f": "https://cdn.akakce.com/z/samsung/samsung-galaxy-s25-ultra.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-samsung-galaxy-s25-ultra-fiyati,651960345.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/palto.html"
+  },
+  {
+   "id": "h13nn4z2",
+   "c": "Giyim",
+   "e": "",
+   "t": "iPhone 17 Pro Max 256 GB",
+   "d": "Apple",
+   "p": 105699,
+   "f": "https://cdn.akakce.com/z/apple/iphone-17-pro-max.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-17-pro-max-fiyati,370526315.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sweatshirt.html"
+  },
+  {
+   "id": "h1o3fph3",
+   "c": "Giyim",
+   "e": "",
+   "t": "iPhone 16 Pro 128 GB",
+   "d": "Apple",
+   "p": 109825,
+   "f": "https://cdn.akakce.com/z/apple/iphone-16-pro-128-gb.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-iphone-16-pro-fiyati,760848471.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sweatshirt.html"
+  },
+  {
+   "id": "h1mp1453",
+   "c": "Giyim",
+   "e": "",
+   "t": "AirPods 5. Nesil",
+   "d": "Apple",
+   "p": 8285,
+   "f": "https://cdn.akakce.com/z/apple/airpods-5-nesil.jpg",
+   "k": "https://www.akakce.com/bluetooth-kulaklik/en-ucuz-airpods-5-nesil-fiyati,1686231232.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/sweatshirt.html"
+  },
+  {
+   "id": "hma7bg2",
+   "c": "Giyim",
+   "e": "",
+   "t": "Poco X8 Pro 256 GB 8 GB",
+   "d": "",
+   "p": 31924,
+   "f": "https://cdn.akakce.com/z/poco/poco-x8-pro.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-poco-x8-pro-fiyati,1140705980.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kot-pantolon.html"
+  },
+  {
+   "id": "h1keiwv5",
+   "c": "Giyim",
+   "e": "",
+   "t": "Samsung Galaxy S26 256 GB",
+   "d": "",
+   "p": 56299,
+   "f": "https://cdn.akakce.com/z/samsung/samsung-galaxy-s26.jpg",
+   "k": "https://www.akakce.com/cep-telefonu/en-ucuz-samsung-galaxy-s26-fiyati,657198191.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/kot-pantolon.html"
+  },
+  {
+   "id": "h1aq3ww1",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "Bosch GSB 185 Li Çift Akülü 2 Ah Darbeli Matkap",
+   "d": "",
+   "p": 7776,
+   "f": "https://cdn.akakce.com/z/bosch/bosch-gsb-185-li-2x2-ah-akulu-darbeli.jpg",
+   "k": "https://www.akakce.com/matkap/en-ucuz-bosch-gsb-185-li-2x2-ah-akulu-darbeli-fiyati,1986531702.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/matkap.html"
+  },
+  {
+   "id": "hmomcsf",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "Stanley SCD718D2K 18 V Çift Akülü 2 Ah Darbeli Matkap",
+   "d": "",
+   "p": 4899,
+   "f": "https://cdn.akakce.com/z/stanley/stanley-scd718d2k-18-v-2-0-ah-cift-akulu-darbeli.jpg",
+   "k": "https://www.akakce.com/matkap/en-ucuz-stanley-scd718d2k-18-v-2-0-ah-cift-akulu-darbeli-fiyati,257802329.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/matkap.html"
+  },
+  {
+   "id": "h1ls1dk7",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "Bay-Tec MK0010 500 W Mini Matkap",
+   "d": "",
+   "p": 830,
+   "f": "https://cdn.akakce.com/z/bay-tec/bay-tec-mk0010-500-w-mini.jpg",
+   "k": "https://www.akakce.com/matkap/en-ucuz-bay-tec-mk0010-500-w-mini-fiyati,376879482.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/matkap.html"
+  },
+  {
+   "id": "h1s3tuvx",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "Hais RB-DB16 Darbeli Matkap",
+   "d": "",
+   "p": 4917,
+   "f": "https://cdn.akakce.com/z/hais/hais-rb-db16-16-v.jpg",
+   "k": "https://www.akakce.com/matkap/en-ucuz-hais-rb-db16-16-v-fiyati,711585524.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/matkap.html"
+  },
+  {
+   "id": "h1frj00i",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "Troy 25305 30 cm Çift Taraflı Japon Testeresi",
+   "d": "",
+   "p": 579,
+   "f": "https://cdn.akakce.com/z/troy/troy-25305-30-cm-cift-tarafli-japon-si.jpg",
+   "k": "https://www.akakce.com/testere/en-ucuz-troy-25305-30-cm-cift-tarafli-japon-si-fiyati,506652758.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/testere.html"
+  },
+  {
+   "id": "h1b8y8ne",
+   "c": "Hırdavat",
+   "e": "",
+   "t": "İzeltaş 0589050830 300 mm Testere Kolu",
+   "d": "",
+   "p": 930,
+   "f": "https://cdn.akakce.com/izeltas/izeltas-05890-300-mm-kolu-z.jpg",
+   "k": "https://www.akakce.com/testere/en-ucuz-izeltas-05890-300-mm-kolu-fiyati,510734244.html",
+   "kn": "Akakçe (en ucuz fiyat)",
+   "kontrol": "2026-11-11T08:07:11.504Z",
+   "liste": "https://www.akakce.com/testere.html"
   }
  ]
 }
