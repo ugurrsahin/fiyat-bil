@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-11T13:26:36.812Z",
+ "guncelleme": "2026-11-11T14:45:34.571Z",
  "ozet": {
   "toplam": 57,
   "guncel": 7,
@@ -43,14 +43,14 @@
   "kozmetik-maybelline-lash-sensational-sky-high-maskara": {
    "fiyat": 1050,
    "referans": 1050,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
   "kozmetik-nivea-soft-krem": {
    "fiyat": 201,
    "referans": 177,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -65,7 +65,7 @@
   "emlak-ayranci-cankaya-satilik-3-1": {
    "fiyat": 6950000,
    "referans": 7250000,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -80,7 +80,7 @@
   "emlak-talatpasa-esenyurt-satilik-2-1": {
    "fiyat": 2425000,
    "referans": 2750000,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -321,7 +321,7 @@
   "emlak-hilalkent-yakutiye-erzurum-satilik-3-1": {
    "fiyat": 3650000,
    "referans": 3650000,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -378,7 +378,7 @@
   "kozmetik-dior-sauvage-eau-de-parfum": {
    "fiyat": 8250,
    "referans": 8250,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "gomulu"
   },
@@ -392,7 +392,7 @@
   "kozmetik-la-roche-posay-effaclar-duo-m": {
    "fiyat": 1035,
    "referans": 1450,
-   "kontrol": "2026-11-11T13:26:36.812Z",
+   "kontrol": "2026-11-11T14:45:34.571Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
