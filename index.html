@@ -274,7 +274,7 @@ const STATIK = [
   ...(window.URUNLER_KAYNAKLI||[]).map(u=>({id:urunId(u),c:u.kategori,e:u.emoji||"🏷️",t:u.baslik,d:u.aciklama||"",p:u.fiyat,f:u.foto||"",k:u.kaynak||"",kn:u.kaynakAdi||"",oto:u.otomatik!==false})),
   ...(window.URUNLER_TAHMINI||[]).map(([c,e,t,d,p])=>({id:urunId({kategori:c,baslik:t}),c,e,t,d,p,f:"",k:"",kn:"",oto:false})),
 ];
-const HAVUZ_MIN = 4;   // bir kategoride canlı ürün bundan azsa yedek liste de eklenir
+const HAVUZ_MIN = 8;   // bir kategoride canlı ürün bundan azsa yedek liste de eklenir
 let HAVUZ = null, ITEMS = [], CATS = [];
 function urunleriKur(){
   const canli = ((HAVUZ && HAVUZ.urunler) || [])
