@@ -13,15 +13,18 @@ import fs from "node:fs/promises";
 import vm from "node:vm";
 import path from "node:path";
 import zlib from "node:zlib";
+import os from "node:os";
 import { fileURLToPath } from "node:url";
 import { fiyatSec, sayfaGetir } from "./fiyat-guncelle.mjs";
 
 const KOK = process.env.FIYATBIL_KOK || path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const CIKTI = path.join(KOK, "urun-havuzu.json");
+const DENEME = process.argv.includes("--deneme");   // sonucu gerçek havuza yazmaz, geçici dosyaya yazar
+const SADECE = ((process.argv.find(a => a.startsWith("--sadece=")) || "").split("=")[1]) || "";   // örn. --sadece=Yemek
+const CIKTI = DENEME ? path.join(os.tmpdir(), "urun-havuzu-deneme.json") : path.join(KOK, "urun-havuzu.json");
 const ESKI_GUN = 7;   // bir kaynak okunamazsa en fazla kaç günlük eski ürünler tutulur
 
 /* aynı siteye art arda istek atmamak için bekleme süresi (ms) */
-const BEKLEME = { "akakce.com": 4000, "cimri.com": 3000, default: 1500 };
+const BEKLEME = { "yemeksepeti.com": 3000, "akakce.com": 4000, "cimri.com": 3000, default: 1500 };
 const SITE_ADI = {
   "cimri.com": "Cimri (en ucuz fiyat)", "akakce.com": "Akakçe (en ucuz fiyat)", "flo.com.tr": "FLO", "newbalance.com.tr": "New Balance Türkiye", "tr.puma.com": "Puma Türkiye", "tr.tommy.com": "Tommy Hilfiger Türkiye", "timberland.com.tr": "Timberland Türkiye", "emlakjet.com": "Emlakjet ilanı", "arabam.com": "arabam.com ilanı",
   "vatanbilgisayar.com": "Vatan Bilgisayar", "dermoeczanem.com": "Dermoeczanem", "mediamarkt.com.tr": "MediaMarkt",
@@ -225,8 +228,75 @@ export async function sitemapAdresleri(site, yol) {
   return [...new Set(bulunan)];
 }
 
+/* ---------- yemek menüleri (Yemeksepeti restoran sayfası): sayfadaki menü ürünlerini oku ---------- */
+const fiyatSayisi = t => { const n = Number(String(t).replace(/\./g, "").replace(",", ".")); return n > 0 ? n : 0; };
+const MENU_HARIC = /taşıma çantası|poşet|\bsos\b|baharat/i;
+export function yemeksepetiMenu(html) {
+  let ad = "", sehir = "", adres = "";
+  for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
+    let j; try { j = JSON.parse(m[1].trim()); } catch { continue; }
+    for (const x of (Array.isArray(j) ? j : [j])) {
+      if (x && /Restaurant/.test(String(x["@type"]))) { ad = varlik(x.name); sehir = varlik(x.address && x.address.addressLocality); adres = varlik(x.address && x.address.streetAddress); }
+    }
+  }
+  const urunler = [], gorulen = new Set();
+  for (const parca of html.split('data-testid="menu-product"').slice(1)) {
+    const g = parca.slice(0, 5000).replace(/<[^<>]*$/, "");   // sonda yarım kalan etiketi at
+    const a = (g.match(/data-testid="menu-product-name">([^<]+)</) || [])[1];
+    if (!a) continue;
+    const urunAdi = varlik(a);
+    if (gorulen.has(urunAdi.toLowerCase())) continue;
+    if (/Sepette/i.test(g.slice(0, 2500))) continue;      // sepete özel fiyat: belirsiz, atla
+    const fiyatlar = [...g.slice(0, 2500).matchAll(/(\d{1,3}(?:\.\d{3})*(?:,\d{2})?)\s*TL/g)].map(m => fiyatSayisi(m[1])).filter(Boolean);
+    if (!fiyatlar.length) continue;
+    const fiyat = Math.min(...fiyatlar);                   // indirimliyse indirimli (en düşük) fiyat
+    let foto = "";
+    for (const im of g.matchAll(/<img\b[^>]*>/gi)) {
+      const u = (im[0].match(/\bsrc="(https?:[^"]+)"/) || im[0].match(/data-src="(https?:[^"]+)"/) || im[0].match(/srcset="(https?:[^"\s,]+)/) || [])[1];
+      if (u && !/icon|logo|\.svg|badge|placeholder|pixel|blank/i.test(u)) { foto = varlik(u); break; }
+    }
+    const satirlar = g.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, "\n").split("\n").map(x => varlik(x)).filter(Boolean);
+    const aciklama = satirlar.find(x => x !== urunAdi && x.length >= 10 && !/^[\d<]/.test(x) && !/\bTL\b/.test(x) && !/^(Popüler|Sepete Ekle|Yeni)$/i.test(x)) || "";
+    gorulen.add(urunAdi.toLowerCase());
+    urunler.push({ ad: urunAdi, fiyat, aciklama, foto });
+  }
+  return { ad, sehir, adres, urunler };
+}
+
+async function menuKaynagi(k, r, urunler, simdi, getir) {
+  const adaylar = karistir(k.urller || []);
+  const gorulenAd = new Set();
+  const subeBasina = Math.max(1, Math.ceil(r.istenen / 2));   // tek şubeden en fazla bu kadar ürün (çeşitlilik için)
+  let denenen = 0;
+  r.link = adaylar.length;
+  for (const u of adaylar) {
+    if (r.alinan >= r.istenen || denenen >= 4) break;
+    denenen++;
+    try {
+      const p = await getir(u);
+      if (p.kaldirildi) { r.hatalar.push("şube sayfası yok"); continue; }
+      const m = yemeksepetiMenu(p.html);
+      if (!m.urunler.length) { r.hatalar.push("menü okunamadı"); continue; }
+      if (k.sehir && m.sehir && m.sehir !== k.sehir) { r.hatalar.push(`şube ${k.sehir} değil (${m.sehir})`); continue; }
+      const [alt, ust] = [k.min ?? 5, k.max ?? 5e6];
+      let bu = 0;
+      for (const x of karistir(m.urunler.filter(x => x.fiyat >= alt && x.fiyat <= ust && !MENU_HARIC.test(x.ad)))) {
+        if (r.alinan >= r.istenen || bu >= subeBasina) break;
+        if (gorulenAd.has(x.ad.toLowerCase())) continue;
+        gorulenAd.add(x.ad.toLowerCase());
+        const marka = m.ad || k.marka || "";
+        const yer = [m.adres.replace(/^\s*adres\s*:\s*/i, ""), m.sehir].filter(Boolean).join(", ");   // bazı şubelerde adres "ADRES:" ile başlıyor
+        const baslik = kisalt(fiyatsiz(`${marka} ${x.ad}`.trim(), x.fiyat), 90);
+        const aciklama = fiyatsiz([x.aciklama, "Yemeksepeti" + (yer ? " · " + marka + ", " + yer : "")].filter(Boolean).join(" · "), x.fiyat);
+        urunler.push({ id: "h" + kisaHash(u + "#" + x.ad), c: k.kategori, e: k.emoji || "🍔", t: baslik, d: aciklama, p: Math.round(x.fiyat), f: x.foto, k: u, kn: "Yemeksepeti" + (m.sehir ? " (" + m.sehir + ")" : ""), kontrol: simdi, liste: k.url });
+        r.alinan++; bu++;
+      }
+    } catch (e) { r.hatalar.push(String(e.message || e)); }
+  }
+}
+
 async function main() {
-  const kaynaklar = await kaynaklariYukle();
+  const kaynaklar = (await kaynaklariYukle()).filter(k => !SADECE || k.kategori === SADECE);
   let eski = { urunler: [] };
   try { eski = JSON.parse(await fs.readFile(CIKTI, "utf8")); } catch {}
   const simdi = new Date().toISOString();
@@ -243,6 +313,9 @@ async function main() {
     for (const k of liste) {
       const r = { kategori: k.kategori, url: k.url, istenen: k.adet || 4, alinan: 0, link: 0, hatalar: [] };
       try {
+        if (k.menu) {
+          await menuKaynagi(k, r, urunler, simdi, getir);
+        } else {
         let linkler;
         if (k.sitemap) {
           linkler = karistir(await sitemapAdresleri(k.sitemap, k.yol || "")).filter(u => !gorulenUrl.has(u));
@@ -264,6 +337,7 @@ async function main() {
             urunler.push({ id: "h" + kisaHash(u), c: k.kategori, e: k.emoji || "", t: b.ad, d: b.aciklama, p: b.fiyat, f: b.foto, k: u, kn: SITE_ADI[host] || host, kontrol: simdi, liste: k.url });
             r.alinan++;
           } catch (e) { r.hatalar.push(String(e.message || e)); }
+        }
         }
       } catch (e) { r.hatalar.unshift(String(e.message || e)); }
 

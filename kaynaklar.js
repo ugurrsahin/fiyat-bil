@@ -84,4 +84,28 @@ window.KAYNAKLAR = [
   // ---- Elektronik: akıllı saat ve kulaklık (kulaklık sayfası adı tahmin; 404 verirse silinebilir) ----
   { kategori: "Elektronik", url: "https://www.akakce.com/akilli-saat.html", adet: 2 },
   { kategori: "Elektronik", url: "https://www.akakce.com/kulaklik.html", adet: 2 },
+
+  // ---- Yemek: Yemeksepeti Ankara şubeleri (menü ürünleri; fiyat şubeye göre değişir) ----
+  { kategori: "Yemek", emoji: "🍔", url: "https://www.yemeksepeti.com/#menu-burger-king", menu: "yemeksepeti", sehir: "Ankara", marka: "Burger King", min: 150, adet: 3,
+    urller: [
+      "https://www.yemeksepeti.com/restaurant/zmj9/burger-king-zmj9",
+      "https://www.yemeksepeti.com/restaurant/k0jo/burger-king-k0jo",
+      "https://www.yemeksepeti.com/restaurant/g2ne/burger-king-g2ne",
+      "https://www.yemeksepeti.com/restaurant/m4b9/burger-king-m4b9",
+      "https://www.yemeksepeti.com/restaurant/gcu3/burger-king-gcu3",
+      "https://www.yemeksepeti.com/restaurant/wed5/burger-king-wed5",
+      "https://www.yemeksepeti.com/restaurant/sb6i/burger-king-sb6i",
+      "https://www.yemeksepeti.com/restaurant/ckv9/burger-king-ckv9"
+    ] },
+  { kategori: "Yemek", emoji: "🍟", url: "https://www.yemeksepeti.com/#menu-mcdonalds", menu: "yemeksepeti", sehir: "Ankara", marka: "McDonald's", min: 150, adet: 3,
+    urller: [
+      "https://www.yemeksepeti.com/restaurant/c4hx/mcdonalds-c4hx",
+      "https://www.yemeksepeti.com/restaurant/vr48/mcdonalds-vr48",
+      "https://www.yemeksepeti.com/restaurant/wojh/mcdonalds-wojh",
+      "https://www.yemeksepeti.com/restaurant/wnk4/mcdonalds-wnk4",
+      "https://www.yemeksepeti.com/restaurant/xl2z/mcdonalds-xl2z",
+      "https://www.yemeksepeti.com/restaurant/jsna/mcdonalds-jsna",
+      "https://www.yemeksepeti.com/restaurant/irsr/mcdonalds-irsr",
+      "https://www.yemeksepeti.com/restaurant/ur1e/mcdonalds-ur1e"
+    ] },
 ];
