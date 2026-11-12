@@ -1,9 +1,9 @@
 {
- "guncelleme": "2026-11-11T15:02:30.934Z",
+ "guncelleme": "2026-11-12T10:51:29.158Z",
  "ozet": {
   "toplam": 57,
-  "guncel": 10,
-  "eski": 9,
+  "guncel": 7,
+  "eski": 12,
   "elle": 33,
   "kaldirildi": 5
  },
@@ -12,15 +12,17 @@
    "fiyat": 105999,
    "referans": 111999,
    "kontrol": "2026-11-11T15:02:30.934Z",
-   "durum": "guncel",
-   "yontem": "json-ld"
+   "durum": "eski",
+   "yontem": "json-ld",
+   "hata": "HTTP 403"
   },
   "elektronik-sony-playstation-5-slim-dijital": {
    "fiyat": 57999,
    "referans": 52999,
    "kontrol": "2026-11-11T15:02:30.934Z",
-   "durum": "guncel",
-   "yontem": "gomulu"
+   "durum": "eski",
+   "yontem": "gomulu",
+   "hata": "HTTP 403"
   },
   "elektronik-logitech-mx-master-3s": {
    "fiyat": 6259,
@@ -28,26 +30,27 @@
    "kontrol": null,
    "durum": "eski",
    "yontem": null,
-   "hata": "sayfada fiyat bulunamadı"
+   "hata": "HTTP 403"
   },
   "elektronik-apple-airpods-4": {
    "fiyat": 9999,
    "referans": 8799,
    "kontrol": "2026-11-11T15:02:30.934Z",
-   "durum": "guncel",
-   "yontem": "json-ld"
+   "durum": "eski",
+   "yontem": "json-ld",
+   "hata": "HTTP 403"
   },
   "kozmetik-maybelline-lash-sensational-sky-high-maskara": {
    "fiyat": 1050,
    "referans": 1050,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
   "kozmetik-nivea-soft-krem": {
    "fiyat": 201,
    "referans": 177,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -62,7 +65,7 @@
   "emlak-ayranci-cankaya-satilik-3-1": {
    "fiyat": 6950000,
    "referans": 7250000,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -77,7 +80,7 @@
   "emlak-talatpasa-esenyurt-satilik-2-1": {
    "fiyat": 2425000,
    "referans": 2750000,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -318,7 +321,7 @@
   "emlak-hilalkent-yakutiye-erzurum-satilik-3-1": {
    "fiyat": 3650000,
    "referans": 3650000,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
@@ -375,7 +378,7 @@
   "kozmetik-dior-sauvage-eau-de-parfum": {
    "fiyat": 8250,
    "referans": 8250,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "gomulu"
   },
@@ -389,7 +392,7 @@
   "kozmetik-la-roche-posay-effaclar-duo-m": {
    "fiyat": 1035,
    "referans": 1450,
-   "kontrol": "2026-11-11T15:02:30.934Z",
+   "kontrol": "2026-11-12T10:51:29.158Z",
    "durum": "guncel",
    "yontem": "json-ld"
   },
